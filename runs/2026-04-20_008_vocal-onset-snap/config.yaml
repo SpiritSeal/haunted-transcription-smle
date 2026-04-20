@@ -1,0 +1,14 @@
+date: '2026-04-20'
+hypothesis: Snap CREPE vocal starts to nearest detected vocal-stem onset (tol 80ms)
+  before 16th quantize
+run_id: 2026-04-20_008_vocal-onset-snap
+script_shas:
+  analyze_grid.py: edf5237f8422
+  assemble_v4.py: 26c76058fa61
+  chord_detect.py: 991e95648d03
+  midi_utils.py: 4c999b70ccb7
+  transcribe_drums.py: cb46f97c5320
+  transcribe_stems.py: eb473cf5c946
+  transcribe_vocals_poly.py: 2a78aa1fa12e
+  vocal_harmony.py: e860d0d26fd2
+  vocal_melody.py: 794297b7c356

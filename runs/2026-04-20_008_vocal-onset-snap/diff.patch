@@ -1,0 +1,2355 @@
+diff --git a/Haunted.ly b/Haunted.ly
+index 0c36abb..9754f02 100644
+--- a/Haunted.ly
++++ b/Haunted.ly
+@@ -20,37 +20,39 @@
+         autoBeaming = ##f
+         }
+     }
+-PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne = 
++PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOne = 
+ \relative d' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1 | % 2
+     R1 | % 3
+     R1 | % 4
+-    r8. d8. r4 r16 cis8 r8. | % 5
++    r4 d8 r4 r16 cis8 r8. | % 5
+     r4 b4 a8 fis4 r8 | % 6
+     r8. d'8. r4 r16 e8. r8 | % 7
+     r8. b4. r8 a8 r8. | % 8
+-    r16 e'8. d4 ~ d16 e4 ~ e16 r8 | % 9
+-    r16 e4 ~ e16 d2 <cis d>8 | \barNumberCheck #10
++    e'4 d4 ~ d16 e4 ~ e16 r8 | % 9
++    r16 e4 r16 d2 <cis d>8 | \barNumberCheck #10
+     \stemUp d16 [ \stemUp b8. ] r8. b4 r4 b16 | % 11
+     b4 ~ b16 r2 r16 a'8 | % 12
+-    r2 r8 e8 r4 | % 13
+-    r8. e4 r4 r16 d4 | % 14
++    r8 e8 r4. e8 r4 | % 13
++    r4 e8. r4 r16 d4 | % 14
+     d8. r2 r4 r16 | % 15
+     r8 e4 d8. r4 d8. | % 16
+     d4 r4 e2 | % 17
+-    e16 r8. \stemUp d16 [ \stemUp <d e>8 \stemUp d16 ] \stemUp <cis d>8.
+-    [ \stemUp cis8. ] r8 | % 18
++    \stemUp e16 [ \stemUp fis8 \stemUp d8 ] \stemUp <d e>8 [ \stemUp d16
++    ] \stemUp <cis d>8. [ \stemUp <b cis>8 ] cis16 r8 | % 18
+     b8. r4 r16 e2 | % 19
+     e16 r8. \stemUp e8 [ \stemUp cis8 ] d8 r4. | \barNumberCheck #20
+     r4 \stemUp <b e fis>8 [ \stemUp e8 ] r16 fis4 ~ fis16 r8 | % 21
+-    r4 a8 <d, fis>4 ~ ~ <d fis>16 fis8 r8. | % 22
+-    r4 fis4.. <fis fis'>8. r8 | % 23
+-    r4 r16 <d d'>8. r2 | % 24
++    r4 \stemUp a16 [ \stemUp <d, fis a>16 ] <d fis>4 ~ ~ <d fis>16 fis8
++    r8. | % 22
++    r8. fis2 <fis fis'>8. r8 | % 23
++    r8. b8 <d, d'>8. r2 | % 24
+     r4 fis2 r4 | % 25
+     r4 r16 fis2 r8. | % 26
+     r4.. fis4 ~ fis16 r4 | % 27
+-    r16 <a, a'>8 r8 d8 r8. d8 r4 | % 28
++    r16 \stemUp <a, a'>16 [ \stemUp <a a' b>16 \stemUp b'16 ] r16 d,8 r8.
++    d8 r4 | % 28
+     R1 | % 29
+     r2 r8 b'8 r4 | \barNumberCheck #30
+     R1 | % 31
+@@ -60,137 +62,139 @@ PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiv
+     r2 r8 b'8. r8. | % 34
+     r2... a16 | % 35
+     \stemUp a16 [ \stemUp b8 \stemUp d,8 ] r2 d8. | % 36
+-    r4 cis4 r4.. b16 | % 37
+-    \stemUp b16 [ \stemUp a8 \stemUp fis8. ] r4. \stemUp d'8. [ \stemUp
+-    cis16 ] | % 38
++    r8. cis4 ~ cis16 r8. a8 r16 b8 | % 37
++    \stemUp b16 [ \stemUp a8 ] r16 fis8 r4. \stemUp d'8. [ \stemUp cis16
++    ] | % 38
+     cis8 r8 fis8. r2 cis16 | % 39
+-    \stemUp cis8 [ \stemUp d8 ] r4. e8. d8. ] | \barNumberCheck #40
+-    \stemUp d8 [ \stemUp e8. ] r4 r16 e4 ~ e16 r16 | % 41
+-    \stemUp d16 [ \stemUp <cis d>8 ] d4 cis8 r16 b8 r4 | % 42
++    \stemUp cis8 [ \stemUp d8 ] r4 r16 e4 d8. | \barNumberCheck #40
++    \stemUp d8 [ \stemUp e8. ] r8 d8 r16 e4 ~ e16 d16 | % 41
++    \stemUp d16 [ \stemUp cis8 ] r16 \stemUp d8. [ \stemUp cis8 ] r16 b8
++    r4 | % 42
+     r16 b8. r4 b2 | % 43
+-    b8 r2. g'8 | % 44
++    b8 r2 r4 r16 g'16 | % 44
+     g8 r4.. d8 e4 ~ e16 | % 45
+     e8 r16 d4 ~ d16 r2 | % 46
+-    r4 d8 r8. d8 e4 r16 | % 47
++    r4 d8 r8. \stemUp d8 [ \stemUp <d e>16 ] e8. r16 | % 47
+     r4. d4. r4 | % 48
+-    r16 e4. r4. \stemUp d16 [ \stemUp <d e>8 ] | % 49
++    r16 e4. r8. fis8 r16 \stemUp d16 [ \stemUp <d e>8 ] | % 49
+     \stemUp d16 [ \stemUp <cis d>8. ] cis4 r16 b4 g'8. | \barNumberCheck
+     #50
+-    r16 e2 ~ e16 r8. \stemUp e8 [ \stemUp cis16 ] | % 51
+-    \stemUp cis16 [ \stemUp d8. ] r4. b'8 r16 \stemUp fis8 [ \stemUp e16
+-    ] | % 52
+-    e16 r16 fis4 r4 r16 b8 \stemUp a8 [ \stemUp fis16 ] | % 53
+-    \stemUp fis16 [ \stemUp <d fis>8. ] fis8 r4.. fis8. | % 54
+-    fis4 ~ fis16 <fis fis'>8 r4 a8 r8 <d, d'>16 | % 55
++    r16 e2 ~ e16 r8. e8 r16 | % 51
++    r16 d8. r4. b'8 r16 \stemUp fis8 [ \stemUp e16 ] | % 52
++    e16 r16 fis4 r4 r16 b8 \stemUp a8 [ \stemUp <fis a>16 ] | % 53
++    \stemUp fis16 [ \stemUp <d fis>8. ] fis8 r8 b8 r8. fis8. | % 54
++    fis4 <fis fis'>8. r4 a16 \stemUp <a b>16 [ \stemUp b16 ] r16 <d, d'>16
++    | % 55
+     <d d'>4. r8. b'8 r8 fis8. | % 56
+-    fis4 <fis d' fis>8 r4 b8 \stemUp a8 [ \stemUp fis8 ] | % 57
++    fis4 <fis d' fis>8 r4. \stemUp a8 [ \stemUp fis8 ] | % 57
+     fis4 ~ fis16 r4.. \stemUp d8 [ \stemUp <d a'>8 ] | % 58
+-    fis2 ~ fis16 r16 <a, a'>8 r8 d8 | % 59
++    fis2 ~ fis16 r16 <a, a'>8 r16 d8. | % 59
+     r8. d8 r2 r8. | \barNumberCheck #60
+     R1 | % 61
+     r8. b'8. r2 r8 | % 62
+-    r2 r16 \stemUp a8 [ \stemUp b8 ] r8. | % 63
++    r2 r16 \stemUp a8 [ \stemUp b16 ] \stemDown <b d>16 [ \stemDown d16
++    ] r8 | % 63
+     r8 <d, b' d>8 r2. | % 64
+-    r2 r8. b'8. r8 | % 65
++    r2 r8 b'4 r8 | % 65
+     r8. b8 r2 r8. | % 66
+     r2 \stemUp a8 [ \stemUp <b, b'>8 ] \stemUp <d d'>8. [ \stemUp d'16 ]
+     | % 67
+     R1 | % 68
+-    r8. e,2 ~ e4 ~ e16 | % 69
++    r8 e,2.. | % 69
+     e2 ~ e16 r4.. | \barNumberCheck #70
+-    r4. cis2 ~ cis8 | % 71
++    r4.. cis2 ~ cis16 | % 71
+     cis16 r4 fis,8 r4. fis8. | % 72
+-    fis16 a4.. r16 d8. e4 | % 73
++    <fis a>16 a4.. r16 d8. e4 | % 73
+     e16 r8 d8 r2 r8. | % 74
+     r8 e4. r8. g4 ~ g16 | % 75
+     fis8 r2.. | % 76
+     R1 | % 77
+     R1 | % 78
+-    r2 r16 \stemUp d16 [ \stemUp <d d'>8 ] r8. <d b' d>16 | % 79
++    r4.. b8 \stemUp d,16 [ \stemUp <d d'>8 ] r8. <d b' d>16 | % 79
+     <d b' d>16 r2... | \barNumberCheck #80
+     r4.. b'4 r4 b16 | % 81
+     b16 r2... | % 82
+-    r4 a8. r8 d,8 r4 r16 | % 83
++    r4 a8. r8 d,8 r8. d8 | % 83
+     R1 }
+ 
+-PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords = 
++PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOneChords = 
+ \chordmode {
+     | % 1
+-    b8.:m a8. g8. b8.:m s16*39 s8. s4 s16 s8 s8. | % 5
++    b4:m a4 g4 b4:m s4*9 s8 s4 s16 s8 s8. | % 5
+     d4 s4 s8 s4 s8 | % 6
+     g8. s8. s4 s16 s8. s8 | % 7
+     b8.:m s4. s8 s8 s8. | % 8
+-    a16 s8. s4 s16 s4 s16 s8 | % 9
++    a4 s4 s16 s4 s16 s8 | % 9
+     g16 s4 s16 s2 s8 | \barNumberCheck #10
+     b16:m s8. s8. s4 s4 s16 | % 11
+     d4 s16 s2 s16 s8 | % 12
+-    g2 s8 s8 s4 | % 13
+-    a8. s4 s4 s16 s4 | % 14
++    g8 s8 s4. s8 s4 | % 13
++    a4 s8. s4 s16 s4 | % 14
+     b8.:m s2 s4 s16 | % 15
+     a8 s4 s8. s4 s8. | % 16
+     g4 s4 s2 | % 17
+-    b16:m s8. s16 s8 s16 s8. s8. s8 | % 18
++    b16:m s8 s8 s8 s16 s8. s8 s16 s8 | % 18
+     d8. s4 s16 s2 | % 19
+     g16 s8. s8 s8 s8 s4. | \barNumberCheck #20
+     e4:m s8 s8 s16 s4 s16 s8 | % 21
+-    d4 s8 s4 s16 s8 s8. | % 22
+-    a4 s16*7 s8. s8 | % 23
+-    b4:m s16 s8. s2 | % 24
++    d4 s16 s16 s4 s16 s8 s8. | % 22
++    a8. s2 s8. s8 | % 23
++    b8.:m s8 s8. s2 | % 24
+     a4 s2 s4 | % 25
+     d4 s16 s2 s8. | % 26
+     g4.. s4 s16 s4 | % 27
+-    e16:m s8 s8 s8 s8. s8 s4 | % 28
++    e16:m s16 s16 s16 s16 s8 s8. s8 s4 | % 28
+     d2 a2 s2 s8 s8 s4 | \barNumberCheck #30
+     b8:m g8 s8*7 s8 s8 s8. s8 s4 s16 | % 32
+     e2:m s1 s8 s8. s8. | % 34
+     d2... s16 | % 35
+     a16 s8 s8 s2 s8. | % 36
+-    b4:m s4 s16*7 s16 | % 37
+-    e16:m s8 s8. s4. s8. s16 | % 38
++    b8.:m s4 s16 s8. s8 s16 s8 | % 37
++    e16:m s8 s16 s8 s4. s8. s16 | % 38
+     d8 s8 s8. s2 s16 | % 39
+-    b8:m s8 s4. s8. s8. | \barNumberCheck #40
+-    e8:m s8. s4 s16 s4 s16 s16 | % 41
+-    d16 s8 s4 s8 s16 s8 s4 | % 42
++    b8:m s8 s4 s16 s4 s8. | \barNumberCheck #40
++    e8:m s8. s8 s8 s16 s4 s16 s16 | % 41
++    d16 s8 s16 s8. s8 s16 s8 s4 | % 42
+     a16 s8. s4 s2 | % 43
+-    e8:m s2. s8 | % 44
++    e8:m s2 s4 s16 s16 | % 44
+     g8 s16*7 s8 s4 s16 | % 45
+     a8 s16 s4 s16 s2 | % 46
+-    e4:m s8 s8. s8 s4 s16 | % 47
++    e4:m s8 s8. s8 s16 s8. s16 | % 47
+     s4. s4. s4 | % 48
+-    fis16:m s4. s4. s16 s8 | % 49
++    fis16:m s4. s8. s8 s16 s16 s8 | % 49
+     b16:m s8. s4 s16 s4 s8. | \barNumberCheck #50
+     e16:m s2 s16 s8. s8 s16 | % 51
+     fis16:m s8. s4. s8 s16 s8 s16 | % 52
+     b16:m s16 s4 s4 s16 s8 s8 s16 | % 53
+-    d16 s8. s8 s16*7 s8. | % 54
+-    b4:m s16 s8 s4 s8 s8 s16 | % 55
++    d16 s8. s8 s8 s8 s8. s8. | % 54
++    b4:m s8. s4 s16 s16 s16 s16 s16 | % 55
+     g4. s8. s8 s8 s8. | % 56
+-    a4 s8 s4 s8 s8 s8 | % 57
++    a4 s8 s4. s8 s8 | % 57
+     b4:m s16 s16*7 s8 s8 | % 58
+-    a2 s16 s16 s8 s8 s8 | % 59
++    a2 s16 s16 s8 s16 s8. | % 59
+     g8. s8 s2 s8. | \barNumberCheck #60
+     b8.:m d8. s16*13 s8. s2 s8 | % 62
+-    g2 s16 s8 s8 s8. | % 63
++    g2 s16 s8 s16 s16 s16 s8 | % 63
+     b8:m s8 s2. | % 64
+-    a2 s8. s8. s8 | % 65
++    a2 s8 s4 s8 | % 65
+     g8. s8 s2 s8. | % 66
+     b2:m s8 s8 s8. s16 | % 67
+-    d8. g8. s16*13 s2 s4 s16 | % 69
++    d8 g8 s8*7 s8*7 | % 69
+     e2:m s16 s16*7 | \barNumberCheck #70
+-    d4. s2 s8 | % 71
++    d4.. s2 s16 | % 71
+     a16 s4 s8 s4. s8. | % 72
+     b16:m s16*7 s16 s8. s4 | % 73
+     a16 s8 s8 s2 s8. | % 74
+     e8:m s4. s8. s4 s16 | % 75
+     d8 s8*7 | % 76
+-    g2 e2:m d2 s1 s16 s16 s8 s8. s16 | % 79
++    g4.. e4..:m d4.. s8*9 s8 s16 s8 s8. s16 | % 79
+     a16 s16*15 | \barNumberCheck #80
+     b4..:m s4 s4 s16 | % 81
+     g16 s16*15 | % 82
+-    a4 s8. s8 s8 s4 s16 | % 83
++    a4 s8. s8 s8 s8. s8 | % 83
+     }
+ 
+-PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne = 
++PartPSixeSevenTwoZeroSevenadcaTwoTwoSevenTwoTwofOneSevenfFoureThreeNinecaSixTwoNineOneTwoThreeThreeVoiceOne = 
+ \relative cis' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 cis16 r2... | % 2
+@@ -282,7 +286,7 @@ PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroF
+     r2 r8. e16 r4 | % 83
+     r8 e16 r2 r4 r16 }
+ 
+-PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne = 
++PartPZerofOneSixEightZerofFourbSevenTwodaSixeTwoEightOneSevenZeroEightFourThreeFourEightNineZeroSixTwoTwoTwoFiveVoiceOne = 
+ \relative b {
+     \clef "bass" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 r2 b8. r4 r16 | % 2
+@@ -384,7 +388,7 @@ PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZero
+     r16 a,16 r2.. | % 83
+     R1 }
+ 
+-PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne = 
++PartPSevenTwoEightNineFourFourcZeroaEightSevenTwoEightSixThreefbSevenNineZeroOneFourbNinecEightNineEightSevenNineThreedVoiceOne = 
+ \relative cis' {
+     \clef "treble_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 cis8. r16 \stemUp g,16 [ \stemUp <g b' b'>16 \stemUp <g
+@@ -535,7 +539,7 @@ PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEight
+     r16 a8 r2 r4 r16 | % 83
+     R1 }
+ 
+-PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne = 
++PartPcaTwoFiveThreeeSevenZeroaFoureccSixbSixEightdccFourbOneFourThreeaNineFivedTwoSixOneVoiceOne = 
+ \relative e, {
+     \clef "bass_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1*11 | % 12
+@@ -602,7 +606,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+ \score {
+     <<
+         
+-        \context ChordNames = "PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords" { \PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords}
++        \context ChordNames = "PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOneChords" { \PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOneChords}
+         \new Staff
+         <<
+             \set Staff.instrumentName = "Vocals"
+@@ -610,7 +614,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne" {  \PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne }
++                \context Voice = "PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOne" {  \PartPSevenFivebSixcFivefeSixNineOneccfSixOneNinedFiveeFourFouraThreeThreeNinebSixaFivedcVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -620,7 +624,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne" {  \PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne }
++                \context Voice = "PartPSixeSevenTwoZeroSevenadcaTwoTwoSevenTwoTwofOneSevenfFoureThreeNinecaSixTwoNineOneTwoThreeThreeVoiceOne" {  \PartPSixeSevenTwoZeroSevenadcaTwoTwoSevenTwoTwofOneSevenfFoureThreeNinecaSixTwoNineOneTwoThreeThreeVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -630,7 +634,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne" {  \PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne }
++                \context Voice = "PartPZerofOneSixEightZerofFourbSevenTwodaSixeTwoEightOneSevenZeroEightFourThreeFourEightNineZeroSixTwoTwoTwoFiveVoiceOne" {  \PartPZerofOneSixEightZerofFourbSevenTwodaSixeTwoEightOneSevenZeroEightFourThreeFourEightNineZeroSixTwoTwoTwoFiveVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -640,7 +644,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne" {  \PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne }
++                \context Voice = "PartPSevenTwoEightNineFourFourcZeroaEightSevenTwoEightSixThreefbSevenNineZeroOneFourbNinecEightNineEightSevenNineThreedVoiceOne" {  \PartPSevenTwoEightNineFourFourcZeroaEightSevenTwoEightSixThreefbSevenNineZeroOneFourbNinecEightNineEightSevenNineThreedVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -650,7 +654,7 @@ PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTw
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne" {  \PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne }
++                \context Voice = "PartPcaTwoFiveThreeeSevenZeroaFoureccSixbSixEightdccFourbOneFourThreeaNineFivedTwoSixOneVoiceOne" {  \PartPcaTwoFiveThreeeSevenZeroaFoureccSixbSixEightdccFourbOneFourThreeaNineFivedTwoSixOneVoiceOne }
+                 >>
+             >>
+         
+diff --git a/Haunted.musicxml b/Haunted.musicxml
+index 2b46f88..f9d78b0 100644
+--- a/Haunted.musicxml
++++ b/Haunted.musicxml
+@@ -19,69 +19,69 @@
+     </scaling>
+   </defaults>
+   <part-list>
+-    <score-part id="Pf597d15176b63a19bc8f252559a9be05">
++    <score-part id="P75b6c5fe691ccf619d5e44a339b6a5dc">
+       <part-name>Vocals</part-name>
+       <part-abbreviation>Voca</part-abbreviation>
+-      <score-instrument id="Ib2897b0c9a1d4380390b80b79b5ba138">
++      <score-instrument id="I9abed3609676fc626f2a00c8cdfc308e">
+         <instrument-name>Voice</instrument-name>
+         <instrument-abbreviation>V</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="Ib2897b0c9a1d4380390b80b79b5ba138">
++      <midi-instrument id="I9abed3609676fc626f2a00c8cdfc308e">
+         <midi-channel>1</midi-channel>
+         <midi-program>54</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P9bfe7436772e5006229b3f0561231534">
++    <score-part id="P6e7207adca22722f17f4e39ca6291233">
+       <part-name>Piano RH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="I830a62cfb09a2ab8577d99bfa5a4d769">
++      <score-instrument id="I354665645a214a3e2bdae3225e123ea4">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I830a62cfb09a2ab8577d99bfa5a4d769">
++      <midi-instrument id="I354665645a214a3e2bdae3225e123ea4">
+         <midi-channel>2</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="Pfc936eb7459ab4d5bbb27ca8580407e4">
++    <score-part id="P0f1680f4b72da6e28170843489062225">
+       <part-name>Piano LH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="I2fca4d19500adc4e769949800a148f58">
++      <score-instrument id="I67f8971ae5b40a833f21986108937f56">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I2fca4d19500adc4e769949800a148f58">
++      <midi-instrument id="I67f8971ae5b40a833f21986108937f56">
+         <midi-channel>3</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P72ff012aede895aee067999e78d512fe">
++    <score-part id="P728944c0a872863fb79014b9c898793d">
+       <part-name>Guitar</part-name>
+       <part-abbreviation>Guit</part-abbreviation>
+-      <score-instrument id="I14de60bf7ead7cd75f24636f070a5d45">
++      <score-instrument id="I7664113f6fd69aa9fd1cb1ac92ff8b92">
+         <instrument-name>Acoustic Guitar</instrument-name>
+         <instrument-abbreviation>Ac Gtr</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I14de60bf7ead7cd75f24636f070a5d45">
++      <midi-instrument id="I7664113f6fd69aa9fd1cb1ac92ff8b92">
+         <midi-channel>4</midi-channel>
+         <midi-program>25</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P065d2961edb53e92f17cf70272717791">
++    <score-part id="Pca253e70a4ecc6b68dcc4b143a95d261">
+       <part-name>Bass</part-name>
+       <part-abbreviation>Bass</part-abbreviation>
+-      <score-instrument id="Icf6c1b56c5909b6bf98a79345e8d1df7">
++      <score-instrument id="I1e81617abe379efa9dcb75267e16e021">
+         <instrument-name>Electric Bass</instrument-name>
+         <instrument-abbreviation>Elec b</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="Icf6c1b56c5909b6bf98a79345e8d1df7">
++      <midi-instrument id="I1e81617abe379efa9dcb75267e16e021">
+         <midi-channel>5</midi-channel>
+         <midi-program>34</midi-program>
+       </midi-instrument>
+     </score-part>
+   </part-list>
+   <!--=========================== Part 1 ===========================-->
+-  <part id="Pf597d15176b63a19bc8f252559a9be05">
++  <part id="P75b6c5fe691ccf619d5e44a339b6a5dc">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -155,18 +155,16 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <pitch>
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <rest />
+@@ -337,19 +335,13 @@
+         </root>
+         <kind>major</kind>
+       </harmony>
+-      <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
+-      </note>
+       <note>
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <pitch>
+@@ -424,23 +416,12 @@
+           <octave>4</octave>
+         </pitch>
+         <duration>10080</duration>
+-        <tie type="start" />
+         <type>quarter</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
+       </note>
+       <note>
+-        <pitch>
+-          <step>E</step>
+-          <octave>4</octave>
+-        </pitch>
++        <rest />
+         <duration>2520</duration>
+-        <tie type="stop" />
+         <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
+       </note>
+       <note>
+         <pitch>
+@@ -588,14 +569,23 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>20160</duration>
+-        <type>half</type>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
+       </note>
++      <note>
++        <rest />
++        <duration>15120</duration>
++        <type>quarter</type>
++        <dot />
++      </note>
+       <note>
+         <pitch>
+           <step>E</step>
+@@ -620,17 +610,17 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <rest />
+@@ -774,23 +764,30 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+-        <rest />
+-        <duration>7560</duration>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++        <stem>up</stem>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <pitch>
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>2520</duration>
+-        <type>16th</type>
++        <duration>5040</duration>
++        <type>eighth</type>
+         <stem>up</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -800,7 +797,7 @@
+         <duration>5040</duration>
+         <type>eighth</type>
+         <stem>up</stem>
+-        <beam number="1">continue</beam>
++        <beam number="1">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -845,16 +842,33 @@
+         <dot />
+       </note>
+       <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -1063,8 +1077,41 @@
+           <step>A</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1144,8 +1191,9 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <pitch>
+@@ -1153,10 +1201,8 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>17640</duration>
+-        <type>quarter</type>
+-        <dot />
+-        <dot />
++        <duration>20160</duration>
++        <type>half</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1195,13 +1241,17 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1355,8 +1405,11 @@
+           <step>A</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -1364,13 +1417,53 @@
+           <step>A</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1692,8 +1785,9 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <pitch>
+@@ -1702,24 +1796,53 @@
+           <octave>4</octave>
+         </pitch>
+         <duration>10080</duration>
++        <tie type="start" />
+         <type>quarter</type>
++        <notations>
++          <tied type="start" />
++        </notations>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <tie type="stop" />
++        <type>16th</type>
++        <notations>
++          <tied type="stop" />
++        </notations>
+       </note>
+       <note>
+         <rest />
+-        <duration>17640</duration>
+-        <type>quarter</type>
+-        <dot />
++        <duration>7560</duration>
++        <type>eighth</type>
+         <dot />
+       </note>
+       <note>
+         <pitch>
+-          <step>B</step>
++          <step>A</step>
+           <octave>3</octave>
+         </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <rest />
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+-    </measure>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++    </measure>
+     <!--========================= Measure 37 =========================-->
+     <measure implicit="no" number="37">
+       <harmony>
+@@ -1747,7 +1870,12 @@
+         <duration>5040</duration>
+         <type>eighth</type>
+         <stem>up</stem>
+-        <beam number="1">continue</beam>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1755,11 +1883,8 @@
+           <alter>1</alter>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -1869,18 +1994,21 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>15120</duration>
++        <duration>10080</duration>
+         <type>quarter</type>
+-        <dot />
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <pitch>
+@@ -1890,7 +2018,6 @@
+         <duration>7560</duration>
+         <type>eighth</type>
+         <dot />
+-        <beam number="1">end</beam>
+       </note>
+     </measure>
+     <!--========================= Measure 40 =========================-->
+@@ -1924,8 +2051,16 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+         <rest />
+@@ -1957,7 +2092,10 @@
+         </notations>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+@@ -1993,21 +2131,20 @@
+         <beam number="1">end</beam>
+       </note>
+       <note>
+-        <chord />
+-        <pitch>
+-          <step>D</step>
+-          <octave>4</octave>
+-        </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
++        <stem>up</stem>
++        <beam number="1">begin</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -2017,6 +2154,8 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -2091,17 +2230,26 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>30240</duration>
++        <duration>20160</duration>
+         <type>half</type>
+-        <dot />
++      </note>
++      <note>
++        <rest />
++        <duration>10080</duration>
++        <type>quarter</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>G</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 44 =========================-->
+@@ -2245,14 +2393,37 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <rest />
+@@ -2308,10 +2479,24 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>15120</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
+         <dot />
+       </note>
++      <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>D</step>
+@@ -2466,20 +2651,11 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
+-        <stem>up</stem>
+-        <beam number="1">begin</beam>
+       </note>
+       <note>
+-        <pitch>
+-          <step>C</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
+-        </pitch>
++        <rest />
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
+       </note>
+     </measure>
+     <!--========================= Measure 51 =========================-->
+@@ -2492,16 +2668,9 @@
+         <kind>minor</kind>
+       </harmony>
+       <note>
+-        <pitch>
+-          <step>C</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
+-        </pitch>
++        <rest />
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>up</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -2511,8 +2680,6 @@
+         <duration>7560</duration>
+         <type>eighth</type>
+         <dot />
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -2626,6 +2793,15 @@
+         <beam number="1">end</beam>
+         <beam number="2">backward hook</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+     </measure>
+     <!--========================= Measure 53 =========================-->
+     <measure implicit="no" number="53">
+@@ -2680,9 +2856,21 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>17640</duration>
+-        <type>quarter</type>
+-        <dot />
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <rest />
++        <duration>7560</duration>
++        <type>eighth</type>
+         <dot />
+       </note>
+       <note>
+@@ -2711,11 +2899,7 @@
+           <octave>4</octave>
+         </pitch>
+         <duration>10080</duration>
+-        <tie type="start" />
+         <type>quarter</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
+       </note>
+       <note>
+         <pitch>
+@@ -2723,21 +2907,9 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>2520</duration>
+-        <tie type="stop" />
+-        <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
+-      </note>
+-      <note>
+-        <pitch>
+-          <step>F</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
+-        </pitch>
+-        <duration>5040</duration>
++        <duration>7560</duration>
+         <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <chord />
+@@ -2746,8 +2918,9 @@
+           <alter>1</alter>
+           <octave>5</octave>
+         </pitch>
+-        <duration>5040</duration>
++        <duration>7560</duration>
+         <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <rest />
+@@ -2759,13 +2932,44 @@
+           <step>A</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -2889,16 +3093,9 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>10080</duration>
++        <duration>15120</duration>
+         <type>quarter</type>
+-      </note>
+-      <note>
+-        <pitch>
+-          <step>B</step>
+-          <octave>4</octave>
+-        </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+         <pitch>
+@@ -3051,16 +3248,17 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
++        <duration>7560</duration>
+         <type>eighth</type>
++        <dot />
+       </note>
+     </measure>
+     <!--========================= Measure 59 =========================-->
+@@ -3177,16 +3375,47 @@
+           <step>B</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+     </measure>
+     <!--========================= Measure 63 =========================-->
+@@ -3250,18 +3479,16 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <rest />
+@@ -3401,47 +3628,18 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>20160</duration>
+-        <tie type="start" />
++        <duration>35280</duration>
+         <type>half</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
+-      </note>
+-      <note>
+-        <pitch>
+-          <step>E</step>
+-          <octave>4</octave>
+-        </pitch>
+-        <duration>10080</duration>
+-        <tie type="stop" />
+-        <tie type="start" />
+-        <type>quarter</type>
+-        <notations>
+-          <tied type="stop" />
+-          <tied type="start" />
+-        </notations>
+-      </note>
+-      <note>
+-        <pitch>
+-          <step>E</step>
+-          <octave>4</octave>
+-        </pitch>
+-        <duration>2520</duration>
+-        <tie type="stop" />
+-        <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
++        <dot />
++        <dot />
+       </note>
+     </measure>
+     <!--========================= Measure 69 =========================-->
+@@ -3494,9 +3692,10 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>15120</duration>
++        <duration>17640</duration>
+         <type>quarter</type>
+         <dot />
++        <dot />
+       </note>
+       <note>
+         <pitch>
+@@ -3517,9 +3716,9 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
++        <duration>2520</duration>
+         <tie type="stop" />
+-        <type>eighth</type>
++        <type>16th</type>
+         <notations>
+           <tied type="stop" />
+         </notations>
+@@ -3590,6 +3789,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>A</step>
+@@ -3778,13 +3986,18 @@
+       </harmony>
+       <note>
+         <rest />
+-        <duration>20160</duration>
+-        <type>half</type>
++        <duration>17640</duration>
++        <type>quarter</type>
++        <dot />
++        <dot />
+       </note>
+       <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+         <pitch>
+@@ -3991,13 +4204,17 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+       <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+     </measure>
+     <!--========================= Measure 83 =========================-->
+@@ -4015,7 +4232,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 2 ===========================-->
+-  <part id="P9bfe7436772e5006229b3f0561231534">
++  <part id="P6e7207adca22722f17f4e39ca6291233">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -7493,7 +7710,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 3 ===========================-->
+-  <part id="Pfc936eb7459ab4d5bbb27ca8580407e4">
++  <part id="P0f1680f4b72da6e28170843489062225">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -11855,7 +12072,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 4 ===========================-->
+-  <part id="P72ff012aede895aee067999e78d512fe">
++  <part id="P728944c0a872863fb79014b9c898793d">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -20717,7 +20934,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 5 ===========================-->
+-  <part id="P065d2961edb53e92f17cf70272717791">
++  <part id="Pca253e70a4ecc6b68dcc4b143a95d261">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+diff --git a/Haunted.pdf b/Haunted.pdf
+index 26c130c..d8eb988 100644
+Binary files a/Haunted.pdf and b/Haunted.pdf differ
+diff --git a/assemble_v4.py b/assemble_v4.py
+index 36ad949..81e04d7 100644
+--- a/assemble_v4.py
++++ b/assemble_v4.py
+@@ -35,6 +35,10 @@ GRID_ORIGIN  = ANCHOR - PRE_MEASURES * 4 * MEDIAN_INT
+ def snap16(t): return int(round((t - GRID_ORIGIN) / SIXTEENTH))
+ def idx_to_sec(i): return GRID_ORIGIN + i * SIXTEENTH
+ 
++THIRTY_SECOND = SIXTEENTH / 2
++def snap32(t): return int(round((t - GRID_ORIGIN) / THIRTY_SECOND))
++def idx32_to_sec(i): return GRID_ORIGIN + i * THIRTY_SECOND
++
+ # Canonical quarter-length for one sixteenth.
+ QL16 = Fraction(1, 4)
+ 
+@@ -60,12 +64,16 @@ def is_diatonic(p): return (p % 12) in DIATONIC_BM
+ 
+ # ---- note cleanup primitives -------------------------------------------
+ 
+-def quantize(notes, min_len_16=1, velocity_floor=25, pitch_lo=0, pitch_hi=127):
++def quantize(notes, min_len_16=1, velocity_floor=25, pitch_lo=0, pitch_hi=127,
++             *, grid=16):
++    """Snap notes to the N-th-note grid (default 16th). Use grid=32 for
++    32nd-note resolution — finer, better for rubato-heavy vocals."""
++    snap = snap16 if grid == 16 else snap32
+     out = []
+     for n in notes:
+         if n.velocity < velocity_floor: continue
+         if n.pitch < pitch_lo or n.pitch > pitch_hi: continue
+-        s = snap16(n.start); e = snap16(n.end)
++        s = snap(n.start); e = snap(n.end)
+         if e - s < min_len_16: e = s + min_len_16
+         if s < 0: continue
+         out.append([s, e, int(n.pitch), int(n.velocity)])
+@@ -122,8 +130,40 @@ def load_stem_midi(name, premerge_gap_ms: float | None = None):
+ # ---- per-instrument pipelines ------------------------------------------
+ 
+ voc_pm = pretty_midi.PrettyMIDI(str(MIDI_DIR / "vocals_with_harmony.mid"))
+-vox = quantize(list(voc_pm.instruments[0].notes),
+-               min_len_16=1, velocity_floor=0, pitch_lo=48, pitch_hi=88)
++_vox_raw = list(voc_pm.instruments[0].notes)
++
++# Snap each vocal note's start to the nearest audio onset detected on the
++# vocal stem, if there's one within ±80ms. This keeps CREPE's pitch accuracy
++# but gives note attacks that align with the real sung attack — so when we
++# then quantize to 16ths, we land on the 16th nearest the true audio onset,
++# not nearest the CREPE f0-change boundary (which can lag by 20-50ms).
++import librosa as _lb
++_vox_stem_path = next(Path("stems").glob("*vocals*.mp3"))
++_y_vox, _ = _lb.load(str(_vox_stem_path), sr=22050, mono=True)
++_stem_onsets = _lb.onset.onset_detect(y=_y_vox, sr=22050, units="time", backtrack=True)
++_onset_arr = np.asarray(_stem_onsets)
++
++def _snap_to_onset(t, tol=0.08):
++    if len(_onset_arr) == 0:
++        return t
++    i = int(np.searchsorted(_onset_arr, t))
++    cands = []
++    if i > 0:               cands.append(_onset_arr[i-1])
++    if i < len(_onset_arr): cands.append(_onset_arr[i])
++    if not cands: return t
++    nearest = min(cands, key=lambda x: abs(x - t))
++    return nearest if abs(nearest - t) <= tol else t
++
++_vox_snapped = [
++    pretty_midi.Note(velocity=n.velocity, pitch=n.pitch,
++                     start=_snap_to_onset(n.start),
++                     end=max(_snap_to_onset(n.start) + 0.05, n.end))
++    for n in _vox_raw
++]
++print(f"vocals: {sum(1 for a,b in zip(_vox_raw, _vox_snapped) if abs(a.start-b.start) > 1e-4)} note starts snapped to detected onsets")
++
++vox = quantize(_vox_snapped, min_len_16=1, velocity_floor=0,
++               pitch_lo=48, pitch_hi=88)
+ vox = merge_same_pitch(vox, gap_tol_16=2)
+ vox = drop_shorts(vox, min_len_16=2)
+ 
+@@ -174,19 +214,15 @@ print(f"total measures: {N_MEASURES}")
+ 
+ # ---- direct music21 score construction ---------------------------------
+ 
+-def notes_to_part(notes, part_name, m21inst, cl, n_measures):
+-    """Convert a list of (start_16, end_16, pitch, vel) tuples into a music21
+-    Part with exactly n_measures measures of 4/4, every measure summing to 4 QL.
++def notes_to_part(notes, part_name, m21inst, cl, n_measures, slots_per_bar=16):
++    """Convert a list of (start_idx, end_idx, pitch, vel) tuples — at
++    `slots_per_bar` granularity — into a music21 Part of n_measures × 4/4.
+ 
+-    For each 16th slot 0..n_measures*16-1, we compute which pitches are sounding
+-    at that slot (onset or continuation), then emit one note/chord/rest per
+-    maximal run of identical pitch-sets, tied across bar lines where needed.
+-    """
+-    total_slots = n_measures * 16
+-    # sounding[slot] = frozenset of pitches present at slot
++    Default 16ths. Use slots_per_bar=32 for 32nd-note resolution (better
++    vocal rubato, costs more horizontal space)."""
++    total_slots = n_measures * slots_per_bar
++    slots_per_q = slots_per_bar // 4     # 4 (16ths) or 8 (32nds)
+     sounding = [set() for _ in range(total_slots)]
+-    # also track onsets: onset[slot] = set of pitches that start here (to decide
+-    # whether the next run should use a tie-start vs. be a fresh attack)
+     onsets = [set() for _ in range(total_slots)]
+     for (s, e, p, v) in notes:
+         if s >= total_slots: continue
+@@ -210,22 +246,20 @@ def notes_to_part(notes, part_name, m21inst, cl, n_measures):
+             measure.insert(0, meter.TimeSignature("4/4"))
+             measure.insert(0, m21tempo.MetronomeMark(number=round(BPM)))
+ 
+-        # Walk the 16 slots inside this measure
+-        slot0 = m_idx * 16
++        slot0 = m_idx * slots_per_bar
+         i = 0
+-        while i < 16:
+-            # Identify the maximal run within this measure where the pitch set
+-            # is constant AND no fresh onset begins mid-run.
++        while i < slots_per_bar:
+             cur_set = frozenset(sounding[slot0 + i])
+             j = i + 1
+-            while j < 16:
++            while j < slots_per_bar:
+                 next_set = frozenset(sounding[slot0 + j])
+                 has_new_onset = bool(onsets[slot0 + j])
+                 if next_set != cur_set or has_new_onset:
+                     break
+                 j += 1
+-            run_len_16 = j - i
+-            ql = Fraction(run_len_16, 4)     # quarterLength
++            run_len = j - i
++            ql = Fraction(run_len, slots_per_q)   # quarterLength
++            pos_ql = Fraction(i, slots_per_q)
+             if cur_set:
+                 if len(cur_set) == 1:
+                     pitch = next(iter(cur_set))
+@@ -238,10 +272,10 @@ def notes_to_part(notes, part_name, m21inst, cl, n_measures):
+                         ch.add(m21pitch.Pitch(midi=p))
+                     ch.duration = m21dur.Duration(quarterLength=ql)
+                     n = ch
+-                measure.insert(Fraction(i, 4), n)
++                measure.insert(pos_ql, n)
+             else:
+                 r = note.Rest(quarterLength=ql)
+-                measure.insert(Fraction(i, 4), r)
++                measure.insert(pos_ql, r)
+             i = j
+         part.append(measure)
+     return part
+@@ -305,11 +339,13 @@ score.write("musicxml", fp=str(xml_path))
+ print(f"wrote {xml_path}")
+ 
+ # Also write a playback MIDI from our clean grid data (not via score.write)
+-def to_pm_notes(lst, program, name):
++def to_pm_notes(lst, program, name, grid=16):
++    """grid=16 → indices are in 16ths; grid=32 → in 32nds (used for vocals)."""
++    idx = idx_to_sec if grid == 16 else idx32_to_sec
+     inst = pretty_midi.Instrument(program=program, name=name)
+     for (s, e, p, v) in lst:
+         inst.notes.append(pretty_midi.Note(velocity=int(v), pitch=int(p),
+-                                           start=idx_to_sec(s), end=idx_to_sec(e)))
++                                           start=idx(s), end=idx(e)))
+     return inst
+ 
+ pm_out = pretty_midi.PrettyMIDI(initial_tempo=BPM)
+diff --git a/eval.py b/eval.py
+index 935d502..72d57dd 100644
+--- a/eval.py
++++ b/eval.py
+@@ -68,6 +68,11 @@ def chroma_cosine(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
+ 
+ 
+ def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
++    """[legacy] Audio-vs-audio onset comparison. Kept as diagnostic — biased
++    against synths with slow attacks (e.g. Choir Aahs shifts onsets ~70ms
++    later than the note-on), which unfairly penalizes transcriptions whose
++    MIDI is correct but whose synth patch is not a perfect timbral match.
++    Prefer onset_f1_midi() for scoring transcription quality."""
+     ref_on = librosa.onset.onset_detect(y=y_ref, sr=SR, units="time", backtrack=True)
+     hyp_on = librosa.onset.onset_detect(y=y_hyp, sr=SR, units="time", backtrack=True)
+     if len(ref_on) == 0 and len(hyp_on) == 0:
+@@ -78,6 +83,32 @@ def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
+     return float(f)
+ 
+ 
++def onset_f1_midi(stem_audio: np.ndarray, hyp_pm: pretty_midi.PrettyMIDI) -> float:
++    """Compare MIDI note-onsets directly (de-duplicated to unique times at
++    ±10 ms) against audio onsets detected on the stem. This bypasses the
++    synth roundtrip, so the score reflects the transcription, not the
++    SoundFont's attack envelope."""
++    ref_on = librosa.onset.onset_detect(y=stem_audio, sr=SR, units="time", backtrack=True)
++    # Collapse near-simultaneous MIDI starts to a single onset event (chord
++    # note-ons at the same tick should count as one onset).
++    midi_on = sorted({round(n.start, 3)
++                      for inst in hyp_pm.instruments if not inst.is_drum
++                      for n in inst.notes})
++    # de-dupe within 10 ms
++    dedup = []
++    for t in midi_on:
++        if not dedup or t - dedup[-1] > 0.010:
++            dedup.append(t)
++    if len(ref_on) == 0 and len(dedup) == 0:
++        return 1.0
++    if len(ref_on) == 0 or len(dedup) == 0:
++        return 0.0
++    f, _, _ = mir_eval.onset.f_measure(
++        np.asarray(ref_on), np.asarray(dedup), window=ONSET_TOL
++    )
++    return float(f)
++
++
+ def mel_l1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
+     """Log-mel L1 after per-bin z-scoring. 0 = identical, larger = more
+     dissimilar. Unbounded above but typically < 5 for similar timbres.
+@@ -237,9 +268,17 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
+         matched = apply_production_effects(mixed, stem_audio, SR)
+ 
+         ch     = chroma_cosine(stem_audio, mixed)
+-        on     = onset_f1(stem_audio, mixed)
+         ml     = mel_l1(stem_audio, matched)
+         ml_raw = mel_l1(stem_audio, mixed)        # kept for diagnostics
++        on_syn = onset_f1(stem_audio, mixed)      # legacy synth-based
++        # Build a hyp PrettyMIDI from just the tracks that route to this stem
++        _hyp_for_onset = pretty_midi.PrettyMIDI(initial_tempo=95.7)
++        for inst in pm.instruments:
++            if inst.name in tracks:
++                _new = pretty_midi.Instrument(program=inst.program, name=inst.name)
++                _new.notes = list(inst.notes)
++                _hyp_for_onset.instruments.append(_new)
++        on     = onset_f1_midi(stem_audio, _hyp_for_onset)
+ 
+         # Note F1 — basic-pitch on the stem to get pseudo-ground-truth
+         try:
+@@ -256,11 +295,12 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
+             nf = float("nan")
+ 
+         results[stem_name] = {
+-            "chroma_cosine": ch,
+-            "onset_f1":      on,
+-            "note_f1":       nf,
+-            "mel_l1":        ml,           # effect-matched
+-            "mel_l1_raw":    ml_raw,       # diagnostic: pre-effect-match
++            "chroma_cosine":  ch,
++            "onset_f1":       on,          # MIDI-onset-vs-stem-audio-onset
++            "onset_f1_synth": on_syn,      # diagnostic: synth-WAV-vs-stem-WAV
++            "note_f1":        nf,
++            "mel_l1":         ml,          # effect-matched
++            "mel_l1_raw":     ml_raw,      # diagnostic: pre-effect-match
+         }
+ 
+     # 4. Mix-level comparison against original mp3 (with effect matching).
+@@ -271,11 +311,12 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
+         y_syn, _ = librosa.load(str(track_wavs["_mix"]), sr=SR, mono=True)
+         y_syn_matched = apply_production_effects(y_syn, y_mix, SR)
+         results["_mix"] = {
+-            "chroma_cosine": chroma_cosine(y_mix, y_syn),
+-            "onset_f1":      onset_f1(y_mix, y_syn),
+-            "note_f1":       float("nan"),
+-            "mel_l1":        mel_l1(y_mix, y_syn_matched),
+-            "mel_l1_raw":    mel_l1(y_mix, y_syn),
++            "chroma_cosine":  chroma_cosine(y_mix, y_syn),
++            "onset_f1":       onset_f1_midi(y_mix, pm),
++            "onset_f1_synth": onset_f1(y_mix, y_syn),
++            "note_f1":        float("nan"),
++            "mel_l1":         mel_l1(y_mix, y_syn_matched),
++            "mel_l1_raw":     mel_l1(y_mix, y_syn),
+         }
+ 
+     # 5. Composite per stem.
+@@ -314,13 +355,15 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
+              "content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is "
+              "the pre-match diagnostic.",
+              ""]
+-    lines.append("| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |")
+-    lines.append("|---|---:|---:|---:|---:|---:|---:|")
++    lines.append("| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |")
++    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
+     for k, m in results.items():
+         lines.append(
+             f"| {k} | {m['chroma_cosine']:.3f} | {m['onset_f1']:.3f} | "
++            f"{m.get('onset_f1_synth', float('nan')):.3f} | "
+             f"{m['note_f1']:.3f} | {m['mel_l1']:.3f} | "
+-            f"{m.get('mel_l1_raw', float('nan')):.3f} | **{m['composite']:.3f}** |"
++            f"{m.get('mel_l1_raw', float('nan')):.3f} | "
++            f"**{m['composite']:.3f}** |"
+         )
+     (run_dir / "metrics.md").write_text("\n".join(lines))
+     print(f"[eval] wrote {run_dir/'metrics.json'}  overall={overall:.3f}")
+diff --git a/midi/Haunted_full.mid b/midi/Haunted_full.mid
+index 1325405..e98a636 100644
+Binary files a/midi/Haunted_full.mid and b/midi/Haunted_full.mid differ
+diff --git a/midi/combined.mid b/midi/combined.mid
+index bf6ad9e..9845cc5 100644
+Binary files a/midi/combined.mid and b/midi/combined.mid differ
+diff --git a/runs/2026-04-20_002_baseline/metrics.json b/runs/2026-04-20_002_baseline/metrics.json
+index 91d968f..9e966c4 100644
+--- a/runs/2026-04-20_002_baseline/metrics.json
++++ b/runs/2026-04-20_002_baseline/metrics.json
+@@ -1,47 +1,52 @@
+ {
+   "xml_path": "runs/2026-04-20_002_baseline/Haunted.musicxml",
+   "soundfont": "assets/soundfont.sf3",
+-  "overall": 0.4212733835723499,
++  "overall": 0.4340416076198538,
+   "per_stem": {
+     "vocals": {
+       "chroma_cosine": 0.7506333589553833,
+-      "onset_f1": 0.020797227036395145,
++      "onset_f1": 0.16861219195849547,
++      "onset_f1_synth": 0.020797227036395145,
+       "note_f1": 0.015594541910331387,
+       "mel_l1": 1.2054490211046176,
+       "mel_l1_raw": 1.996864914894104,
+-      "composite": 0.3694297860383176
++      "composite": 0.41377427551494766
+     },
+     "piano": {
+       "chroma_cosine": 0.7809894680976868,
+-      "onset_f1": 0.032171581769437,
++      "onset_f1": 0.05365853658536585,
++      "onset_f1_synth": 0.032171581769437,
+       "note_f1": 0.022222222222222223,
+       "mel_l1": 0.36732028160715885,
+       "mel_l1_raw": 0.462512344121933,
+-      "composite": 0.41424769682744494
++      "composite": 0.4206937832722236
+     },
+     "guitar": {
+       "chroma_cosine": 0.7564655542373657,
+-      "onset_f1": 0.31678986272439286,
++      "onset_f1": 0.30145530145530147,
++      "onset_f1_synth": 0.31678986272439286,
+       "note_f1": 0.03470213996529786,
+       "mel_l1": 0.37421544133040796,
+       "mel_l1_raw": 0.5918576121330261,
+-      "composite": 0.4920897604609768
++      "composite": 0.4874893920802494
+     },
+     "bass": {
+       "chroma_cosine": 0.7001749277114868,
+-      "onset_f1": 0.14035087719298245,
++      "onset_f1": 0.1566265060240964,
++      "onset_f1_synth": 0.14035087719298245,
+       "note_f1": 0.0066815144766146995,
+       "mel_l1": 0.4255573852545671,
+       "mel_l1_raw": 0.37688425183296204,
+-      "composite": 0.4093262909626602
++      "composite": 0.4142089796119944
+     },
+     "_mix": {
+       "chroma_cosine": 0.7878269553184509,
+-      "onset_f1": 0.35081967213114756,
++      "onset_f1": 0.359150102810144,
++      "onset_f1_synth": 0.35081967213114756,
+       "note_f1": NaN,
+       "mel_l1": 0.9314349498274849,
+       "mel_l1_raw": 0.9063658118247986,
+-      "composite": 0.4893288521058085
++      "composite": 0.49182798130950744
+     }
+   },
+   "xml_valid": true,
+diff --git a/runs/2026-04-20_002_baseline/metrics.md b/runs/2026-04-20_002_baseline/metrics.md
+index 7a41f4a..04ce893 100644
+--- a/runs/2026-04-20_002_baseline/metrics.md
++++ b/runs/2026-04-20_002_baseline/metrics.md
+@@ -1,14 +1,14 @@
+ # Metrics — Haunted.musicxml
+ 
+-**Overall composite:** 0.421
++**Overall composite:** 0.434
+ **XML valid:** True
+ 
+ `mel_L1` is computed *after* matching production effects (EQ + plate reverb + loudness) onto the synth so it scores note content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is the pre-match diagnostic.
+ 
+-| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |
+-|---|---:|---:|---:|---:|---:|---:|
+-| vocals | 0.751 | 0.021 | 0.016 | 1.205 | 1.997 | **0.369** |
+-| piano | 0.781 | 0.032 | 0.022 | 0.367 | 0.463 | **0.414** |
+-| guitar | 0.756 | 0.317 | 0.035 | 0.374 | 0.592 | **0.492** |
+-| bass | 0.700 | 0.140 | 0.007 | 0.426 | 0.377 | **0.409** |
+-| _mix | 0.788 | 0.351 | nan | 0.931 | 0.906 | **0.489** |
+\ No newline at end of file
++| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| vocals | 0.751 | 0.169 | 0.021 | 0.016 | 1.205 | 1.997 | **0.414** |
++| piano | 0.781 | 0.054 | 0.032 | 0.022 | 0.367 | 0.463 | **0.421** |
++| guitar | 0.756 | 0.301 | 0.317 | 0.035 | 0.374 | 0.592 | **0.487** |
++| bass | 0.700 | 0.157 | 0.140 | 0.007 | 0.426 | 0.377 | **0.414** |
++| _mix | 0.788 | 0.359 | 0.351 | nan | 0.931 | 0.906 | **0.492** |
+\ No newline at end of file
+diff --git a/runs/2026-04-20_003_dtw-chords/metrics.json b/runs/2026-04-20_003_dtw-chords/metrics.json
+index 08ad250..21fd6fa 100644
+--- a/runs/2026-04-20_003_dtw-chords/metrics.json
++++ b/runs/2026-04-20_003_dtw-chords/metrics.json
+@@ -1,47 +1,52 @@
+ {
+   "xml_path": "runs/2026-04-20_003_dtw-chords/Haunted.musicxml",
+   "soundfont": "assets/soundfont.sf3",
+-  "overall": 0.42236354018363476,
++  "overall": 0.43634746385681494,
+   "per_stem": {
+     "vocals": {
+       "chroma_cosine": 0.7731984257698059,
+-      "onset_f1": 0.007017543859649122,
++      "onset_f1": 0.17997465145754118,
++      "onset_f1_synth": 0.007017543859649122,
+       "note_f1": 0.016143497757847534,
+       "mel_l1": 1.256041143135824,
+       "mel_l1_raw": 2.0571067333221436,
+-      "composite": 0.3727452949128592
++      "composite": 0.4246324271922268
+     },
+     "piano": {
+       "chroma_cosine": 0.7925716638565063,
+-      "onset_f1": 0.023668639053254437,
++      "onset_f1": 0.043126684636118594,
++      "onset_f1_synth": 0.023668639053254437,
+       "note_f1": 0.018379281537176276,
+       "mel_l1": 0.35986926317647916,
+       "mel_l1_raw": 0.4297657310962677,
+-      "composite": 0.41580947146013153
++      "composite": 0.42164688513499077
+     },
+     "guitar": {
+       "chroma_cosine": 0.7585980892181396,
+-      "onset_f1": 0.31067961165048547,
++      "onset_f1": 0.28844114528101805,
++      "onset_f1_synth": 0.31067961165048547,
+       "note_f1": 0.036904761904761905,
+       "mel_l1": 0.3735290449339717,
+       "mel_l1_raw": 0.5736281275749207,
+-      "composite": 0.49157310339888816
++      "composite": 0.4849015634880479
+     },
+     "bass": {
+       "chroma_cosine": 0.7001749277114868,
+-      "onset_f1": 0.14035087719298245,
++      "onset_f1": 0.1566265060240964,
++      "onset_f1_synth": 0.14035087719298245,
+       "note_f1": 0.0066815144766146995,
+       "mel_l1": 0.4255573852545671,
+       "mel_l1_raw": 0.37688425183296204,
+-      "composite": 0.4093262909626602
++      "composite": 0.4142089796119944
+     },
+     "_mix": {
+       "chroma_cosine": 0.7857944369316101,
+-      "onset_f1": 0.3375742154368108,
++      "onset_f1": 0.3521224773834377,
++      "onset_f1_synth": 0.3375742154368108,
+       "note_f1": NaN,
+       "mel_l1": 0.9205714909398296,
+       "mel_l1_raw": 0.8837049007415771,
+-      "composite": 0.48490432303902636
++      "composite": 0.4892688016230144
+     }
+   },
+   "xml_valid": true,
+diff --git a/runs/2026-04-20_003_dtw-chords/metrics.md b/runs/2026-04-20_003_dtw-chords/metrics.md
+index e07c91d..984a94e 100644
+--- a/runs/2026-04-20_003_dtw-chords/metrics.md
++++ b/runs/2026-04-20_003_dtw-chords/metrics.md
+@@ -1,14 +1,14 @@
+ # Metrics — Haunted.musicxml
+ 
+-**Overall composite:** 0.422
++**Overall composite:** 0.436
+ **XML valid:** True
+ 
+ `mel_L1` is computed *after* matching production effects (EQ + plate reverb + loudness) onto the synth so it scores note content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is the pre-match diagnostic.
+ 
+-| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |
+-|---|---:|---:|---:|---:|---:|---:|
+-| vocals | 0.773 | 0.007 | 0.016 | 1.256 | 2.057 | **0.373** |
+-| piano | 0.793 | 0.024 | 0.018 | 0.360 | 0.430 | **0.416** |
+-| guitar | 0.759 | 0.311 | 0.037 | 0.374 | 0.574 | **0.492** |
+-| bass | 0.700 | 0.140 | 0.007 | 0.426 | 0.377 | **0.409** |
+-| _mix | 0.786 | 0.338 | nan | 0.921 | 0.884 | **0.485** |
+\ No newline at end of file
++| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| vocals | 0.773 | 0.180 | 0.007 | 0.016 | 1.256 | 2.057 | **0.425** |
++| piano | 0.793 | 0.043 | 0.024 | 0.018 | 0.360 | 0.430 | **0.422** |
++| guitar | 0.759 | 0.288 | 0.311 | 0.037 | 0.374 | 0.574 | **0.485** |
++| bass | 0.700 | 0.157 | 0.140 | 0.007 | 0.426 | 0.377 | **0.414** |
++| _mix | 0.786 | 0.352 | 0.338 | nan | 0.921 | 0.884 | **0.489** |
+\ No newline at end of file
+diff --git a/runs/2026-04-20_004_crepe-bass/metrics.json b/runs/2026-04-20_004_crepe-bass/metrics.json
+index 1b5d876..a413a9a 100644
+--- a/runs/2026-04-20_004_crepe-bass/metrics.json
++++ b/runs/2026-04-20_004_crepe-bass/metrics.json
+@@ -1,47 +1,52 @@
+ {
+   "xml_path": "runs/2026-04-20_004_crepe-bass/Haunted.musicxml",
+   "soundfont": "assets/soundfont.sf3",
+-  "overall": 0.42551870500099004,
++  "overall": 0.4369928336014604,
+   "per_stem": {
+     "vocals": {
+       "chroma_cosine": 0.7731984257698059,
+-      "onset_f1": 0.007017543859649122,
++      "onset_f1": 0.17997465145754118,
++      "onset_f1_synth": 0.007017543859649122,
+       "note_f1": 0.016143497757847534,
+       "mel_l1": 1.256041143135824,
+       "mel_l1_raw": 2.0571067333221436,
+-      "composite": 0.3727452949128592
++      "composite": 0.4246324271922268
+     },
+     "piano": {
+       "chroma_cosine": 0.7925716638565063,
+-      "onset_f1": 0.023668639053254437,
++      "onset_f1": 0.043126684636118594,
++      "onset_f1_synth": 0.023668639053254437,
+       "note_f1": 0.018379281537176276,
+       "mel_l1": 0.35986926317647916,
+       "mel_l1_raw": 0.4297657310962677,
+-      "composite": 0.41580947146013153
++      "composite": 0.42164688513499077
+     },
+     "guitar": {
+       "chroma_cosine": 0.7585980892181396,
+-      "onset_f1": 0.31067961165048547,
++      "onset_f1": 0.28844114528101805,
++      "onset_f1_synth": 0.31067961165048547,
+       "note_f1": 0.036904761904761905,
+       "mel_l1": 0.3735290449339717,
+       "mel_l1_raw": 0.5736281275749207,
+-      "composite": 0.49157310339888816
++      "composite": 0.4849015634880479
+     },
+     "bass": {
+       "chroma_cosine": 0.7381399273872375,
+-      "onset_f1": 0.11989100817438693,
++      "onset_f1": 0.10270270270270271,
++      "onset_f1_synth": 0.11989100817438693,
+       "note_f1": 0.0029239766081871343,
+       "mel_l1": 0.29583355490301455,
+       "mel_l1_raw": 0.2976398766040802,
+-      "composite": 0.4219469502320814
++      "composite": 0.4167904585905761
+     },
+     "_mix": {
+       "chroma_cosine": 0.7840635776519775,
+-      "onset_f1": 0.3310696095076401,
++      "onset_f1": 0.3497501784439686,
++      "onset_f1_synth": 0.3310696095076401,
+       "note_f1": NaN,
+       "mel_l1": 0.9250664842141493,
+       "mel_l1_raw": 0.8847783803939819,
+-      "composite": 0.4821107644392781
++      "composite": 0.48771493512017666
+     }
+   },
+   "xml_valid": true,
+diff --git a/runs/2026-04-20_004_crepe-bass/metrics.md b/runs/2026-04-20_004_crepe-bass/metrics.md
+index f667b8f..e349793 100644
+--- a/runs/2026-04-20_004_crepe-bass/metrics.md
++++ b/runs/2026-04-20_004_crepe-bass/metrics.md
+@@ -1,14 +1,14 @@
+ # Metrics — Haunted.musicxml
+ 
+-**Overall composite:** 0.426
++**Overall composite:** 0.437
+ **XML valid:** True
+ 
+ `mel_L1` is computed *after* matching production effects (EQ + plate reverb + loudness) onto the synth so it scores note content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is the pre-match diagnostic.
+ 
+-| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |
+-|---|---:|---:|---:|---:|---:|---:|
+-| vocals | 0.773 | 0.007 | 0.016 | 1.256 | 2.057 | **0.373** |
+-| piano | 0.793 | 0.024 | 0.018 | 0.360 | 0.430 | **0.416** |
+-| guitar | 0.759 | 0.311 | 0.037 | 0.374 | 0.574 | **0.492** |
+-| bass | 0.738 | 0.120 | 0.003 | 0.296 | 0.298 | **0.422** |
+-| _mix | 0.784 | 0.331 | nan | 0.925 | 0.885 | **0.482** |
+\ No newline at end of file
++| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| vocals | 0.773 | 0.180 | 0.007 | 0.016 | 1.256 | 2.057 | **0.425** |
++| piano | 0.793 | 0.043 | 0.024 | 0.018 | 0.360 | 0.430 | **0.422** |
++| guitar | 0.759 | 0.288 | 0.311 | 0.037 | 0.374 | 0.574 | **0.485** |
++| bass | 0.738 | 0.103 | 0.120 | 0.003 | 0.296 | 0.298 | **0.417** |
++| _mix | 0.784 | 0.350 | 0.331 | nan | 0.925 | 0.885 | **0.488** |
+\ No newline at end of file
+diff --git a/runs/2026-04-20_005_tie-merge/metrics.json b/runs/2026-04-20_005_tie-merge/metrics.json
+index 8f9fa45..4ccefd3 100644
+--- a/runs/2026-04-20_005_tie-merge/metrics.json
++++ b/runs/2026-04-20_005_tie-merge/metrics.json
+@@ -1,47 +1,52 @@
+ {
+   "xml_path": "runs/2026-04-20_005_tie-merge/Haunted.musicxml",
+   "soundfont": "assets/soundfont.sf3",
+-  "overall": 0.4256093848209601,
++  "overall": 0.4367399365968205,
+   "per_stem": {
+     "vocals": {
+       "chroma_cosine": 0.7731984257698059,
+-      "onset_f1": 0.007017543859649122,
++      "onset_f1": 0.17997465145754118,
++      "onset_f1_synth": 0.007017543859649122,
+       "note_f1": 0.016143497757847534,
+       "mel_l1": 1.256041143135824,
+       "mel_l1_raw": 2.0571067333221436,
+-      "composite": 0.3727452949128592
++      "composite": 0.4246324271922268
+     },
+     "piano": {
+       "chroma_cosine": 0.7917357683181763,
+-      "onset_f1": 0.023598820058997053,
++      "onset_f1": 0.043126684636118594,
++      "onset_f1_synth": 0.023598820058997053,
+       "note_f1": 0.01839464882943144,
+       "mel_l1": 0.36026156412520954,
+       "mel_l1_raw": 0.42924609780311584,
+-      "composite": 0.4154441643066823
++      "composite": 0.4213025236798188
+     },
+     "guitar": {
+       "chroma_cosine": 0.7582366466522217,
+-      "onset_f1": 0.31351351351351353,
++      "onset_f1": 0.28662420382165604,
++      "onset_f1_synth": 0.31351351351351353,
+       "note_f1": 0.03701492537313433,
+       "mel_l1": 0.37351703872056446,
+       "mel_l1_raw": 0.5710121393203735,
+-      "composite": 0.49230112983221747
++      "composite": 0.4842343369246602
+     },
+     "bass": {
+       "chroma_cosine": 0.7381399273872375,
+-      "onset_f1": 0.11989100817438693,
++      "onset_f1": 0.10270270270270271,
++      "onset_f1_synth": 0.11989100817438693,
+       "note_f1": 0.0029239766081871343,
+       "mel_l1": 0.29583355490301455,
+       "mel_l1_raw": 0.2976398766040802,
+-      "composite": 0.4219469502320814
++      "composite": 0.4167904585905761
+     },
+     "_mix": {
+       "chroma_cosine": 0.7839918732643127,
+-      "onset_f1": 0.3287904599659285,
++      "onset_f1": 0.34739099356683345,
++      "onset_f1_synth": 0.3287904599659285,
+       "note_f1": NaN,
+       "mel_l1": 0.9248813861543521,
+       "mel_l1_raw": 0.8848254680633545,
+-      "composite": 0.48140450775702526
++      "composite": 0.48698466783729677
+     }
+   },
+   "xml_valid": true,
+diff --git a/runs/2026-04-20_005_tie-merge/metrics.md b/runs/2026-04-20_005_tie-merge/metrics.md
+index bea1f50..47ead47 100644
+--- a/runs/2026-04-20_005_tie-merge/metrics.md
++++ b/runs/2026-04-20_005_tie-merge/metrics.md
+@@ -1,14 +1,14 @@
+ # Metrics — Haunted.musicxml
+ 
+-**Overall composite:** 0.426
++**Overall composite:** 0.437
+ **XML valid:** True
+ 
+ `mel_L1` is computed *after* matching production effects (EQ + plate reverb + loudness) onto the synth so it scores note content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is the pre-match diagnostic.
+ 
+-| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |
+-|---|---:|---:|---:|---:|---:|---:|
+-| vocals | 0.773 | 0.007 | 0.016 | 1.256 | 2.057 | **0.373** |
+-| piano | 0.792 | 0.024 | 0.018 | 0.360 | 0.429 | **0.415** |
+-| guitar | 0.758 | 0.314 | 0.037 | 0.374 | 0.571 | **0.492** |
+-| bass | 0.738 | 0.120 | 0.003 | 0.296 | 0.298 | **0.422** |
+-| _mix | 0.784 | 0.329 | nan | 0.925 | 0.885 | **0.481** |
+\ No newline at end of file
++| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| vocals | 0.773 | 0.180 | 0.007 | 0.016 | 1.256 | 2.057 | **0.425** |
++| piano | 0.792 | 0.043 | 0.024 | 0.018 | 0.360 | 0.429 | **0.421** |
++| guitar | 0.758 | 0.287 | 0.314 | 0.037 | 0.374 | 0.571 | **0.484** |
++| bass | 0.738 | 0.103 | 0.120 | 0.003 | 0.296 | 0.298 | **0.417** |
++| _mix | 0.784 | 0.347 | 0.329 | nan | 0.925 | 0.885 | **0.487** |
+\ No newline at end of file
+diff --git a/runs/2026-04-20_006_richer-drums/metrics.json b/runs/2026-04-20_006_richer-drums/metrics.json
+index b3d4174..6359c22 100644
+--- a/runs/2026-04-20_006_richer-drums/metrics.json
++++ b/runs/2026-04-20_006_richer-drums/metrics.json
+@@ -1,47 +1,52 @@
+ {
+   "xml_path": "runs/2026-04-20_006_richer-drums/Haunted.musicxml",
+   "soundfont": "assets/soundfont.sf3",
+-  "overall": 0.4256093848209601,
++  "overall": 0.4367399365968205,
+   "per_stem": {
+     "vocals": {
+       "chroma_cosine": 0.7731984257698059,
+-      "onset_f1": 0.007017543859649122,
++      "onset_f1": 0.17997465145754118,
++      "onset_f1_synth": 0.007017543859649122,
+       "note_f1": 0.016143497757847534,
+       "mel_l1": 1.256041143135824,
+       "mel_l1_raw": 2.0571067333221436,
+-      "composite": 0.3727452949128592
++      "composite": 0.4246324271922268
+     },
+     "piano": {
+       "chroma_cosine": 0.7917357683181763,
+-      "onset_f1": 0.023598820058997053,
++      "onset_f1": 0.043126684636118594,
++      "onset_f1_synth": 0.023598820058997053,
+       "note_f1": 0.01839464882943144,
+       "mel_l1": 0.36026156412520954,
+       "mel_l1_raw": 0.42924609780311584,
+-      "composite": 0.4154441643066823
++      "composite": 0.4213025236798188
+     },
+     "guitar": {
+       "chroma_cosine": 0.7582366466522217,
+-      "onset_f1": 0.31351351351351353,
++      "onset_f1": 0.28662420382165604,
++      "onset_f1_synth": 0.31351351351351353,
+       "note_f1": 0.03701492537313433,
+       "mel_l1": 0.37351703872056446,
+       "mel_l1_raw": 0.5710121393203735,
+-      "composite": 0.49230112983221747
++      "composite": 0.4842343369246602
+     },
+     "bass": {
+       "chroma_cosine": 0.7381399273872375,
+-      "onset_f1": 0.11989100817438693,
++      "onset_f1": 0.10270270270270271,
++      "onset_f1_synth": 0.11989100817438693,
+       "note_f1": 0.0029239766081871343,
+       "mel_l1": 0.29583355490301455,
+       "mel_l1_raw": 0.2976398766040802,
+-      "composite": 0.4219469502320814
++      "composite": 0.4167904585905761
+     },
+     "_mix": {
+       "chroma_cosine": 0.7839918732643127,
+-      "onset_f1": 0.3287904599659285,
++      "onset_f1": 0.34739099356683345,
++      "onset_f1_synth": 0.3287904599659285,
+       "note_f1": NaN,
+       "mel_l1": 0.9248813861543521,
+       "mel_l1_raw": 0.8848254680633545,
+-      "composite": 0.48140450775702526
++      "composite": 0.48698466783729677
+     }
+   },
+   "xml_valid": true,
+diff --git a/runs/2026-04-20_006_richer-drums/metrics.md b/runs/2026-04-20_006_richer-drums/metrics.md
+index bea1f50..47ead47 100644
+--- a/runs/2026-04-20_006_richer-drums/metrics.md
++++ b/runs/2026-04-20_006_richer-drums/metrics.md
+@@ -1,14 +1,14 @@
+ # Metrics — Haunted.musicxml
+ 
+-**Overall composite:** 0.426
++**Overall composite:** 0.437
+ **XML valid:** True
+ 
+ `mel_L1` is computed *after* matching production effects (EQ + plate reverb + loudness) onto the synth so it scores note content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is the pre-match diagnostic.
+ 
+-| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |
+-|---|---:|---:|---:|---:|---:|---:|
+-| vocals | 0.773 | 0.007 | 0.016 | 1.256 | 2.057 | **0.373** |
+-| piano | 0.792 | 0.024 | 0.018 | 0.360 | 0.429 | **0.415** |
+-| guitar | 0.758 | 0.314 | 0.037 | 0.374 | 0.571 | **0.492** |
+-| bass | 0.738 | 0.120 | 0.003 | 0.296 | 0.298 | **0.422** |
+-| _mix | 0.784 | 0.329 | nan | 0.925 | 0.885 | **0.481** |
+\ No newline at end of file
++| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |
++|---|---:|---:|---:|---:|---:|---:|---:|
++| vocals | 0.773 | 0.180 | 0.007 | 0.016 | 1.256 | 2.057 | **0.425** |
++| piano | 0.792 | 0.043 | 0.024 | 0.018 | 0.360 | 0.429 | **0.421** |
++| guitar | 0.758 | 0.287 | 0.314 | 0.037 | 0.374 | 0.571 | **0.484** |
++| bass | 0.738 | 0.103 | 0.120 | 0.003 | 0.296 | 0.298 | **0.417** |
++| _mix | 0.784 | 0.347 | 0.329 | nan | 0.925 | 0.885 | **0.487** |
+\ No newline at end of file
+diff --git a/runs/INDEX.md b/runs/INDEX.md
+index 5f7f17b..ed2708e 100644
+--- a/runs/INDEX.md
++++ b/runs/INDEX.md
+@@ -15,6 +15,7 @@ Overall = mean of per-stem composites (excluding `_mix`).
+ 
+ | metric | what it measures | effect-sensitive? |
+ |---|---|---|
++| 2026-04-20_007_vocal-32nd | 32nd-note vocal grid + honest onset_F1 (MIDI-vs-stem-onset, not synth-WAV) | 0.766 | 0.145 | 0.017 | **0.434** |  | [dir](./2026-04-20_007_vocal-32nd/) |
+ | `chroma` (chroma-CENS cosine) | right pitch-classes over time | **no** — CENS is timbre-invariant |
+ | `onset_F1` (±50 ms, mir_eval) | right onset timings | low — reverb tails can add false onsets |
+ | `note_F1` (±50 ms / ±50 ¢) | right notes vs basic-pitch pseudo-GT on stem | **no** — compares note events, not audio |

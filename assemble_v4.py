@@ -35,6 +35,10 @@ GRID_ORIGIN  = ANCHOR - PRE_MEASURES * 4 * MEDIAN_INT
 def snap16(t): return int(round((t - GRID_ORIGIN) / SIXTEENTH))
 def idx_to_sec(i): return GRID_ORIGIN + i * SIXTEENTH
 
+THIRTY_SECOND = SIXTEENTH / 2
+def snap32(t): return int(round((t - GRID_ORIGIN) / THIRTY_SECOND))
+def idx32_to_sec(i): return GRID_ORIGIN + i * THIRTY_SECOND
+
 # Canonical quarter-length for one sixteenth.
 QL16 = Fraction(1, 4)
 
@@ -60,12 +64,16 @@ def is_diatonic(p): return (p % 12) in DIATONIC_BM
 
 # ---- note cleanup primitives -------------------------------------------
 
-def quantize(notes, min_len_16=1, velocity_floor=25, pitch_lo=0, pitch_hi=127):
+def quantize(notes, min_len_16=1, velocity_floor=25, pitch_lo=0, pitch_hi=127,
+             *, grid=16):
+    """Snap notes to the N-th-note grid (default 16th). Use grid=32 for
+    32nd-note resolution — finer, better for rubato-heavy vocals."""
+    snap = snap16 if grid == 16 else snap32
     out = []
     for n in notes:
         if n.velocity < velocity_floor: continue
         if n.pitch < pitch_lo or n.pitch > pitch_hi: continue
-        s = snap16(n.start); e = snap16(n.end)
+        s = snap(n.start); e = snap(n.end)
         if e - s < min_len_16: e = s + min_len_16
         if s < 0: continue
         out.append([s, e, int(n.pitch), int(n.velocity)])
@@ -121,9 +129,47 @@ def load_stem_midi(name, premerge_gap_ms: float | None = None):
 
 # ---- per-instrument pipelines ------------------------------------------
 
+# Build per-stem onset tables once — used to nudge note starts onto audio
+# onsets before 16th quantization. Keeps pitch detection's notes but aligns
+# attacks with the real audio transients.
+import librosa as _lb
+
+def _load_stem_onsets(stem_name: str) -> np.ndarray:
+    path = next(Path("stems").glob(f"*{stem_name}*.mp3"))
+    y, _ = _lb.load(str(path), sr=22050, mono=True)
+    return np.asarray(_lb.onset.onset_detect(y=y, sr=22050, units="time",
+                                             backtrack=True))
+
+_ONSETS = {name: _load_stem_onsets(name) for name in ("vocals", "piano", "guitar")}
+
+def _snap_notes_to_onsets(notes, stem_name, tol=0.08):
+    arr = _ONSETS.get(stem_name)
+    if arr is None or len(arr) == 0:
+        return notes
+    def snap(t):
+        i = int(np.searchsorted(arr, t))
+        cands = []
+        if i > 0:           cands.append(arr[i-1])
+        if i < len(arr):    cands.append(arr[i])
+        if not cands: return t
+        nearest = min(cands, key=lambda x: abs(x - t))
+        return float(nearest) if abs(nearest - t) <= tol else t
+    out = []
+    for n in notes:
+        new_start = snap(n.start)
+        # preserve duration: shift end by the same amount
+        shift = new_start - n.start
+        out.append(pretty_midi.Note(velocity=n.velocity, pitch=n.pitch,
+                                    start=new_start, end=n.end + shift))
+    return out
+
 voc_pm = pretty_midi.PrettyMIDI(str(MIDI_DIR / "vocals_with_harmony.mid"))
-vox = quantize(list(voc_pm.instruments[0].notes),
-               min_len_16=1, velocity_floor=0, pitch_lo=48, pitch_hi=88)
+_vox_raw = list(voc_pm.instruments[0].notes)
+_vox_snapped = _snap_notes_to_onsets(_vox_raw, "vocals")
+print(f"vocals: {sum(1 for a,b in zip(_vox_raw, _vox_snapped) if abs(a.start-b.start) > 1e-4)}/{len(_vox_raw)} starts snapped")
+
+vox = quantize(_vox_snapped, min_len_16=1, velocity_floor=0,
+               pitch_lo=48, pitch_hi=88)
 vox = merge_same_pitch(vox, gap_tol_16=2)
 vox = drop_shorts(vox, min_len_16=2)
 
@@ -144,15 +190,17 @@ if not _bass_crepe.exists():
     bass = chord_filter(bass, keep_velocity=80, min_len_16=2)
 bass = drop_shorts(bass, min_len_16=2)
 
-piano = load_stem_midi("piano", premerge_gap_ms=80)
-piano = quantize(piano, min_len_16=1, velocity_floor=30, pitch_lo=33, pitch_hi=96)
+piano_raw = load_stem_midi("piano", premerge_gap_ms=80)
+piano_raw = _snap_notes_to_onsets(piano_raw, "piano")
+piano = quantize(piano_raw, min_len_16=1, velocity_floor=30, pitch_lo=33, pitch_hi=96)
 piano = merge_same_pitch(piano, gap_tol_16=1)
 piano = chord_filter(piano, keep_velocity=75, min_len_16=1)
 piano = cap_polyphony_by_onset(piano, max_voices=4)
 piano = drop_shorts(piano, min_len_16=1)
 
-guit = load_stem_midi("guitar", premerge_gap_ms=80)
-guit = quantize(guit, min_len_16=1, velocity_floor=35, pitch_lo=40, pitch_hi=84)
+guit_raw = load_stem_midi("guitar", premerge_gap_ms=80)
+guit_raw = _snap_notes_to_onsets(guit_raw, "guitar")
+guit = quantize(guit_raw, min_len_16=1, velocity_floor=35, pitch_lo=40, pitch_hi=84)
 guit = merge_same_pitch(guit, gap_tol_16=1)
 guit = chord_filter(guit, keep_velocity=85, min_len_16=1)
 guit = cap_polyphony_by_onset(guit, max_voices=3)
@@ -174,19 +222,15 @@ print(f"total measures: {N_MEASURES}")
 
 # ---- direct music21 score construction ---------------------------------
 
-def notes_to_part(notes, part_name, m21inst, cl, n_measures):
-    """Convert a list of (start_16, end_16, pitch, vel) tuples into a music21
-    Part with exactly n_measures measures of 4/4, every measure summing to 4 QL.
+def notes_to_part(notes, part_name, m21inst, cl, n_measures, slots_per_bar=16):
+    """Convert a list of (start_idx, end_idx, pitch, vel) tuples — at
+    `slots_per_bar` granularity — into a music21 Part of n_measures × 4/4.
 
-    For each 16th slot 0..n_measures*16-1, we compute which pitches are sounding
-    at that slot (onset or continuation), then emit one note/chord/rest per
-    maximal run of identical pitch-sets, tied across bar lines where needed.
-    """
-    total_slots = n_measures * 16
-    # sounding[slot] = frozenset of pitches present at slot
+    Default 16ths. Use slots_per_bar=32 for 32nd-note resolution (better
+    vocal rubato, costs more horizontal space)."""
+    total_slots = n_measures * slots_per_bar
+    slots_per_q = slots_per_bar // 4     # 4 (16ths) or 8 (32nds)
     sounding = [set() for _ in range(total_slots)]
-    # also track onsets: onset[slot] = set of pitches that start here (to decide
-    # whether the next run should use a tie-start vs. be a fresh attack)
     onsets = [set() for _ in range(total_slots)]
     for (s, e, p, v) in notes:
         if s >= total_slots: continue
@@ -210,22 +254,20 @@ def notes_to_part(notes, part_name, m21inst, cl, n_measures):
             measure.insert(0, meter.TimeSignature("4/4"))
             measure.insert(0, m21tempo.MetronomeMark(number=round(BPM)))
 
-        # Walk the 16 slots inside this measure
-        slot0 = m_idx * 16
+        slot0 = m_idx * slots_per_bar
         i = 0
-        while i < 16:
-            # Identify the maximal run within this measure where the pitch set
-            # is constant AND no fresh onset begins mid-run.
+        while i < slots_per_bar:
             cur_set = frozenset(sounding[slot0 + i])
             j = i + 1
-            while j < 16:
+            while j < slots_per_bar:
                 next_set = frozenset(sounding[slot0 + j])
                 has_new_onset = bool(onsets[slot0 + j])
                 if next_set != cur_set or has_new_onset:
                     break
                 j += 1
-            run_len_16 = j - i
-            ql = Fraction(run_len_16, 4)     # quarterLength
+            run_len = j - i
+            ql = Fraction(run_len, slots_per_q)   # quarterLength
+            pos_ql = Fraction(i, slots_per_q)
             if cur_set:
                 if len(cur_set) == 1:
                     pitch = next(iter(cur_set))
@@ -238,10 +280,10 @@ def notes_to_part(notes, part_name, m21inst, cl, n_measures):
                         ch.add(m21pitch.Pitch(midi=p))
                     ch.duration = m21dur.Duration(quarterLength=ql)
                     n = ch
-                measure.insert(Fraction(i, 4), n)
+                measure.insert(pos_ql, n)
             else:
                 r = note.Rest(quarterLength=ql)
-                measure.insert(Fraction(i, 4), r)
+                measure.insert(pos_ql, r)
             i = j
         part.append(measure)
     return part
@@ -305,11 +347,13 @@ score.write("musicxml", fp=str(xml_path))
 print(f"wrote {xml_path}")
 
 # Also write a playback MIDI from our clean grid data (not via score.write)
-def to_pm_notes(lst, program, name):
+def to_pm_notes(lst, program, name, grid=16):
+    """grid=16 → indices are in 16ths; grid=32 → in 32nds (used for vocals)."""
+    idx = idx_to_sec if grid == 16 else idx32_to_sec
     inst = pretty_midi.Instrument(program=program, name=name)
     for (s, e, p, v) in lst:
         inst.notes.append(pretty_midi.Note(velocity=int(v), pitch=int(p),
-                                           start=idx_to_sec(s), end=idx_to_sec(e)))
+                                           start=idx(s), end=idx(e)))
     return inst
 
 pm_out = pretty_midi.PrettyMIDI(initial_tempo=BPM)

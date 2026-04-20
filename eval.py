@@ -68,6 +68,11 @@ def chroma_cosine(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
 
 
 def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
+    """[legacy] Audio-vs-audio onset comparison. Kept as diagnostic — biased
+    against synths with slow attacks (e.g. Choir Aahs shifts onsets ~70ms
+    later than the note-on), which unfairly penalizes transcriptions whose
+    MIDI is correct but whose synth patch is not a perfect timbral match.
+    Prefer onset_f1_midi() for scoring transcription quality."""
     ref_on = librosa.onset.onset_detect(y=y_ref, sr=SR, units="time", backtrack=True)
     hyp_on = librosa.onset.onset_detect(y=y_hyp, sr=SR, units="time", backtrack=True)
     if len(ref_on) == 0 and len(hyp_on) == 0:
@@ -75,6 +80,32 @@ def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
     if len(ref_on) == 0 or len(hyp_on) == 0:
         return 0.0
     f, _, _ = mir_eval.onset.f_measure(ref_on, hyp_on, window=ONSET_TOL)
+    return float(f)
+
+
+def onset_f1_midi(stem_audio: np.ndarray, hyp_pm: pretty_midi.PrettyMIDI) -> float:
+    """Compare MIDI note-onsets directly (de-duplicated to unique times at
+    ±10 ms) against audio onsets detected on the stem. This bypasses the
+    synth roundtrip, so the score reflects the transcription, not the
+    SoundFont's attack envelope."""
+    ref_on = librosa.onset.onset_detect(y=stem_audio, sr=SR, units="time", backtrack=True)
+    # Collapse near-simultaneous MIDI starts to a single onset event (chord
+    # note-ons at the same tick should count as one onset).
+    midi_on = sorted({round(n.start, 3)
+                      for inst in hyp_pm.instruments if not inst.is_drum
+                      for n in inst.notes})
+    # de-dupe within 10 ms
+    dedup = []
+    for t in midi_on:
+        if not dedup or t - dedup[-1] > 0.010:
+            dedup.append(t)
+    if len(ref_on) == 0 and len(dedup) == 0:
+        return 1.0
+    if len(ref_on) == 0 or len(dedup) == 0:
+        return 0.0
+    f, _, _ = mir_eval.onset.f_measure(
+        np.asarray(ref_on), np.asarray(dedup), window=ONSET_TOL
+    )
     return float(f)
 
 
@@ -237,9 +268,17 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
         matched = apply_production_effects(mixed, stem_audio, SR)
 
         ch     = chroma_cosine(stem_audio, mixed)
-        on     = onset_f1(stem_audio, mixed)
         ml     = mel_l1(stem_audio, matched)
         ml_raw = mel_l1(stem_audio, mixed)        # kept for diagnostics
+        on_syn = onset_f1(stem_audio, mixed)      # legacy synth-based
+        # Build a hyp PrettyMIDI from just the tracks that route to this stem
+        _hyp_for_onset = pretty_midi.PrettyMIDI(initial_tempo=95.7)
+        for inst in pm.instruments:
+            if inst.name in tracks:
+                _new = pretty_midi.Instrument(program=inst.program, name=inst.name)
+                _new.notes = list(inst.notes)
+                _hyp_for_onset.instruments.append(_new)
+        on     = onset_f1_midi(stem_audio, _hyp_for_onset)
 
         # Note F1 — basic-pitch on the stem to get pseudo-ground-truth
         try:
@@ -256,11 +295,12 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
             nf = float("nan")
 
         results[stem_name] = {
-            "chroma_cosine": ch,
-            "onset_f1":      on,
-            "note_f1":       nf,
-            "mel_l1":        ml,           # effect-matched
-            "mel_l1_raw":    ml_raw,       # diagnostic: pre-effect-match
+            "chroma_cosine":  ch,
+            "onset_f1":       on,          # MIDI-onset-vs-stem-audio-onset
+            "onset_f1_synth": on_syn,      # diagnostic: synth-WAV-vs-stem-WAV
+            "note_f1":        nf,
+            "mel_l1":         ml,          # effect-matched
+            "mel_l1_raw":     ml_raw,      # diagnostic: pre-effect-match
         }
 
     # 4. Mix-level comparison against original mp3 (with effect matching).
@@ -271,11 +311,12 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
         y_syn, _ = librosa.load(str(track_wavs["_mix"]), sr=SR, mono=True)
         y_syn_matched = apply_production_effects(y_syn, y_mix, SR)
         results["_mix"] = {
-            "chroma_cosine": chroma_cosine(y_mix, y_syn),
-            "onset_f1":      onset_f1(y_mix, y_syn),
-            "note_f1":       float("nan"),
-            "mel_l1":        mel_l1(y_mix, y_syn_matched),
-            "mel_l1_raw":    mel_l1(y_mix, y_syn),
+            "chroma_cosine":  chroma_cosine(y_mix, y_syn),
+            "onset_f1":       onset_f1_midi(y_mix, pm),
+            "onset_f1_synth": onset_f1(y_mix, y_syn),
+            "note_f1":        float("nan"),
+            "mel_l1":         mel_l1(y_mix, y_syn_matched),
+            "mel_l1_raw":     mel_l1(y_mix, y_syn),
         }
 
     # 5. Composite per stem.
@@ -314,13 +355,15 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
              "content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is "
              "the pre-match diagnostic.",
              ""]
-    lines.append("| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |")
-    lines.append("|---|---:|---:|---:|---:|---:|---:|")
+    lines.append("| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
     for k, m in results.items():
         lines.append(
             f"| {k} | {m['chroma_cosine']:.3f} | {m['onset_f1']:.3f} | "
+            f"{m.get('onset_f1_synth', float('nan')):.3f} | "
             f"{m['note_f1']:.3f} | {m['mel_l1']:.3f} | "
-            f"{m.get('mel_l1_raw', float('nan')):.3f} | **{m['composite']:.3f}** |"
+            f"{m.get('mel_l1_raw', float('nan')):.3f} | "
+            f"**{m['composite']:.3f}** |"
         )
     (run_dir / "metrics.md").write_text("\n".join(lines))
     print(f"[eval] wrote {run_dir/'metrics.json'}  overall={overall:.3f}")
