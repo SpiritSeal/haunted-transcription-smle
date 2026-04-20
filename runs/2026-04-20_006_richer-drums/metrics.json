@@ -1,42 +1,47 @@
 {
-  "xml_path": "/Users/spyre/Documents/claude-cowork/music-transcription/runs/2026-04-20_006_richer-drums/Haunted.musicxml",
+  "xml_path": "runs/2026-04-20_006_richer-drums/Haunted.musicxml",
   "soundfont": "assets/soundfont.sf3",
-  "overall": 0.4166981219362509,
+  "overall": 0.4256093848209601,
   "per_stem": {
     "vocals": {
       "chroma_cosine": 0.7731984257698059,
       "onset_f1": 0.007017543859649122,
       "note_f1": 0.016143497757847534,
-      "mel_l1": 2.0571067333221436,
-      "composite": 0.3460431085733152
+      "mel_l1": 1.256041143135824,
+      "mel_l1_raw": 2.0571067333221436,
+      "composite": 0.3727452949128592
     },
     "piano": {
       "chroma_cosine": 0.7917357683181763,
       "onset_f1": 0.023598820058997053,
       "note_f1": 0.01839464882943144,
-      "mel_l1": 0.42924609780311584,
-      "composite": 0.4131446798507521
+      "mel_l1": 0.36026156412520954,
+      "mel_l1_raw": 0.42924609780311584,
+      "composite": 0.4154441643066823
     },
     "guitar": {
       "chroma_cosine": 0.7582366466522217,
       "onset_f1": 0.31351351351351353,
       "note_f1": 0.03701492537313433,
-      "mel_l1": 0.5710121393203735,
-      "composite": 0.4857179598122238
+      "mel_l1": 0.37351703872056446,
+      "mel_l1_raw": 0.5710121393203735,
+      "composite": 0.49230112983221747
     },
     "bass": {
       "chroma_cosine": 0.7381399273872375,
       "onset_f1": 0.11989100817438693,
       "note_f1": 0.0029239766081871343,
-      "mel_l1": 0.2976398766040802,
-      "composite": 0.4218867395087125
+      "mel_l1": 0.29583355490301455,
+      "mel_l1_raw": 0.2976398766040802,
+      "composite": 0.4219469502320814
     },
     "_mix": {
       "chroma_cosine": 0.7839918732643127,
       "onset_f1": 0.3287904599659285,
       "note_f1": NaN,
-      "mel_l1": 0.8848254680633545,
-      "composite": 0.48273970502672514
+      "mel_l1": 0.9248813861543521,
+      "mel_l1_raw": 0.8848254680633545,
+      "composite": 0.48140450775702526
     }
   },
   "xml_valid": true,

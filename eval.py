@@ -32,6 +32,7 @@ import music21
 
 from midi_utils import (stem_paths, mix_path, render_per_track,
                         DEFAULT_SF2, TRACK_TO_STEM, validate_musicxml)
+from effects import apply_production_effects, dereverb
 
 
 # ------------------------------------------------------------------ #
@@ -79,7 +80,11 @@ def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
 
 def mel_l1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
     """Log-mel L1 after per-bin z-scoring. 0 = identical, larger = more
-    dissimilar. Unbounded above but typically < 5 for similar timbres."""
+    dissimilar. Unbounded above but typically < 5 for similar timbres.
+
+    NOTE: callers should pass effect-matched audio for y_hyp so this metric
+    scores note content, not production-effect mismatch. See
+    effects.apply_production_effects."""
     def featurize(y):
         m = librosa.feature.melspectrogram(y=y, sr=SR, n_mels=64, hop_length=HOP)
         return np.log1p(m)
@@ -221,15 +226,20 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
         # pad to same length
         L = max(len(a) for a in track_audio)
         mixed = sum(np.pad(a, (0, L - len(a))) for a in track_audio)
-        # Normalize for fair comparison
         if np.max(np.abs(mixed)) > 0:
             mixed = mixed / np.max(np.abs(mixed)) * 0.7
 
-        # Compute
-        print(f"[eval] scoring stem: {stem_name}")
-        ch  = chroma_cosine(stem_audio, mixed)
-        on  = onset_f1(stem_audio, mixed)
-        ml  = mel_l1(stem_audio, mixed)
+        # Effect-match the synth to the reference before spectral comparison.
+        # Chroma-CENS and onset detection are effect-invariant so we run them
+        # on raw synth; mel_L1 would penalize dry-synth-vs-wet-stem mismatch,
+        # so we run it on the effect-matched signal instead.
+        print(f"[eval] scoring stem: {stem_name}  (matching effects)")
+        matched = apply_production_effects(mixed, stem_audio, SR)
+
+        ch     = chroma_cosine(stem_audio, mixed)
+        on     = onset_f1(stem_audio, mixed)
+        ml     = mel_l1(stem_audio, matched)
+        ml_raw = mel_l1(stem_audio, mixed)        # kept for diagnostics
 
         # Note F1 — basic-pitch on the stem to get pseudo-ground-truth
         try:
@@ -249,20 +259,23 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
             "chroma_cosine": ch,
             "onset_f1":      on,
             "note_f1":       nf,
-            "mel_l1":        ml,
+            "mel_l1":        ml,           # effect-matched
+            "mel_l1_raw":    ml_raw,       # diagnostic: pre-effect-match
         }
 
-    # 4. Mix-level comparison against original mp3.
+    # 4. Mix-level comparison against original mp3 (with effect matching).
     mix = mix_path()
     if mix is not None and "_mix" in track_wavs:
-        print("[eval] scoring mix...")
+        print("[eval] scoring mix... (matching effects)")
         y_mix = load_audio(mix)
         y_syn, _ = librosa.load(str(track_wavs["_mix"]), sr=SR, mono=True)
+        y_syn_matched = apply_production_effects(y_syn, y_mix, SR)
         results["_mix"] = {
             "chroma_cosine": chroma_cosine(y_mix, y_syn),
             "onset_f1":      onset_f1(y_mix, y_syn),
             "note_f1":       float("nan"),
-            "mel_l1":        mel_l1(y_mix, y_syn),
+            "mel_l1":        mel_l1(y_mix, y_syn_matched),
+            "mel_l1_raw":    mel_l1(y_mix, y_syn),
         }
 
     # 5. Composite per stem.
@@ -294,13 +307,20 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
     # Human-readable
     lines = [f"# Metrics — {xml_path.name}", "",
              f"**Overall composite:** {overall:.3f}",
-             f"**XML valid:** {ok}",  ""]
-    lines.append("| stem | chroma | onset_F1 | note_F1 | mel_L1 | composite |")
-    lines.append("|---|---:|---:|---:|---:|---:|")
+             f"**XML valid:** {ok}",
+             "",
+             "`mel_L1` is computed *after* matching production effects "
+             "(EQ + plate reverb + loudness) onto the synth so it scores note "
+             "content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is "
+             "the pre-match diagnostic.",
+             ""]
+    lines.append("| stem | chroma | onset_F1 | note_F1 | mel_L1 | mel_L1_raw | composite |")
+    lines.append("|---|---:|---:|---:|---:|---:|---:|")
     for k, m in results.items():
         lines.append(
             f"| {k} | {m['chroma_cosine']:.3f} | {m['onset_f1']:.3f} | "
-            f"{m['note_f1']:.3f} | {m['mel_l1']:.3f} | **{m['composite']:.3f}** |"
+            f"{m['note_f1']:.3f} | {m['mel_l1']:.3f} | "
+            f"{m.get('mel_l1_raw', float('nan')):.3f} | **{m['composite']:.3f}** |"
         )
     (run_dir / "metrics.md").write_text("\n".join(lines))
     print(f"[eval] wrote {run_dir/'metrics.json'}  overall={overall:.3f}")
