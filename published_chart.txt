@@ -1,0 +1,34 @@
+# Published chord chart for "Haunted" by smle (ft. Seann Bowe)
+# Source: https://tabs.ultimate-guitar.com/tab/smle/haunted-chords-2772448
+# One chord per bar. Lines are section markers; each subsequent line lists the
+# bar-by-bar chord sequence for that section. Blank lines ignored.
+
+[Intro]
+Bm A G Bm D G
+
+[Verse 1]
+Bm A G Bm D G A
+
+[Pre-Chorus]
+Bm A G Bm D G Em D A Bm A Em D G Em D A Bm G A Em
+
+[Chorus]
+Em D A Bm Em D Bm Em D A Em G A Em
+
+[Interlude]
+Em F#m Bm Em F#m Bm Em D Bm G A Em
+
+[Verse 2]
+Bm A G Bm D G
+
+[Pre-Chorus 2]
+Bm A G Bm D G Em D A Bm A Em D G Em D A Bm G A Em
+
+[Chorus 2]
+Em D A Bm Em D Bm Em D A Em G A Em
+
+[Verse 3]
+Em D A Em D Bm Em D A Bm G A Em
+
+[Outro]
+Em F#m Bm Em F#m Bm Em F#m Bm G A Em

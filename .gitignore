@@ -1,1 +1,11 @@
-.venv
+.venv/
+__pycache__/
+*.pyc
+_prev-*.png
+Haunted_preview-*.png
+assets/*.sf2
+assets/*.sf3
+.cache/
+
+# Per-run audio renders (WAVs are heavy) — keep MIDI/PDF/XML committed
+runs/*/audio/

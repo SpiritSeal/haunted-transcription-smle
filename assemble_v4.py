@@ -108,9 +108,16 @@ def cap_polyphony_by_onset(notes, max_voices):
         out.extend(bucket[:max_voices])
     return sorted(out, key=lambda x: (x[0], x[2]))
 
-def load_stem_midi(name):
+def load_stem_midi(name, premerge_gap_ms: float | None = None):
+    """Load all pitched notes from stems's basic-pitch MIDI. If
+    premerge_gap_ms is set, apply a pre-quantization same-pitch merge so
+    sustained-note fragments become single notes before we snap to 16ths."""
     pm = pretty_midi.PrettyMIDI(str(MIDI_DIR / f"{name}.mid"))
-    return [n for inst in pm.instruments if not inst.is_drum for n in inst.notes]
+    notes = [n for inst in pm.instruments if not inst.is_drum for n in inst.notes]
+    if premerge_gap_ms is not None:
+        from midi_utils import merge_tied_notes
+        notes = merge_tied_notes(notes, gap_ms=premerge_gap_ms)
+    return notes
 
 # ---- per-instrument pipelines ------------------------------------------
 
@@ -120,20 +127,31 @@ vox = quantize(list(voc_pm.instruments[0].notes),
 vox = merge_same_pitch(vox, gap_tol_16=2)
 vox = drop_shorts(vox, min_len_16=2)
 
-bass = load_stem_midi("bass")
-bass = quantize(bass, min_len_16=2, velocity_floor=30, pitch_lo=28, pitch_hi=55)
+# Bass — prefer CREPE monophonic track when available (clean f0 contour),
+# fall back to basic-pitch. CREPE notes are already monophonic and high-
+# confidence, so skip chord_filter.
+_bass_crepe = MIDI_DIR / "bass_crepe.mid"
+if _bass_crepe.exists():
+    _pm = pretty_midi.PrettyMIDI(str(_bass_crepe))
+    bass_raw = list(_pm.instruments[0].notes)
+    print("bass: using CREPE contour")
+else:
+    bass_raw = load_stem_midi("bass")
+bass = quantize(bass_raw, min_len_16=2, velocity_floor=0 if _bass_crepe.exists() else 30,
+                pitch_lo=28, pitch_hi=55)
 bass = merge_same_pitch(bass, gap_tol_16=2)
-bass = chord_filter(bass, keep_velocity=80, min_len_16=2)
+if not _bass_crepe.exists():
+    bass = chord_filter(bass, keep_velocity=80, min_len_16=2)
 bass = drop_shorts(bass, min_len_16=2)
 
-piano = load_stem_midi("piano")
+piano = load_stem_midi("piano", premerge_gap_ms=80)
 piano = quantize(piano, min_len_16=1, velocity_floor=30, pitch_lo=33, pitch_hi=96)
 piano = merge_same_pitch(piano, gap_tol_16=1)
 piano = chord_filter(piano, keep_velocity=75, min_len_16=1)
 piano = cap_polyphony_by_onset(piano, max_voices=4)
 piano = drop_shorts(piano, min_len_16=1)
 
-guit = load_stem_midi("guitar")
+guit = load_stem_midi("guitar", premerge_gap_ms=80)
 guit = quantize(guit, min_len_16=1, velocity_floor=35, pitch_lo=40, pitch_hi=84)
 guit = merge_same_pitch(guit, gap_tol_16=1)
 guit = chord_filter(guit, keep_velocity=85, min_len_16=1)

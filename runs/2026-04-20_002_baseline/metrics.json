@@ -1,0 +1,44 @@
+{
+  "xml_path": "/Users/spyre/Documents/claude-cowork/music-transcription/runs/2026-04-20_002_baseline/Haunted.musicxml",
+  "soundfont": "assets/soundfont.sf3",
+  "overall": 0.4124769086249726,
+  "per_stem": {
+    "vocals": {
+      "chroma_cosine": 0.7506333589553833,
+      "onset_f1": 0.020797227036395145,
+      "note_f1": 0.015594541910331387,
+      "mel_l1": 1.996864914894104,
+      "composite": 0.3430492562453347
+    },
+    "piano": {
+      "chroma_cosine": 0.7809894680976868,
+      "onset_f1": 0.032171581769437,
+      "note_f1": 0.022222222222222223,
+      "mel_l1": 0.462512344121933,
+      "composite": 0.4110746280769525
+    },
+    "guitar": {
+      "chroma_cosine": 0.7564655542373657,
+      "onset_f1": 0.31678986272439286,
+      "note_f1": 0.03470213996529786,
+      "mel_l1": 0.5918576121330261,
+      "composite": 0.48483502143422286
+    },
+    "bass": {
+      "chroma_cosine": 0.7001749277114868,
+      "onset_f1": 0.14035087719298245,
+      "note_f1": 0.0066815144766146995,
+      "mel_l1": 0.37688425183296204,
+      "composite": 0.4109487287433804
+    },
+    "_mix": {
+      "chroma_cosine": 0.7878269553184509,
+      "onset_f1": 0.35081967213114756,
+      "note_f1": NaN,
+      "mel_l1": 0.9063658118247986,
+      "composite": 0.49016449003923135
+    }
+  },
+  "xml_valid": true,
+  "xml_issues": []
+}

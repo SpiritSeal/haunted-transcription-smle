@@ -1,0 +1,258 @@
+diff --git a/.gitignore b/.gitignore
+index 1d17dae..0496404 100644
+--- a/.gitignore
++++ b/.gitignore
+@@ -1 +1,11 @@
+-.venv
++.venv/
++__pycache__/
++*.pyc
++_prev-*.png
++Haunted_preview-*.png
++assets/*.sf2
++assets/*.sf3
++.cache/
++
++# Per-run audio renders (WAVs are heavy) — keep MIDI/PDF/XML committed
++runs/*/audio/
+diff --git a/Haunted.ly b/Haunted.ly
+index 566da10..1fd8587 100644
+--- a/Haunted.ly
++++ b/Haunted.ly
+@@ -20,7 +20,7 @@
+         autoBeaming = ##f
+         }
+     }
+-PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOne = 
++PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOne = 
+ \relative d' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1*3 | % 4
+@@ -110,7 +110,7 @@ PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFo
+     r4 a8. r8 d,8 r4 r16 | % 83
+     R1 }
+ 
+-PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOneChords = 
++PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOneChords = 
+ \chordmode {
+     | % 1
+     g8. s1*3 s8. s4 s16 s8 s8. | % 5
+@@ -189,7 +189,7 @@ PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFo
+     a4 s8. s8 s8 s4 s16 | % 83
+     }
+ 
+-PartPThreeTwoEightNineSixcFiveThreeSevenZeroSevenTwoeecThreeaSixbSevenNinebdbFourFiveEightFiveSevenEightZerocVoiceOne = 
++PartPFiveFourNinedSixTwoaFourFourFiveEightfThreeSevenbThreefcbSixZeroZerofThreeOneSevenThreefNineSixfTwoVoiceOne = 
+ \relative cis' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 cis16 r2... | % 2
+@@ -285,7 +285,7 @@ PartPThreeTwoEightNineSixcFiveThreeSevenZeroSevenTwoeecThreeaSixbSevenNinebdbFou
+     r2 r8. e16 r4 | % 83
+     r8 e16 r2 r4 r16 }
+ 
+-PartPTwoZeroSevencfaThreeFourfOneThreedThreeaeTwoNineTwoFouraaaecZeroafTwodSixcfVoiceOne = 
++PartPeFouraSixabTwoEightTwoEightFourbThreeNineFourTwoFivebcbOneZeroTwoThreeZeroFivecbOnedcFourVoiceOne = 
+ \relative g {
+     \clef "bass" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 r4 g16 r8 g16 b8. r8 g,16 r8 | % 2
+@@ -393,7 +393,7 @@ PartPTwoZeroSevencfaThreeFourfOneThreedThreeaeTwoNineTwoFouraaaecZeroafTwodSixcf
+     r16 a,16 r2.. | % 83
+     R1 }
+ 
+-PartPSevenEightSevenEightFourFiveSixbbFourSixcTwoFiveSixFourcNineThreeTwobcdcThreebOnebfSixNinecVoiceOne = 
++PartPThreecEightThreeThreeFourThreeeTwobffOneaZeroOnebThreeTwoSevenffcFiveZerobedTwoNineEightSixVoiceOne = 
+ \relative cis' {
+     \clef "treble_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 cis8. r16 \stemUp <g, g'>16 [ \stemUp <g b' b'>16
+@@ -556,7 +556,7 @@ PartPSevenEightSevenEightFourFiveSixbbFourSixcTwoFiveSixFourcNineThreeTwobcdcThr
+     r16 a8 r2 r4 r16 | % 83
+     R1 }
+ 
+-PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiveEightEightOneZeroOnebVoiceOne = 
++PartPaSevenffNineFiveeecZeroEightTwoSevendbSixeOneSixZeroFoureNinecSevenNineSevenTwoeFiveFourFourVoiceOne = 
+ \relative d {
+     \clef "bass_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1 | % 2
+@@ -659,7 +659,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+ \score {
+     <<
+         
+-        \context ChordNames = "PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOneChords" { \PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOneChords}
++        \context ChordNames = "PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOneChords" { \PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOneChords}
+         \new Staff
+         <<
+             \set Staff.instrumentName = "Vocals"
+@@ -667,7 +667,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOne" {  \PartPNinecOnefbdebTwoFourFourZeroZeroTwocZeroThreeFourSevendEightbeSixbbabFiveFourEightFiveVoiceOne }
++                \context Voice = "PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOne" {  \PartPSevenOneEightOneThreeThreedThreeeFourOneSevenFivecEightSixcOnefSevencThreeSixdcOneThreeFiveFouredFiveVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -677,7 +677,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPThreeTwoEightNineSixcFiveThreeSevenZeroSevenTwoeecThreeaSixbSevenNinebdbFourFiveEightFiveSevenEightZerocVoiceOne" {  \PartPThreeTwoEightNineSixcFiveThreeSevenZeroSevenTwoeecThreeaSixbSevenNinebdbFourFiveEightFiveSevenEightZerocVoiceOne }
++                \context Voice = "PartPFiveFourNinedSixTwoaFourFourFiveEightfThreeSevenbThreefcbSixZeroZerofThreeOneSevenThreefNineSixfTwoVoiceOne" {  \PartPFiveFourNinedSixTwoaFourFourFiveEightfThreeSevenbThreefcbSixZeroZerofThreeOneSevenThreefNineSixfTwoVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -687,7 +687,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPTwoZeroSevencfaThreeFourfOneThreedThreeaeTwoNineTwoFouraaaecZeroafTwodSixcfVoiceOne" {  \PartPTwoZeroSevencfaThreeFourfOneThreedThreeaeTwoNineTwoFouraaaecZeroafTwodSixcfVoiceOne }
++                \context Voice = "PartPeFouraSixabTwoEightTwoEightFourbThreeNineFourTwoFivebcbOneZeroTwoThreeZeroFivecbOnedcFourVoiceOne" {  \PartPeFouraSixabTwoEightTwoEightFourbThreeNineFourTwoFivebcbOneZeroTwoThreeZeroFivecbOnedcFourVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -697,7 +697,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPSevenEightSevenEightFourFiveSixbbFourSixcTwoFiveSixFourcNineThreeTwobcdcThreebOnebfSixNinecVoiceOne" {  \PartPSevenEightSevenEightFourFiveSixbbFourSixcTwoFiveSixFourcNineThreeTwobcdcThreebOnebfSixNinecVoiceOne }
++                \context Voice = "PartPThreecEightThreeThreeFourThreeeTwobffOneaZeroOnebThreeTwoSevenffcFiveZerobedTwoNineEightSixVoiceOne" {  \PartPThreecEightThreeThreeFourThreeeTwobffOneaZeroOnebThreeTwoSevenffcFiveZerobedTwoNineEightSixVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -707,7 +707,7 @@ PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiv
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiveEightEightOneZeroOnebVoiceOne" {  \PartPSevenSevenbFourbSevenSixSixOneFiveSixOnedTwoSixfNineaZeroTwofSevenFourdeFiveEightEightOneZeroOnebVoiceOne }
++                \context Voice = "PartPaSevenffNineFiveeecZeroEightTwoSevendbSixeOneSixZeroFoureNinecSevenNineSevenTwoeFiveFourFourVoiceOne" {  \PartPaSevenffNineFiveeecZeroEightTwoSevendbSixeOneSixZeroFoureNinecSevenNineSevenTwoeFiveFourFourVoiceOne }
+                 >>
+             >>
+         
+diff --git a/Haunted.musicxml b/Haunted.musicxml
+index 857fd91..c96ccb3 100644
+--- a/Haunted.musicxml
++++ b/Haunted.musicxml
+@@ -19,69 +19,69 @@
+     </scaling>
+   </defaults>
+   <part-list>
+-    <score-part id="P9c1fbdeb244002c0347d8be6bbab5485">
++    <score-part id="P718133d3e4175c86c1f7c36dc1354ed5">
+       <part-name>Vocals</part-name>
+       <part-abbreviation>Voca</part-abbreviation>
+-      <score-instrument id="I82528afeb28f710e9364e898246c99b8">
++      <score-instrument id="I052bddf790e4ab9f175ab35530412ae8">
+         <instrument-name>Voice</instrument-name>
+         <instrument-abbreviation>V</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I82528afeb28f710e9364e898246c99b8">
++      <midi-instrument id="I052bddf790e4ab9f175ab35530412ae8">
+         <midi-channel>1</midi-channel>
+         <midi-program>54</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P32896c537072eec3a6b79bdb4585780c">
++    <score-part id="P549d62a4458f37b3fcb600f3173f96f2">
+       <part-name>Piano RH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="I6c2e72d4ece3349c1a1dea12d295b1f9">
++      <score-instrument id="Ieb5e4e60aef6b34f1ac7baccaad55b16">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I6c2e72d4ece3349c1a1dea12d295b1f9">
++      <midi-instrument id="Ieb5e4e60aef6b34f1ac7baccaad55b16">
+         <midi-channel>2</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P207cfa34f13d3ae2924aaaec0af2d6cf">
++    <score-part id="Pe4a6ab28284b39425bcb102305cb1dc4">
+       <part-name>Piano LH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="If8651d01395294d0f2aad46f19bc5bef">
++      <score-instrument id="I769d6ceaf9b9be5014ec9aa2f5f28b4f">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="If8651d01395294d0f2aad46f19bc5bef">
++      <midi-instrument id="I769d6ceaf9b9be5014ec9aa2f5f28b4f">
+         <midi-channel>3</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P7878456bb46c2564c932bcdc3b1bf69c">
++    <score-part id="P3c83343e2bff1a01b327ffc50bed2986">
+       <part-name>Guitar</part-name>
+       <part-abbreviation>Guit</part-abbreviation>
+-      <score-instrument id="I84c3622c426800cc47aae0c296813632">
++      <score-instrument id="Icb900c0897cf50449e697f781917d3d3">
+         <instrument-name>Acoustic Guitar</instrument-name>
+         <instrument-abbreviation>Ac Gtr</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I84c3622c426800cc47aae0c296813632">
++      <midi-instrument id="Icb900c0897cf50449e697f781917d3d3">
+         <midi-channel>4</midi-channel>
+         <midi-program>25</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P77b4b7661561d26f9a02f74de588101b">
++    <score-part id="Pa7ff95eec0827db6e1604e9c7972e544">
+       <part-name>Bass</part-name>
+       <part-abbreviation>Bass</part-abbreviation>
+-      <score-instrument id="Ifd07fde992109f38d0a430ed6b8b6fe2">
++      <score-instrument id="Iab3e2472086c1b3c36cb0864015d4e02">
+         <instrument-name>Electric Bass</instrument-name>
+         <instrument-abbreviation>Elec b</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="Ifd07fde992109f38d0a430ed6b8b6fe2">
++      <midi-instrument id="Iab3e2472086c1b3c36cb0864015d4e02">
+         <midi-channel>5</midi-channel>
+         <midi-program>34</midi-program>
+       </midi-instrument>
+     </score-part>
+   </part-list>
+   <!--=========================== Part 1 ===========================-->
+-  <part id="P9c1fbdeb244002c0347d8be6bbab5485">
++  <part id="P718133d3e4175c86c1f7c36dc1354ed5">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -3835,7 +3835,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 2 ===========================-->
+-  <part id="P32896c537072eec3a6b79bdb4585780c">
++  <part id="P549d62a4458f37b3fcb600f3173f96f2">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -7465,7 +7465,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 3 ===========================-->
+-  <part id="P207cfa34f13d3ae2924aaaec0af2d6cf">
++  <part id="Pe4a6ab28284b39425bcb102305cb1dc4">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -12341,7 +12341,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 4 ===========================-->
+-  <part id="P7878456bb46c2564c932bcdc3b1bf69c">
++  <part id="P3c83343e2bff1a01b327ffc50bed2986">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -21725,7 +21725,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 5 ===========================-->
+-  <part id="P77b4b7661561d26f9a02f74de588101b">
++  <part id="Pa7ff95eec0827db6e1604e9c7972e544">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+diff --git a/Haunted.pdf b/Haunted.pdf
+index 3691e1a..4e966b2 100644
+Binary files a/Haunted.pdf and b/Haunted.pdf differ
