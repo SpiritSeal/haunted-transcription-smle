@@ -20,7 +20,7 @@
         autoBeaming = ##f
         }
     }
-PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOne = 
+PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne = 
 \relative d' {
     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 R1 | % 2
@@ -113,7 +113,7 @@ PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZ
     r4 a8. r8 d,8 r4 r16 | % 83
     R1 }
 
-PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOneChords = 
+PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords = 
 \chordmode {
     | % 1
     b8.:m a8. g8. b8.:m s16*39 s8. s4 s16 s8 s8. | % 5
@@ -190,7 +190,7 @@ PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZ
     a4 s8. s8 s8 s4 s16 | % 83
     }
 
-PartPFiveSevenEightNineSevenEightThreecaNineFourSixTwoEightThreeNineThreebaEightOneaThreeFivedeNinebFourSixThreeThreeVoiceOne = 
+PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne = 
 \relative cis' {
     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 cis16 r2... | % 2
@@ -282,7 +282,7 @@ PartPFiveSevenEightNineSevenEightThreecaNineFourSixTwoEightThreeNineThreebaEight
     r2 r8. e16 r4 | % 83
     r8 e16 r2 r4 r16 }
 
-PartPaTwoaNinedfeNineNineaTwoZeroZeroEightcbTwobFourdNineFivedOnecFourFiveZeroaaZeroNineVoiceOne = 
+PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne = 
 \relative b {
     \clef "bass" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 r2 b8. r4 r16 | % 2
@@ -384,7 +384,7 @@ PartPaTwoaNinedfeNineNineaTwoZeroZeroEightcbTwobFourdNineFivedOnecFourFiveZeroaa
     r16 a,16 r2.. | % 83
     R1 }
 
-PartPTwoafaEightFourSixOneNineafThreebfSevenNinecSevenfTwoFourdcFourabdEightbNineNinebVoiceOne = 
+PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne = 
 \relative cis' {
     \clef "treble_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 cis8. r16 \stemUp g,16 [ \stemUp <g b' b'>16 \stemUp <g
@@ -535,7 +535,7 @@ PartPTwoafaEightFourSixOneNineafThreebfSevenNinecSevenfTwoFourdcFourabdEightbNin
     r16 a8 r2 r4 r16 | % 83
     R1 }
 
-PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoaTwodbaeTwoOneFourVoiceOne = 
+PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne = 
 \relative e, {
     \clef "bass_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 R1*11 | % 12
@@ -602,7 +602,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
 \score {
     <<
         
-        \context ChordNames = "PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOneChords" { \PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOneChords}
+        \context ChordNames = "PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords" { \PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOneChords}
         \new Staff
         <<
             \set Staff.instrumentName = "Vocals"
@@ -610,7 +610,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOne" {  \PartPaFourTwoNinebeaZeroEightcFourbSixfTwoOnedbFiveSevenNinecTwoaThreeNinecFourZeroSixaSevenVoiceOne }
+                \context Voice = "PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne" {  \PartPfFiveNineSevendOneFiveOneSevenSixbSixThreeaOneNinebcEightfTwoFiveTwoFiveFiveNineaNinebeZeroFiveVoiceOne }
                 >>
             >>
         \new Staff
@@ -620,7 +620,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPFiveSevenEightNineSevenEightThreecaNineFourSixTwoEightThreeNineThreebaEightOneaThreeFivedeNinebFourSixThreeThreeVoiceOne" {  \PartPFiveSevenEightNineSevenEightThreecaNineFourSixTwoEightThreeNineThreebaEightOneaThreeFivedeNinebFourSixThreeThreeVoiceOne }
+                \context Voice = "PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne" {  \PartPNinebfeSevenFourThreeSixSevenSevenTwoeFiveZeroZeroSixTwoTwoNinebThreefZeroFiveSixOneTwoThreeOneFiveThreeFourVoiceOne }
                 >>
             >>
         \new Staff
@@ -630,7 +630,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPaTwoaNinedfeNineNineaTwoZeroZeroEightcbTwobFourdNineFivedOnecFourFiveZeroaaZeroNineVoiceOne" {  \PartPaTwoaNinedfeNineNineaTwoZeroZeroEightcbTwobFourdNineFivedOnecFourFiveZeroaaZeroNineVoiceOne }
+                \context Voice = "PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne" {  \PartPfcNineThreeSixebSevenFourFiveNineabFourdFivebbbTwoSevencaEightFiveEightZeroFourZeroSeveneFourVoiceOne }
                 >>
             >>
         \new Staff
@@ -640,7 +640,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPTwoafaEightFourSixOneNineafThreebfSevenNinecSevenfTwoFourdcFourabdEightbNineNinebVoiceOne" {  \PartPTwoafaEightFourSixOneNineafThreebfSevenNinecSevenfTwoFourdcFourabdEightbNineNinebVoiceOne }
+                \context Voice = "PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne" {  \PartPSevenTwoffZeroOneTwoaedeEightNineFiveaeeZeroSixSevenNineNineNineeSevenEightdFiveOneTwofeVoiceOne }
                 >>
             >>
         \new Staff
@@ -650,7 +650,7 @@ PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoa
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoaTwodbaeTwoOneFourVoiceOne" {  \PartPcFourFourTwoSevenSixZerocOneZeroOneSixbFiveEightTwoSixSevenSixFiveFouraTwoaTwodbaeTwoOneFourVoiceOne }
+                \context Voice = "PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne" {  \PartPZeroSixFivedTwoNineSixOneedbFiveThreeeNineTwofOneSevencfSevenZeroTwoSevenTwoSevenOneSevenSevenNineOneVoiceOne }
                 >>
             >>
         
