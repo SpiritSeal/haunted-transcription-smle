@@ -88,6 +88,7 @@ DEFAULT_SF2 = Path("assets/FluidR3.sf3")
 # Mapping from track name → the stem it should be compared against.
 TRACK_TO_STEM = {
     "Vocals":   "vocals",
+    "Piano":    "piano",     # legacy pre-v4 single-staff piano parts
     "Piano RH": "piano",
     "Piano LH": "piano",
     "Guitar":   "guitar",

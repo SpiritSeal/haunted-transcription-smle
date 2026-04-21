@@ -136,9 +136,16 @@ def append_index(run_id: str, hypothesis: str, metrics: dict):
     overall = metrics["overall"]
     row = (f"| {run_id} | {hypothesis} | {chroma:.3f} | {onset:.3f} | "
            f"{note:.3f} | **{overall:.3f}** |  | [dir](./{run_id}/) |\n")
-    # Insert row right after the header separator line (starts with "|---")
+    # Insert row right after the runs-table separator line. The file may
+    # contain other tables (methodology table etc.) with "|---" separators,
+    # so anchor specifically under the "## Runs" heading.
     lines = idx.read_text().splitlines(keepends=True)
-    sep_idx = next((i for i, l in enumerate(lines) if l.startswith("|---")), None)
+    runs_hdr = next((i for i, l in enumerate(lines) if l.strip() == "## Runs"), None)
+    if runs_hdr is not None:
+        sep_idx = next((i for i, l in enumerate(lines[runs_hdr:], start=runs_hdr)
+                        if l.startswith("|---")), None)
+    else:
+        sep_idx = next((i for i, l in enumerate(lines) if l.startswith("|---")), None)
     if sep_idx is not None:
         lines.insert(sep_idx + 1, row)
     else:
@@ -175,6 +182,8 @@ def main():
     ap.add_argument("--compare", help="previous run_id to diff metrics against")
     ap.add_argument("--skip-assemble", action="store_true",
                     help="reuse current Haunted.musicxml without rerunning pipeline")
+    ap.add_argument("--vocals-wav", type=Path, default=None,
+                    help="pass-through: RVC or other pre-rendered vocal WAV")
     args = ap.parse_args()
 
     today = date.today().isoformat()
@@ -211,7 +220,10 @@ def main():
 
     # 4. Evaluate
     print("[4/5] running eval.py")
-    run([PYTHON, "eval.py", str(run_dir / "Haunted.musicxml"), str(run_dir)])
+    eval_cmd = [PYTHON, "eval.py", str(run_dir / "Haunted.musicxml"), str(run_dir)]
+    if args.vocals_wav is not None:
+        eval_cmd += ["--vocals-wav", str(args.vocals_wav)]
+    run(eval_cmd)
     metrics = json.loads((run_dir / "metrics.json").read_text())
 
     # 5. Seed notes.md, append to INDEX.md

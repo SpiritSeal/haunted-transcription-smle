@@ -1,0 +1,6 @@
+date: '2026-04-20'
+hypothesis: "First auto-transcription (basic-pitch on Demucs-v3 stems, float-quantize\
+  \ via pretty_midi \u2192 music21). No chord symbols, no effect matching."
+retroactive: true
+run_id: 2026-04-20_0a_draft1
+source_commit: 8dbcc0b

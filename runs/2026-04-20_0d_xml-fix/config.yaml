@@ -1,0 +1,5 @@
+date: '2026-04-20'
+hypothesis: MusicXML structural fixes + vocal polyphony merge.
+retroactive: true
+run_id: 2026-04-20_0d_xml-fix
+source_commit: 80245f0

@@ -1,0 +1,65 @@
+{
+  "xml_path": "/Users/spyre/Documents/claude-cowork/music-transcription/runs/2026-04-20_0c_max/Haunted.musicxml",
+  "soundfont": "assets/FluidR3.sf3",
+  "overall": 0.4672396652149686,
+  "per_stem": {
+    "vocals": {
+      "chroma_cosine": 0.7540039420127869,
+      "onset_f1": 0.13297150610583444,
+      "onset_f1_synth": 0.0176678445229682,
+      "note_f1": 0.04831932773109244,
+      "mel_l1": 1.298650422686196,
+      "mel_l1_raw": 2.345998764038086,
+      "composite": 0.40786854676021045
+    },
+    "piano": {
+      "chroma_cosine": 0.8627903461456299,
+      "onset_f1": 0.04774535809018568,
+      "onset_f1_synth": 0.05232558139534883,
+      "note_f1": 0.11387900355871887,
+      "mel_l1": 0.36994736686586516,
+      "mel_l1_raw": 0.37682297825813293,
+      "composite": 0.4698839677015226
+    },
+    "guitar": {
+      "chroma_cosine": 0.7633311152458191,
+      "onset_f1": 0.24460431654676257,
+      "onset_f1_synth": 0.252760736196319,
+      "note_f1": 0.0776287932251235,
+      "mel_l1": 0.3648989517645107,
+      "mel_l1_raw": 0.6877087354660034,
+      "composite": 0.48207620131523077
+    },
+    "bass": {
+      "chroma_cosine": 0.8469961285591125,
+      "onset_f1": 0.1651376146788991,
+      "onset_f1_synth": 0.18052256532066507,
+      "note_f1": 0.1668806161745828,
+      "mel_l1": 0.37757741937962186,
+      "mel_l1_raw": 0.33033350110054016,
+      "composite": 0.5091299450829107
+    },
+    "_mix": {
+      "chroma_cosine": 0.7859387397766113,
+      "onset_f1": 0.3237962316817865,
+      "onset_f1_synth": 0.21632653061224488,
+      "note_f1": NaN,
+      "mel_l1": 0.9061120176173922,
+      "mel_l1_raw": 0.8950062394142151,
+      "composite": 0.48131063149460074
+    }
+  },
+  "xml_valid": false,
+  "xml_issues": [
+    "part P8594d76 m10 voice 1: 45360 \u2260 40320",
+    "part P8594d76 m18 voice 1: 52920 \u2260 40320",
+    "part P8594d76 m41 voice 1: 45360 \u2260 40320",
+    "part P8594d76 m49 voice 1: 52920 \u2260 40320",
+    "part P34c56b9 m24 voice 1: 52920 \u2260 40320",
+    "part P34c56b9 m32 voice 1: 42840 \u2260 40320",
+    "part P598386c m6 voice 1: 42840 \u2260 40320",
+    "part P598386c m8 voice 1: 42840 \u2260 40320",
+    "part P598386c m11 voice 1: 45360 \u2260 40320",
+    "part P598386c m24 voice 1: 42840 \u2260 40320"
+  ]
+}

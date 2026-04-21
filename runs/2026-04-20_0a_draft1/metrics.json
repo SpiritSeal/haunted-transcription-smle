@@ -1,0 +1,75 @@
+{
+  "xml_path": "runs/2026-04-20_0a_draft1/Haunted.musicxml",
+  "soundfont": "assets/FluidR3.sf3",
+  "overall": 0.6693262612549801,
+  "per_stem": {
+    "vocals": {
+      "chroma_cosine": 0.8474189639091492,
+      "chroma_active": 0.8763172030448914,
+      "onset_f1": 0.31334622823984526,
+      "onset_f1_synth": 0.32231404958677684,
+      "note_f1": 0.5187772925764192,
+      "mel_l1": 0.42640800780895943,
+      "mel_l1_raw": 0.41693824529647827,
+      "fp_silence": 0.02092050209205021,
+      "composite": 0.7119445800046665
+    },
+    "piano": {
+      "chroma_cosine": 0.8888384103775024,
+      "chroma_active": 0.9447967410087585,
+      "onset_f1": 0.024539877300613498,
+      "onset_f1_synth": 0.03747072599531616,
+      "note_f1": 0.0829090909090909,
+      "mel_l1": 0.4022919021018365,
+      "mel_l1_raw": 0.4190172255039215,
+      "fp_silence": 0.7340116279069767,
+      "composite": 0.5160351840318953
+    },
+    "guitar": {
+      "chroma_cosine": 0.8730509877204895,
+      "chroma_active": 0.9164561629295349,
+      "onset_f1": 0.449952335557674,
+      "onset_f1_synth": 0.5141129032258065,
+      "note_f1": 0.5078505684894423,
+      "mel_l1": 0.3103785658405602,
+      "mel_l1_raw": 0.881663978099823,
+      "fp_silence": 0.13876146788990826,
+      "composite": 0.7465251747715529
+    },
+    "bass": {
+      "chroma_cosine": 0.9199621677398682,
+      "chroma_active": 0.9396131634712219,
+      "onset_f1": 0.36065573770491804,
+      "onset_f1_synth": 0.3766666666666667,
+      "note_f1": 0.4392712550607287,
+      "mel_l1": 0.5063058402710455,
+      "mel_l1_raw": 0.5660122632980347,
+      "fp_silence": 0.26184538653366585,
+      "composite": 0.7028001062118054
+    },
+    "_mix": {
+      "chroma_cosine": 0.9030884504318237,
+      "chroma_active": 0.9110780954360962,
+      "onset_f1": 0.3993055555555556,
+      "onset_f1_synth": 0.40374909877433307,
+      "note_f1": NaN,
+      "mel_l1": 0.8816530855119555,
+      "mel_l1_raw": 0.9286860227584839,
+      "fp_silence": 0.0016400164001640015,
+      "composite": 0.6842237061693572
+    }
+  },
+  "xml_valid": false,
+  "xml_issues": [
+    "part P5e1cff4 m6 voice 1: 45360 \u2260 40320",
+    "part P5e1cff4 m12 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m23 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m24 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m25 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m28 voice 1: 57960 \u2260 40320",
+    "part P5e1cff4 m32 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m53 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m56 voice 1: 42840 \u2260 40320",
+    "part P5e1cff4 m57 voice 1: 45360 \u2260 40320"
+  ]
+}

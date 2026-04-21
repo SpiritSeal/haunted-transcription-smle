@@ -1,0 +1,5 @@
+date: '2026-04-20'
+hypothesis: 'First cleanup pass: chord detection added, basic post-quantize cleanup.'
+retroactive: true
+run_id: 2026-04-20_0b_clean
+source_commit: 8fbd2ac
