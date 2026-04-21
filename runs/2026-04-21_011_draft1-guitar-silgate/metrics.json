@@ -1,0 +1,64 @@
+{
+  "xml_path": "/Users/spyre/Documents/claude-cowork/music-transcription/runs/2026-04-21_011_draft1-guitar-silgate/Haunted.musicxml",
+  "soundfont": "assets/FluidR3.sf3",
+  "overall": 0.5785481389902419,
+  "per_stem": {
+    "vocals": {
+      "chroma_cosine": 0.9158360958099365,
+      "chroma_active": 0.9085312485694885,
+      "onset_f1": 0.19240506329113927,
+      "onset_f1_synth": 0.2523148148148148,
+      "note_f1": 0.02120141342756184,
+      "mel_l1": 0.5028894476410911,
+      "mel_l1_raw": 0.4098733365535736,
+      "fp_silence": 0.1935483870967742,
+      "composite": 0.6182039093028063
+    },
+    "piano": {
+      "chroma_cosine": 0.8007450103759766,
+      "chroma_active": 0.7994815111160278,
+      "onset_f1": 0.14166666666666666,
+      "onset_f1_synth": 0.1187214611872146,
+      "note_f1": 0.0189873417721519,
+      "mel_l1": 0.27746090254799904,
+      "mel_l1_raw": 0.3315432071685791,
+      "fp_silence": 0.3310225303292894,
+      "composite": 0.5482691039522971
+    },
+    "guitar": {
+      "chroma_cosine": 0.7880582213401794,
+      "chroma_active": 0.7563339471817017,
+      "onset_f1": 0.41148325358851684,
+      "onset_f1_synth": 0.4256157635467981,
+      "note_f1": 0.0373171961674231,
+      "mel_l1": 0.37360798280844504,
+      "mel_l1_raw": 0.9711403250694275,
+      "fp_silence": 0.09226190476190477,
+      "composite": 0.6344294404532422
+    },
+    "bass": {
+      "chroma_cosine": 0.7137049436569214,
+      "chroma_active": 0.6505220532417297,
+      "onset_f1": 0.1702970297029703,
+      "onset_f1_synth": 0.15652173913043477,
+      "note_f1": 0.0196078431372549,
+      "mel_l1": 0.4275110261984112,
+      "mel_l1_raw": 0.3850143849849701,
+      "fp_silence": 0.20241691842900303,
+      "composite": 0.513290102252622
+    },
+    "_mix": {
+      "chroma_cosine": 0.7844066619873047,
+      "chroma_active": 0.7863190770149231,
+      "onset_f1": 0.39056356487549143,
+      "onset_f1_synth": 0.38,
+      "note_f1": NaN,
+      "mel_l1": 0.9387101013225416,
+      "mel_l1_raw": 0.8953714966773987,
+      "fp_silence": 0.0,
+      "composite": 0.6307825645627099
+    }
+  },
+  "xml_valid": true,
+  "xml_issues": []
+}

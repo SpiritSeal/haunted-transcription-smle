@@ -49,22 +49,66 @@ def load_audio(path, sr=SR):
     return y
 
 
-def chroma_cosine(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
-    """Mean cosine similarity of chroma-CENS over time (truncate to shorter)."""
+def _stem_active_mask(y: np.ndarray, hop: int = HOP,
+                      db_floor: float = -30.0) -> np.ndarray:
+    """Boolean per-frame mask: True where the stem has meaningful energy.
+    Threshold is relative to the stem's own peak RMS — catches the
+    "non-guitar sections" where basic-pitch was still emitting notes
+    from cross-bleed."""
+    rms = librosa.feature.rms(y=y, frame_length=hop * 2, hop_length=hop)[0]
+    db = 20 * np.log10(np.maximum(rms, 1e-10))
+    return db > (db.max() + db_floor)
+
+
+def chroma_cosine(y_ref: np.ndarray, y_hyp: np.ndarray,
+                  active_only: bool = False) -> float:
+    """Mean cosine similarity of chroma-CENS over time (truncate to shorter).
+    If `active_only`, restrict comparison to frames where the reference
+    has meaningful energy — this stops a hypothesis from scoring high by
+    emitting notes during reference-silent sections."""
     c_ref = librosa.feature.chroma_cens(y=y_ref, sr=SR, hop_length=HOP)
     c_hyp = librosa.feature.chroma_cens(y=y_hyp, sr=SR, hop_length=HOP)
     n = min(c_ref.shape[1], c_hyp.shape[1])
     if n == 0:
         return 0.0
     c_ref, c_hyp = c_ref[:, :n], c_hyp[:, :n]
-    # cosine per frame; mask frames with both near-zero energy
     dot = (c_ref * c_hyp).sum(axis=0)
     nr = np.linalg.norm(c_ref, axis=0)
     nh = np.linalg.norm(c_hyp, axis=0)
     mask = (nr > 1e-6) & (nh > 1e-6)
+    if active_only:
+        ref_active = _stem_active_mask(y_ref)[:n]
+        mask = mask & ref_active
     if not mask.any():
         return 0.0
     return float(np.mean(dot[mask] / (nr[mask] * nh[mask])))
+
+
+def fp_silence_rate(stem_audio: np.ndarray,
+                    hyp_pm: pretty_midi.PrettyMIDI) -> float:
+    """Fraction of hypothesis note-onsets that fall during frames where the
+    reference stem is silent. High = many phantom notes (false positives)
+    in regions where nothing is actually playing on this stem.
+
+    0.0 = perfect silence discipline; 1.0 = every note is a phantom.
+    """
+    active = _stem_active_mask(stem_audio)
+    starts = [n.start for inst in hyp_pm.instruments if not inst.is_drum
+              for n in inst.notes]
+    if not starts:
+        return 0.0
+    # frame index = t*SR/HOP
+    fp = 0
+    for t in starts:
+        fi = int(t * SR / HOP)
+        if 0 <= fi < len(active):
+            # tolerance window: ±1 frame (~93 ms at HOP=2048)
+            lo = max(0, fi - 1); hi = min(len(active), fi + 2)
+            if not active[lo:hi].any():
+                fp += 1
+        else:
+            fp += 1
+    return fp / len(starts)
 
 
 def onset_f1(y_ref: np.ndarray, y_hyp: np.ndarray) -> float:
@@ -255,7 +299,7 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
         by_stem.setdefault(stem, []).append(track_name)
 
     # 3. For each stem, compute metrics.
-    stems = stem_paths()
+    stems = stem_paths(os.environ.get("STEMS_DIR", "stems"))
     results: dict[str, dict[str, float]] = {}
 
     for stem_name, tracks in by_stem.items():
@@ -281,6 +325,7 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
         matched = apply_production_effects(mixed, stem_audio, SR)
 
         ch     = chroma_cosine(stem_audio, mixed)
+        ch_act = chroma_cosine(stem_audio, mixed, active_only=True)
         ml     = mel_l1(stem_audio, matched)
         ml_raw = mel_l1(stem_audio, mixed)        # kept for diagnostics
         on_syn = onset_f1(stem_audio, mixed)      # legacy synth-based
@@ -292,6 +337,7 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
                 _new.notes = list(inst.notes)
                 _hyp_for_onset.instruments.append(_new)
         on     = onset_f1_midi(stem_audio, _hyp_for_onset)
+        fp_sil = fp_silence_rate(stem_audio, _hyp_for_onset)
 
         # Note F1 — basic-pitch on the stem to get pseudo-ground-truth
         try:
@@ -309,11 +355,13 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
 
         results[stem_name] = {
             "chroma_cosine":  ch,
+            "chroma_active":  ch_act,      # chroma computed only on stem-active frames
             "onset_f1":       on,          # MIDI-onset-vs-stem-audio-onset
             "onset_f1_synth": on_syn,      # diagnostic: synth-WAV-vs-stem-WAV
             "note_f1":        nf,
             "mel_l1":         ml,          # effect-matched
             "mel_l1_raw":     ml_raw,      # diagnostic: pre-effect-match
+            "fp_silence":     fp_sil,      # note-starts in stem-silent regions
         }
 
     # 4. Mix-level comparison against original mp3 (with effect matching).
@@ -325,21 +373,39 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
         y_syn_matched = apply_production_effects(y_syn, y_mix, SR)
         results["_mix"] = {
             "chroma_cosine":  chroma_cosine(y_mix, y_syn),
+            "chroma_active":  chroma_cosine(y_mix, y_syn, active_only=True),
             "onset_f1":       onset_f1_midi(y_mix, pm),
             "onset_f1_synth": onset_f1(y_mix, y_syn),
             "note_f1":        float("nan"),
             "mel_l1":         mel_l1(y_mix, y_syn_matched),
             "mel_l1_raw":     mel_l1(y_mix, y_syn),
+            "fp_silence":     fp_silence_rate(y_mix, pm),
         }
 
-    # 5. Composite per stem.
+    # 5. Composite per stem. v2 weighting reflects lessons from retroactive
+    # eval of draft1 (git 8dbcc0b): chroma_active beats plain chroma because
+    # phantom notes during silent stem sections shouldn't count; fp_silence
+    # directly penalizes cross-bleed phantoms; note_f1 downweighted because
+    # it's pathological (basic-pitch pseudo-GT favors basic-pitch pipelines).
+    #
+    #   composite = 0.35·chroma_active
+    #             + 0.25·onset_F1
+    #             + 0.10·note_F1
+    #             + 0.15·(1 − fp_silence)       ← NEW: silence discipline
+    #             + 0.10·(1 − mel_L1/3)
+    #             + 0.05·chroma                 ← raw chroma kept for cont.
     def composite(m):
-        ml_norm = min(m["mel_l1"] / 3.0, 1.0)   # 3.0 ~ very different timbres
+        ml_norm = min(m["mel_l1"] / 3.0, 1.0)
         parts = []
-        if not np.isnan(m["chroma_cosine"]): parts.append(0.4 * m["chroma_cosine"])
-        if not np.isnan(m["onset_f1"]):      parts.append(0.3 * m["onset_f1"])
-        if not np.isnan(m["note_f1"]):       parts.append(0.2 * m["note_f1"])
-        parts.append(0.1 * (1 - ml_norm))
+        if "chroma_active" in m and not np.isnan(m["chroma_active"]):
+            parts.append(0.35 * m["chroma_active"])
+        if not np.isnan(m["chroma_cosine"]):
+            parts.append(0.05 * m["chroma_cosine"])
+        if not np.isnan(m["onset_f1"]):      parts.append(0.25 * m["onset_f1"])
+        if not np.isnan(m["note_f1"]):       parts.append(0.10 * m["note_f1"])
+        if "fp_silence" in m and not np.isnan(m["fp_silence"]):
+            parts.append(0.15 * (1 - m["fp_silence"]))
+        parts.append(0.10 * (1 - ml_norm))
         return sum(parts)
     for k, m in results.items():
         m["composite"] = composite(m)
@@ -368,14 +434,15 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
              "content, not dry-synth-vs-wet-stem mismatch. `mel_L1_raw` is "
              "the pre-match diagnostic.",
              ""]
-    lines.append("| stem | chroma | onset_F1 | (synth) | note_F1 | mel_L1 | (raw) | composite |")
+    lines.append("| stem | chroma | chroma_active | onset_F1 | note_F1 | mel_L1 | fp_silence | composite |")
     lines.append("|---|---:|---:|---:|---:|---:|---:|---:|")
     for k, m in results.items():
         lines.append(
-            f"| {k} | {m['chroma_cosine']:.3f} | {m['onset_f1']:.3f} | "
-            f"{m.get('onset_f1_synth', float('nan')):.3f} | "
-            f"{m['note_f1']:.3f} | {m['mel_l1']:.3f} | "
-            f"{m.get('mel_l1_raw', float('nan')):.3f} | "
+            f"| {k} | {m['chroma_cosine']:.3f} | "
+            f"{m.get('chroma_active', float('nan')):.3f} | "
+            f"{m['onset_f1']:.3f} | {m['note_f1']:.3f} | "
+            f"{m['mel_l1']:.3f} | "
+            f"{m.get('fp_silence', float('nan')):.3f} | "
             f"**{m['composite']:.3f}** |"
         )
     (run_dir / "metrics.md").write_text("\n".join(lines))

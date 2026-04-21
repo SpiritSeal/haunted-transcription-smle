@@ -1,0 +1,5316 @@
+diff --git a/Haunted.ly b/Haunted.ly
+index 567279f..a67ddd3 100644
+--- a/Haunted.ly
++++ b/Haunted.ly
+@@ -20,7 +20,7 @@
+         autoBeaming = ##f
+         }
+     }
+-PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne = 
++PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOne = 
+ \relative d' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1 | % 2
+@@ -116,7 +116,7 @@ PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffF
+     b16 r2... | % 82
+     r4 a8. r8 d,8 r8. d8 }
+ 
+-PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords = 
++PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOneChords = 
+ \chordmode {
+     | % 1
+     b4:m a4 g4 b4:m s4*9 s8 s4 s16 s8 s8. | % 5
+@@ -194,7 +194,7 @@ PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffF
+     g16 s16*15 | % 82
+     a4 s8. s8 s8 s8. }
+ 
+-PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne = 
++PartPbOneTwoFiveThreeSixTwoSixeSevenOneNineTwoThreebfTwoFiveaFiveNinefFivecOneFiveSixThreeSixaSeveneVoiceOne = 
+ \relative d''' {
+     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1*13 | % 14
+@@ -282,7 +282,7 @@ PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEightee
+     r4. b,8 <a b>16 r4.. | % 74
+     R1*9 }
+ 
+-PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne = 
++PartPcFourecFouraeSixTwoSixdNineeSevenEightFiveNineTwoNinedFourFiveSixSixEightSixFiveNineSixaacVoiceOne = 
+ \relative e, {
+     \clef "bass" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1*21 | % 22
+@@ -314,146 +314,176 @@ PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTw
+     r4 r16 <a,, e'' a>8 r2 r16 | % 73
+     R1*10 }
+ 
+-PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne = 
++PartPFiveZerocEightOneOneeSevenZeroOneTwoOneSixSevencFiveThreeOneeSevendeThreecdSevenfeSixOneFourZeroVoiceOne = 
+ \relative cis' {
+     \clef "treble_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+-    \tempo 4=96 cis8. r16 \stemUp g,16 [ \stemUp <g b' b'>16 \stemUp <g
+-        b'>8 ] \stemUp <g b' b'>16 [ \stemUp <g b'>16 \stemUp <g g' b>16
+-    \stemUp <g g'>8 ] \stemUp <g b' b'>16 [ \stemUp <g b'>8 ] | % 2
+-    <g b'>16 r16 \stemUp <a cis'>16 [ \stemUp cis'16 ] b,4 \stemUp <b
+-        d'>8. [ \stemUp d'16 ] \stemUp <d, d'>16 [ \stemUp <d fis'>8. ]
+-    | % 3
++    \tempo 4=96 \stemDown cis8. [ \stemDown c16 ] \stemUp <g, g'>16 [
++    \stemUp <g b' b'>16 \stemUp <g b'>16 \stemUp <g g' b>16 ] \stemUp <g
++        b' b'>16 [ \stemUp <g b'>16 \stemUp <g g' b>16 \stemUp <g g'>8 ]
++    \stemUp <g b' b'>16 [ \stemUp <g b'>8 ] | % 2
++    <g b'>16 r16 \stemUp <a cis'>16 [ \stemUp cis'16 ] \stemUp <b, b'>16
++    [ \stemUp <b d'>16 \stemUp b16 \stemUp <b b'>16 ] \stemUp <b d'>8 [
++    \stemUp <b b' d>16 \stemUp d'16 ] \stemUp <d, d'>16 [ \stemUp <d
++        fis'>8. ] | % 3
+     <d fis'>8. r16 <g, g'>16 <g b'>4 \stemUp <g g' b>16 [ \stemUp <g b'>8
+     ] \stemUp <g g' b b'>16 [ \stemUp <g g' b>8. ] | % 4
+-    <g b'>16 r8 b'16 \stemUp <b, b' d>8. [ \stemUp <b d'>8 ] \stemUp <b
+-        b' d>16 [ \stemUp b16 \stemUp <a a'>16 ] \stemUp <a a' cis>16 [
+-    \stemUp <a cis'>8. ] | % 5
+-    <a cis'>8 r16 g16 <g b'>8 <g g' b>2 ~ ~ ~ <g g' b>8 | % 6
+-    r16 \stemDown cis'8 [ \stemDown <b, b'>16 ] \stemUp <b d'>16 [
+-    \stemUp b16 \stemUp <b b'>16 \stemUp <b d'>16 ] \stemUp b16 [
+-    \stemUp <b b'>16 ] r16 <d d'>16 <d fis'>4 | % 7
++    <g b'>16 r16 \stemUp <a a' cis>16 [ \stemUp b'16 ] \stemUp <b, b' d>8.
++    [ \stemUp <b d'>8 ] \stemUp <b b' d>16 [ \stemUp b16 \stemUp <a a'>16
++    ] \stemUp <a a' cis>16 [ \stemUp <a cis'>8 \stemUp <a a' cis>16 ] | % 5
++    <a cis'>8 r16 <g g'>16 <g b'>8 <g g' b>2 ~ ~ ~ <g g' b>8 | % 6
++    r16 \stemUp <a a' cis>16 [ \stemUp cis'16 \stemUp <b, b'>16 ]
++    \stemUp <b d'>16 [ \stemUp b16 \stemUp <b b'>16 \stemUp <b d'>16 ]
++    \stemUp b16 [ \stemUp <b b'>16 ] r16 <d d'>16 <d fis'>4 | % 7
+     <d fis'>8 r16 <g, g' b>4.. \stemUp <g g' b d>16 [ \stemUp <g g' b
+         b'>16 ] \stemUp <g g' b>8. [ \stemUp <g b'>16 ] | % 8
+-    r16 <a a' cis>16 r16 <b d'>4. d'16 r16 <a, cis'>16 \stemUp <a a'
+-        cis>8 [ \stemUp <a a' cis cis'>16 \stemUp <a a' cis>16 ] | % 9
+-    \stemUp <a a' cis>16 [ \stemUp a16 \stemUp <g g'>16 \stemUp <g b'>8
+-    ] \stemUp <g g' b d>16 [ \stemUp <g g' b>16 \stemUp <g b'>8. ]
+-    \stemUp <g g' b>16 [ \stemUp <g b'>8 ] \stemUp <g g' b>16 [ \stemUp
+-    <g b'>16 ] r16 | \barNumberCheck #10
+-    \stemDown cis'8 [ \stemDown <b, cis'>16 \stemDown <b d'>16 ] \stemUp
+-    b16 [ \stemUp <b b'>16 \stemUp <b d'>8. ] r16 \stemUp d16 [ \stemUp
+-    <d fis'>16 ] \stemUp d8 [ \stemUp <d fis'>8 ] | % 11
+-    <d fis'>16 r16 <g, g'>8 \stemUp g8 [ \stemUp <g b'>8 ] \stemUp <g b'
+-        g'>16 [ \stemUp <g g''>16 \stemUp g16 ] <g b'>4 r16 | % 12
+-    r8. g''4. r16 <d, fis'>8. fis'8. ] | % 13
+-    r16 <a,, a' cis>16 <a cis'>4 cis'8 \stemUp <a, cis' a' cis>16 [
+-    \stemUp d'8 ] r8. d8 | % 14
+-    d16 r16 g4. \stemDown fis16 [ \stemDown <d, fis'>16 \stemDown fis'8
+-    ] \stemUp <d, fis'>16 [ \stemUp fis'8. ] | % 15
+-    r8 b,2 ~ b16 r8 b8. | % 16
+-    r16 g'8 r8 g8 r8 \stemUp <d, fis'>16 [ \stemUp fis'8 ] \stemUp <d,
++    r16 <a a' cis>16 r16 <b b' d>16 <b d'>4 \stemUp <b b' d fis>16 [
++    \stemUp <bes d'>16 ] r16 <a cis'>16 \stemUp <a a' cis>8 [ \stemUp <a
++        a' cis cis'>16 \stemUp <a a' cis>16 ] | % 9
++    \stemUp <a a' cis>16 [ \stemUp <a c'>16 \stemUp <g g'>16 \stemUp <g
++        b'>8 ] \stemUp <g g' b d>16 [ \stemUp <g g' b>16 \stemUp <g b'>8.
++    ] \stemUp <g g' b>16 [ \stemUp <g b'>8 ] \stemUp <g g' b>16 [
++    \stemUp <g b'>16 ] r16 | \barNumberCheck #10
++    \stemUp <a a' cis>16 [ \stemUp cis'16 \stemUp <b, cis'>16 \stemUp <b
++        d'>16 ] \stemUp b16 [ \stemUp <b b'>16 \stemUp <b d'>8. ] r16
++    \stemUp d16 [ \stemUp <d fis'>16 ] \stemUp d8 [ \stemUp <d fis'>8 ]
++    | % 11
++    <d fis'>16 r16 \stemUp <g, g'>16 [ \stemUp <g g' b>16 ] \stemUp g8 [
++    \stemUp <g b'>8 ] \stemUp <g b' g'>16 [ \stemUp <g g''>16 \stemUp g16
++    \stemUp <g b'>8 ] \stemUp <g g' b>16 [ \stemUp <g b'>16 ] r16 | % 12
++    <a cis'>16 r16 \stemDown e'16 [ \stemDown g'8 ] \stemDown <e, g'>16
++    [ \stemDown g'8 ] <e, g'>16 r16 <d fis'>8. fis'8. ] | % 13
++    \stemUp d,16 [ \stemUp <a a' cis>16 ] <a cis'>4 cis'8 \stemUp <a,
++        cis' a' cis>16 [ \stemUp d'8 ] r16 <b, b'>16 r16 d'8 | % 14
++    \stemDown d16 [ \stemDown e,16 \stemDown g'8 ] \stemDown <e, g'>16 [
++    \stemDown g'8. ] \stemDown fis16 [ \stemDown <d, fis'>16 \stemDown
++    fis'8 ] \stemUp <d, fis'>16 [ \stemUp fis'8. ] | % 15
++    r16 \stemUp g,16 [ \stemUp b8. ] \stemDown <g b>16 [ \stemDown b16
++    \stemDown <b d>16 ] \stemDown b16 [ \stemDown <g, g' b>16 \stemDown
++    b'16 ] r16 \stemUp g,16 [ \stemUp b'8 \stemUp <b fis'>16 ] | % 16
++    r16 \stemDown <e, g'>16 [ \stemDown g'16 ] r16 \stemDown e,16 [
++    \stemDown g'8 ] r8 \stemUp <d, fis'>16 [ \stemUp fis'8 ] \stemUp <d,
+         fis'>16 [ \stemUp fis'8. ] | % 17
+-    cis8. r16 \stemUp a,16 [ \stemUp <a cis'>8 \stemUp cis'16 ] r16
+-    \stemDown <d fis>16 [ \stemDown d8 ] <d fis>16 r16 cis8 | % 18
+-    b4.. r16 \stemUp <a, a'>16 [ \stemUp <a cis'>8 \stemUp <a a' cis>16
+-    ] \stemUp <a cis'>8. [ \stemUp cis'16 ] | % 19
+-    r16 \stemUp g8 [ \stemUp <e g b>16 ] \stemDown <e g>8 [ \stemDown <e
+-        g g'>8. ] \stemUp <e g b>16 [ \stemUp e8. ] r8. |
++    cis8. r16 \stemUp <a, a'>16 [ \stemUp <a cis'>16 \stemUp <a cis' e>16
++    \stemUp cis'16 ] r16 \stemDown <d fis>16 [ \stemDown d8 ] <d fis>16
++    r16 \stemDown cis16 [ \stemDown <cis a'>16 ] | % 18
++    \stemUp <g, b'>16 [ \stemUp b'8 \stemUp <g, g' b>16 ] b'8. r16
++    \stemUp <a, a'>16 [ \stemUp <a cis'>8 \stemUp <a a' cis>16 ] \stemUp
++    <a cis'>8 [ \stemUp <a cis' cis'>16 \stemUp cis'16 ] | % 19
++    \stemUp <e,, e'>16 [ \stemUp g'8 \stemUp <e g b>16 ] \stemDown <e g>8
++    [ \stemDown <e g g'>8. ] \stemUp <e g b>16 [ \stemUp e8. ] r8. |
+     \barNumberCheck #20
+-    \stemUp e16 [ \stemUp <e b' g'>8 \stemUp <e, e' b'>16 ] r2. | % 21
+-    \stemUp <a a' cis>16 [ \stemUp <a cis'>8 \stemUp <a a' cis a'>16 ]
++    \stemUp e16 [ \stemUp <e b' g'>8 \stemUp <e, e' b'>16 ] r4 r16 d''16
++    r4. | % 21
++    \stemUp <a, a' cis>16 [ \stemUp <a cis'>8 \stemUp <a a' cis a'>16 ]
+     <a cis'>16 r16 <b b' d>8 \stemDown <b' d>8 [ \stemDown d8 ] r4 | % 22
+-    r2 \stemDown <fis d'>8 [ \stemDown <a, d'>16 \stemDown d'8. ] a16 r16
+-    | % 23
+-    \stemDown b,16 [ \stemDown d16 \stemDown <d a''>16 \stemDown <b a''>16
+-    ] \stemDown <d' a'>16 [ \stemDown <b,, d' a'' b>16 \stemDown <d' fis
+-        fis'>16 \stemDown <b d fis'>16 ] r8 fis,16 r4 r16 | % 24
+-    r8 b'8 \stemDown <b e>16 [ \stemDown b16 \stemDown a,16 \stemDown
+-    fis''8 ] d'8 r4 r16 | % 25
+-    \stemDown <a, cis>16 [ \stemDown cis8 ] r8 \stemDown b,8 [ \stemDown
+-    a'''16 ] \stemDown d,,16 [ \stemDown <b d>16 \stemDown b16 \stemDown
+-    <b fis'>16 ] r4 | % 26
+-    r8 \stemDown b16 [ \stemDown <b d>16 ] d8 r16 <cis e'>4 e'16 r8 g,,16
+-    r16 | % 27
+-    r16 <e e'' b'>16 r8 \stemDown b'''16 [ \stemDown g,,16 ] r16 b16
+-    <e,, g'>16 r4.. | % 28
+-    r4.. <a' a''>16 r4 a,8 r8 | % 29
+-    r8. e'8 r2 r8. | \barNumberCheck #30
+-    \stemUp <b b' b''>16 [ \stemUp b16 ] r16 d''16 <b,, b' fis''>16 r2 r8.
+-    | % 31
+-    r2 r8 d'16 r4 r16 | % 32
+-    r2... b16 | % 33
+-    r8 <e, b''>16 r2 r4 r16 | % 34
++    r2 \stemDown <d, fis' d'>16 [ \stemDown <fis' d'>16 \stemDown <a,
++        d'>16 \stemDown <d d'>16 ] \stemDown d'16 [ \stemDown <d,, d''>16
++    \stemDown a''16 ] r16 | % 23
++    \stemDown b,16 [ \stemDown d16 \stemDown <d a' a'>16 \stemDown <b
++        a''>16 ] \stemDown <d' a'>16 [ \stemDown <b,, d' a'' b>16
++    \stemDown <d' fis fis'>16 \stemDown <b d fis'>16 ] e16 r16 fis,,16 r4
++    r16 | % 24
++    g''16 r16 b,8 \stemDown <b e g>16 [ \stemDown b16 \stemDown a,16
++    \stemDown fis''8 ] \stemDown d'16 [ \stemDown <d, d'>16 ] r4 r16 | % 25
++    \stemDown <a cis>16 [ \stemDown cis8 \stemDown cis'16 ] r16
++    \stemDown <b,, b'>16 [ \stemDown b16 \stemDown a'''16 ] \stemDown
++    d,,16 [ \stemDown <b d>16 \stemDown b16 \stemDown <b fis'>16 ] r8
++    cis'16 r16 | % 26
++    r8 \stemDown b,16 [ \stemDown <b d>16 ] d8 r16 <cis e e'>16
++    \stemDown <a cis e'>16 [ \stemDown <cis e' gis>16 \stemDown <cis e'>16
++    \stemDown e'16 ] r8 g,,16 r16 | % 27
++    r16 \stemDown <e a' e'>16 [ \stemDown a''16 ] r16 \stemDown b16 [
++    \stemDown g,,16 \stemDown d''16 \stemDown b,16 ] <e,, g'>16 r4.. | % 28
++    r4.. <a' e'' a>16 r4 a,8 r8 | % 29
++    r8. <e' b''>16 e16 r8. b'16 r4.. | \barNumberCheck #30
++    \stemUp <b, b' b''>16 [ \stemUp b16 ] r16 d''16 <b,, b' fis''>16 r16
++    <a' e'' a>16 r2 r16 | % 31
++    r2 r8 d16 r4 r16 | % 32
++    r2. <a, a'>16 r8 b'16 | % 33
++    fis16 r16 <e b''>16 r2 r4 r16 | % 34
+     d16 r8 d16 r2. | % 35
+-    r4 r16 e'16 r4. \stemUp <b, b'>16 [ \stemUp <b b' d>16 \stemUp <b
+-        d'>8 ] | % 36
+-    \stemUp <b b' d>16 [ \stemUp d'8 \stemUp <b, b' d>16 ] \stemUp a16 [
+-    \stemUp <a cis'>16 \stemUp a8 ] <a cis'>8. r16 \stemUp <g g'>16 [
+-    \stemUp <g g' b b'>16 \stemUp <g g' b>16 \stemUp <g g' b d>16 ] | % 37
++    r4 r16 <b' e>16 r4. \stemUp <b, b'>16 [ \stemUp <b b' d>16 \stemUp
++    <b d'>8 ] | % 36
++    \stemUp <b b' d>16 [ \stemUp d'8 \stemUp <bes, b b' d>16 ] \stemUp a16
++    [ \stemUp <a cis'>16 \stemUp a16 \stemUp <a a'>16 ] \stemUp <a cis'>8.
++    [ \stemUp c'16 ] \stemUp <g, g'>16 [ \stemUp <g g' b b'>16 \stemUp
++    <g g' b>16 \stemUp <g g' b d>16 ] | % 37
+     \stemUp <g g' b b'>16 [ \stemUp <g g' b>8. ] \stemUp <g g' b g'>16 [
+-    \stemUp <g g' b>8. ] <g b'>16 r16 cis'8 <b, b'>4 | % 38
++    \stemUp <g g' b>8. ] <g b'>16 r16 \stemUp <a cis'>16 [ \stemUp cis'16
++    ] <b, b'>4 | % 38
+     \stemUp <b b' d>8 [ \stemUp <b d b' d>16 \stemUp <d d'>16 ] \stemUp
+     d16 [ \stemUp <d fis'>16 \stemUp d16 \stemUp <d d'>16 ] <d fis'>8. r16
+-    \stemUp <g, g'>16 [ \stemUp <g g' b>8. ] | % 39
+-    \stemUp <g b'>8 [ \stemUp <g g' b>16 \stemUp <g g'>8 ] \stemUp <g b'
+-        b'>16 [ \stemUp <g b'>16 \stemUp <g b' d>16 ] <g b'>16 r8.
+-    \stemUp <b b'>16 [ \stemUp <b d'>16 \stemUp b8 ] | \barNumberCheck
+-    #40
+-    \stemDown d'8 [ \stemDown <b, d'>16 ] r16 \stemUp <a cis'>8. [
+-    \stemUp <a a' cis>8. ] a16 r16 \stemUp <g g' b>16 [ \stemUp <g b'>8.
+-    ] | % 41
+-    <g b'>16 <g g' b>4.. r16 \stemUp <a a' cis>16 [ \stemUp cis'16
++    \stemUp <g, g'>16 [ \stemUp <g g' b b'>16 \stemUp <g g' b>8 ] | % 39
++    \stemUp <g b'>16 [ \stemUp <g b' cis>16 \stemUp <g g' b>16 \stemUp
++    <g g'>8 ] \stemUp <g b' b'>16 [ \stemUp <g b'>16 \stemUp <g g' b d>16
++    ] <g b'>16 r16 <a a' cis>16 r16 \stemUp <b b'>16 [ \stemUp <b d'>16
++    \stemUp b8 ] | \barNumberCheck #40
++    \stemDown d'8 [ \stemDown <bes, b d'>16 ] r16 \stemUp <a a' cis>16 [
++    \stemUp <a cis'>8 \stemUp <a a' cis>8 ] \stemUp <a a' cis cis'>16 [
++    \stemUp a16 ] r16 \stemUp <g g' b>16 [ \stemUp <g b'>8 \stemUp <g b'
++        d>16 ] | % 41
++    <g b'>16 <g g' b>4.. r16 \stemUp <a a' cis>16 [ \stemUp <cis' cis'>16
+     \stemUp <b, cis'>16 ] \stemUp <b d'>8 [ \stemUp <b b' d>8 ] | % 42
+-    \stemUp <b b' d>8 [ \stemUp <b d'>16 \stemUp <d d'>16 ] \stemUp d8.
+-    [ \stemUp <d fis'>8 ] fis'16 r16 <g,, g'>16 \stemUp <g g' b>8. [
+-    \stemUp <g b'>16 ] | % 43
+-    \stemUp <g b'>16 [ \stemUp <g g' b>16 \stemUp <g g'>8 ] <g g' b>4 r8.
+-    e'16 \stemDown <e g'>8. [ \stemDown g'16 ] | % 44
+-    \stemDown <b, g'>16 [ \stemDown g'16 ] r16 d,16 fis'16 r16 \stemUp
+-    d,16 [ \stemUp fis'8. ] cis16 <a, cis'>4 cis'16 | % 45
+-    \stemDown cis16 [ \stemDown <a, cis'>16 \stemDown d'8. ] r8 d8 r8.
+-    \stemDown g16 [ \stemDown <e, g'>16 \stemDown g'8 ] | % 46
+-    <e, g'>16 r16 fis'8. \stemUp <d, fis'>8 [ \stemUp fis'8 ] r8 b,4 ~ b16
+-    | % 47
++    \stemUp <b b' d>8 [ \stemUp <b d'>16 \stemUp <d d'>16 ] \stemUp <d
++        fis'>16 [ \stemUp d16 \stemUp <d d'>16 \stemUp <d fis'>8 ] fis'16
++    r16 <g,, g'>16 \stemUp <g g' b>8. [ \stemUp <g b'>16 ] | % 43
++    \stemUp <g b'>16 [ \stemUp <g g' b>16 \stemUp <g g'>8 ] <g g' b>4 r16
++    <a a' cis>16 r16 e'16 \stemDown <e g'>8. [ \stemDown g'16 ] | % 44
++    \stemDown <b, g'>16 [ \stemDown <e, g' e'>16 ] r16 d16 fis'16 r16
++    \stemUp d,16 [ \stemUp fis'8. ] \stemDown cis16 [ \stemDown <a, a'
++        cis>16 ] \stemUp <a cis'>8 [ \stemUp <a a' cis>16 \stemUp cis'16
++    ] | % 45
++    \stemDown cis16 [ \stemDown <a, cis'>16 \stemDown d'8. ] <b, b'>16 r16
++    d'8 r8. \stemDown g16 [ \stemDown <e, g'>16 \stemDown g'8 ] | % 46
++    <e, g'>16 r16 \stemUp <d fis'>16 [ \stemUp fis'8 ] \stemUp <d, fis'>8
++    [ \stemUp fis'8 ] r8 b,4 ~ b16 | % 47
+     b16 r16 \stemUp <g, g'>16 [ \stemUp b'16 ] r8 b8. r16 \stemDown e,16
+     [ \stemDown g'8 ] \stemDown <e, g'>16 [ \stemDown g'8 ] | % 48
+-    r4 fis4 ~ fis16 cis4 \stemUp <a, a' cis>16 [ \stemUp cis'8 ] | % 49
+-    cis8 d4 r8. \stemDown b16 [ \stemDown <b b'>16 \stemDown <b d>16 ] b4
+-    | \barNumberCheck #50
+-    \stemUp <g, b'>16 [ \stemUp a'8 \stemUp <a cis>8 ] cis4 \stemUp <e,
+-        b'>16 [ \stemUp g8 ] \stemDown <e g b>16 [ \stemDown g8
++    r4 fis4 ~ fis16 \stemDown <cis e>16 [ \stemDown cis8. ] \stemUp <a,
++        a' cis>16 [ \stemUp cis'8 ] | % 49
++    cis8 d4 r8 \stemDown <cis e cis'>16 [ \stemDown b16 \stemDown <b b'>16
++    \stemDown <b d>16 ] \stemUp <g b>16 [ \stemUp b8. ] |
++    \barNumberCheck #50
++    \stemUp <g, b'>16 [ \stemUp a'8 \stemUp <a cis>16 ] \stemDown <a, a'
++        cis>16 [ \stemDown cis'8 \stemDown <cis cis'>16 ] \stemUp cis16
++    [ \stemUp <e, b'>16 \stemUp g8 ] \stemDown <e g b>16 [ \stemDown g8
+     \stemDown <g g'>16 ] | % 51
+-    \stemUp <g g'>16 [ \stemUp <e g b g'>16 \stemUp <e g b>16 ] r4.
+-    \stemDown <b' g'>16 [ \stemDown <e, b' g'>8 ] <b' g'>16 r8. | % 52
+-    r16 d8. <d, d'>16 r4 cis'4 ~ cis16 r16 <b d>16 | % 53
+-    <b d>4 ~ ~ <b d>16 b8 r8 \stemDown <b g'>16 [ \stemDown <e, b' g'>8
++    \stemUp <g g'>16 [ \stemUp <e, e' g b g'>16 \stemUp <e' g b>16 ] r4.
++    \stemDown <b' e g>16 [ \stemDown <e, b' g'>8 ] <b' e g>16 r8. | % 52
++    r16 d8. <d, d'>16 r4 \stemUp <a a' cis>16 [ \stemUp cis'8 ]
++    \stemDown <a cis>16 [ \stemDown cis16 ] r16 <b d>16 | % 53
++    <b, b' d>16 <b' d>4 b8 r8 \stemDown <b g'>16 [ \stemDown <e, b' g'>8
+     ] \stemUp <e b'>16 [ \stemUp <b' e>8. ] | % 54
+     \stemDown d16 [ \stemDown <d, a' d fis>16 \stemDown <a' d fis>16
+-    \stemDown <a d>8 ] r4 \stemDown b16 [ \stemDown <b d a''>8. ]
+-    \stemDown <d a''>16 [ \stemDown <d fis b'>16 ] r16 | % 55
+-    \stemDown b16 [ \stemDown d16 ] r8. d16 r8. \stemDown <b g' e'>8 [
+-    \stemDown <b g'>16 ] g'8 r8 | % 56
++    \stemDown <a d>8 ] r4 \stemDown b16 [ \stemDown <b d a''>16
++    \stemDown <b d a' a'>16 ] \stemDown <b d a''>16 [ \stemDown <d a''>16
++    \stemDown <d fis b'>16 ] r16 | % 55
++    \stemDown <b fis'' a>16 [ \stemDown d16 ] r8. d16 r8. \stemDown <b
++        g' e'>8 [ \stemDown <b g'>16 ] \stemDown g'16 [ \stemDown <e g>16
++    ] r8 | % 56
+     \stemDown fis16 [ \stemDown <fis a>16 \stemDown <d fis a d>16
+     \stemDown <a d a' d e>16 ] <d e' a>16 r4 \stemDown a16 [ \stemDown
+-    cis8 ] <a cis>16 r16 \stemDown <b, d'>16 [ \stemDown <b fis' d' a''>16
+-    ] | % 57
+-    \stemUp <b fis' d'>16 [ \stemUp d'16 \stemUp b16 ] r16 d16 r2 r8. | % 58
+-    r16 cis16 r2.. | % 59
+-    r2 r16 <b, b'>16 r4. | \barNumberCheck #60
++    cis8 ] <a cis>16 r16 \stemDown <b, d'>16 [ \stemDown <b fis' d' d'
++        a'>16 ] | % 57
++    \stemUp <b fis' d'>16 [ \stemUp d'16 \stemUp b16 ] r16 d16 r16 <g,
++        bes cis>16 r2 r16 | % 58
++    r16 cis16 r4. b16 r4 b''16 r8 | % 59
++    r2 r16 <b,,, b' fis''>16 r4. | \barNumberCheck #60
+     r4 r16 a8 r2 r16 | % 61
+-    r2 r16 b8 r4 r16 | % 62
++    r2 r16 \stemUp <b b'>16 [ \stemUp b16 ] r4 r16 | % 62
+     r2 r8. e16 \stemDown <e b'>16 [ \stemDown b''16 ] r8 | % 63
+     r2 r8 \stemDown <b, fis'' b>16 [ \stemDown b16 ] \stemDown <b, b'>16
+-    [ \stemDown <b fis''' b>16 ] r8 | % 64
+-    r4 r16 \stemUp <a a' a''>16 [ \stemUp a16 ] r2 r16 | % 65
+-    r2 r16 \stemDown <d d''>16 [ \stemDown d16 \stemDown a'''8 ] d,,,16
+-    r8 | % 66
++    [ \stemDown <b fis''' b>16 ] r16 <e'' a>16 | % 64
++    r4 r16 \stemUp <a,,, a' a''>16 [ \stemUp a16 ] r2 r16 | % 65
++    r2 r16 \stemDown <d d'' fis>16 [ \stemDown d16 \stemDown a'''8 ]
++    <d,,, a'' fis'>16 r8 | % 66
+     r16 fis'16 r2.. | % 67
+-    r4 r16 <e, g'>8. \stemDown e16 [ \stemDown <e b''>8. ] r8 <d fis'>8
+-    | % 68
++    r4 r16 <e, g'>8. \stemDown e16 [ \stemDown <e b''>8. ] r16 \stemDown
++    b'16 [ \stemDown <d, fis'>8 ] | % 68
+     \stemDown <d fis'>16 [ \stemDown <d b''>16 \stemDown b''16 ] r8
+-    \stemUp a,,16 [ \stemUp <a cis'>8. ] \stemDown cis'8 [ \stemDown <b,
+-        b' d>8 ] \stemUp <b d'>8 [ \stemUp <b b' d>16 ] | % 69
++    \stemUp <a,, a'>16 [ \stemUp <a cis'>8 ] \stemUp <a a' cis>16 [
++    \stemUp cis'8 \stemUp <b, b' d>8 ] \stemUp <b d'>8 [ \stemUp <b b'
++        d>16 ] | % 69
+     \stemUp <b d'>8 [ \stemUp d'8 ] r16 <e, g'>8. \stemDown e16 [
+     \stemDown <e b''>8. ] \stemDown b'16 [ \stemDown <d, fis'>8. ] |
+     \barNumberCheck #70
+@@ -462,24 +492,27 @@ PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourN
+         d>8. [ \stemUp <b d'>16 ] | % 71
+     <b d'>8 r8. \stemDown b'16 [ \stemDown <e, b'>16 \stemDown b'16 ] <b
+         b'>4 r16 \stemUp <d, d' fis>16 [ \stemUp <d a' d fis>8 ] | % 72
+-    \stemDown d16 [ \stemDown <b b''>16 ] r8. <a cis'>4 r8 <b b' d>4 ~ ~
+-    ~ <b b' d>16 | % 73
++    \stemDown d16 [ \stemDown <b b''>16 ] r8. \stemUp <a e' cis'>16 [
++    \stemUp <a cis' e>16 \stemUp <a cis'>8 ] r8 <b b' d>4 ~ ~ ~ <b b' d>16
++    | % 73
+     \stemUp <b d'>16 [ \stemUp d'16 ] r8. <g,, g' b>8. b'8 r8 \stemUp a,16
+     [ \stemUp <a e' a cis>16 \stemUp <a cis'>8 ] | % 74
+     <a cis'>16 r8. \stemUp <e g' b>16 [ \stemUp <e b' g' b>8 \stemUp <e
+         g' b>16 ] \stemUp <e e' g b>16 [ \stemUp <e g' b>8 \stemUp <e b'
+         g' b>16 ] <e e' g b>4 | % 75
+     r2 r16 b'8. r4 | % 76
+-    r4. \stemDown b'16 [ \stemDown d16 ] r16 b'16 r16 b,16 b'16 r16 b,16
+-    r16 | % 77
++    r4. \stemDown b'16 [ \stemDown d16 ] r16 b'16 r16 b,16 b'16 r16
++    <fis, b>16 r16 | % 77
+     r16 b'8. e,,,8. r8 \stemDown b''16 [ \stemDown <b, e b'>16 ] r4 r16
+     | % 78
+-    R1*2 | \barNumberCheck #80
+-    r16 a8 r8. d'16 r8. b16 r4 e,16 | % 81
++    R1 | % 79
++    r2 d''16 r4.. | \barNumberCheck #80
++    r16 \stemUp a,,16 [ \stemUp <a a'>16 ] r8. d'16 r16 e,16 r16 b'16 r4
++    e,16 | % 81
+     e16 r2... | % 82
+-    r16 a,8 r2 r4 r16 }
++    r16 a,8 r2 r16 gis''16 r8. }
+ 
+-PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne = 
++PartPNineeaNinebeeZeroSevenNineNineFourSixfaFiveeaZeroTwoNineFivedZeroSevenZeroZeroFiveZeroFiveSixZeroVoiceOne = 
+ \relative e, {
+     \clef "bass_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
+     \tempo 4=96 R1*11 | % 12
+@@ -546,7 +579,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+ \score {
+     <<
+         
+-        \context ChordNames = "PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords" { \PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords}
++        \context ChordNames = "PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOneChords" { \PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOneChords}
+         \new Staff
+         <<
+             \set Staff.instrumentName = "Vocals"
+@@ -554,7 +587,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne" {  \PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne }
++                \context Voice = "PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOne" {  \PartPThreeebfOneOneZeroTwofTwoOneZeroEightSevenNineFivecEightfTwoNineSevenSevenfSevendbZeroNineThreeOnefVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -564,7 +597,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne" {  \PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne }
++                \context Voice = "PartPbOneTwoFiveThreeSixTwoSixeSevenOneNineTwoThreebfTwoFiveaFiveNinefFivecOneFiveSixThreeSixaSeveneVoiceOne" {  \PartPbOneTwoFiveThreeSixTwoSixeSevenOneNineTwoThreebfTwoFiveaFiveNinefFivecOneFiveSixThreeSixaSeveneVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -574,7 +607,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne" {  \PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne }
++                \context Voice = "PartPcFourecFouraeSixTwoSixdNineeSevenEightFiveNineTwoNinedFourFiveSixSixEightSixFiveNineSixaacVoiceOne" {  \PartPcFourecFouraeSixTwoSixdNineeSevenEightFiveNineTwoNinedFourFiveSixSixEightSixFiveNineSixaacVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -584,7 +617,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne" {  \PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne }
++                \context Voice = "PartPFiveZerocEightOneOneeSevenZeroOneTwoOneSixSevencFiveThreeOneeSevendeThreecdSevenfeSixOneFourZeroVoiceOne" {  \PartPFiveZerocEightOneOneeSevenZeroOneTwoOneSixSevencFiveThreeOneeSevendeThreecdSevenfeSixOneFourZeroVoiceOne }
+                 >>
+             >>
+         \new Staff
+@@ -594,7 +627,7 @@ PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeN
+             
+             \context Staff << 
+                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
+-                \context Voice = "PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne" {  \PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne }
++                \context Voice = "PartPNineeaNinebeeZeroSevenNineNineFourSixfaFiveeaZeroTwoNineFivedZeroSevenZeroZeroFiveZeroFiveSixZeroVoiceOne" {  \PartPNineeaNinebeeZeroSevenNineNineFourSixfaFiveeaZeroTwoNineFivedZeroSevenZeroZeroFiveZeroFiveSixZeroVoiceOne }
+                 >>
+             >>
+         
+diff --git a/Haunted.musicxml b/Haunted.musicxml
+index 524946c..93ef246 100644
+--- a/Haunted.musicxml
++++ b/Haunted.musicxml
+@@ -19,69 +19,69 @@
+     </scaling>
+   </defaults>
+   <part-list>
+-    <score-part id="P2c02a6d07020e4a9278b468ff59e58e2">
++    <score-part id="P3ebf1102f2108795c8f2977f7db0931f">
+       <part-name>Vocals</part-name>
+       <part-abbreviation>Voca</part-abbreviation>
+-      <score-instrument id="I2edef5ce82a251013ee74faa74bf6036">
++      <score-instrument id="I61dbb5846224ea967c073e8fcca1e4aa">
+         <instrument-name>Voice</instrument-name>
+         <instrument-abbreviation>V</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I2edef5ce82a251013ee74faa74bf6036">
++      <midi-instrument id="I61dbb5846224ea967c073e8fcca1e4aa">
+         <midi-channel>1</midi-channel>
+         <midi-program>54</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P43e4d80eca6d3ffd37aa918ea68ee2a8">
++    <score-part id="Pb1253626e71923bf25a59f5c15636a7e">
+       <part-name>Piano RH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="I2ed0dd71db1042464f4615ca2341644e">
++      <score-instrument id="I386a8b6fc55490205222e7bd1c9e0d16">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I2ed0dd71db1042464f4615ca2341644e">
++      <midi-instrument id="I386a8b6fc55490205222e7bd1c9e0d16">
+         <midi-channel>2</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P084b3c56e3345b1b368b7626fa2497db">
++    <score-part id="Pc4ec4ae626d9e785929d456686596aac">
+       <part-name>Piano LH</part-name>
+       <part-abbreviation>Pian</part-abbreviation>
+-      <score-instrument id="Iaf8c36607a131243735035212b3a477b">
++      <score-instrument id="I63b9b4e929a1c28de85dd250d6a7afb9">
+         <instrument-name>Piano</instrument-name>
+         <instrument-abbreviation>Pno</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="Iaf8c36607a131243735035212b3a477b">
++      <midi-instrument id="I63b9b4e929a1c28de85dd250d6a7afb9">
+         <midi-channel>3</midi-channel>
+         <midi-program>1</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="Pfcd82098a1ceee11e4a5aa126646a491">
++    <score-part id="P50c811e7012167c531e7de3cd7fe6140">
+       <part-name>Guitar</part-name>
+       <part-abbreviation>Guit</part-abbreviation>
+-      <score-instrument id="I4e39dcacd794578fb06787290ea6ec10">
++      <score-instrument id="I58c27d00320934168f00d4f91cf1e305">
+         <instrument-name>Acoustic Guitar</instrument-name>
+         <instrument-abbreviation>Ac Gtr</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="I4e39dcacd794578fb06787290ea6ec10">
++      <midi-instrument id="I58c27d00320934168f00d4f91cf1e305">
+         <midi-channel>4</midi-channel>
+         <midi-program>25</midi-program>
+       </midi-instrument>
+     </score-part>
+-    <score-part id="P03853ef83d3dd2bd366e8539a0a8350c">
++    <score-part id="P9ea9bee079946fa5ea0295d070050560">
+       <part-name>Bass</part-name>
+       <part-abbreviation>Bass</part-abbreviation>
+-      <score-instrument id="Ieac239cf0ad153e1b4434ed313d5b05d">
++      <score-instrument id="Id9689163bf5d09beb32b3ae2cec35d7a">
+         <instrument-name>Electric Bass</instrument-name>
+         <instrument-abbreviation>Elec b</instrument-abbreviation>
+       </score-instrument>
+-      <midi-instrument id="Ieac239cf0ad153e1b4434ed313d5b05d">
++      <midi-instrument id="Id9689163bf5d09beb32b3ae2cec35d7a">
+         <midi-channel>5</midi-channel>
+         <midi-program>34</midi-program>
+       </midi-instrument>
+     </score-part>
+   </part-list>
+   <!--=========================== Part 1 ===========================-->
+-  <part id="P2c02a6d07020e4a9278b468ff59e58e2">
++  <part id="P3ebf1102f2108795c8f2977f7db0931f">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -4139,7 +4139,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 2 ===========================-->
+-  <part id="P43e4d80eca6d3ffd37aa918ea68ee2a8">
++  <part id="Pb1253626e71923bf25a59f5c15636a7e">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -7936,7 +7936,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 3 ===========================-->
+-  <part id="P084b3c56e3345b1b368b7626fa2497db">
++  <part id="Pc4ec4ae626d9e785929d456686596aac">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -10041,7 +10041,7 @@
+     </measure>
+   </part>
+   <!--=========================== Part 4 ===========================-->
+-  <part id="Pfcd82098a1ceee11e4a5aa126646a491">
++  <part id="P50c811e7012167c531e7de3cd7fe6140">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+@@ -10078,11 +10078,21 @@
+         <duration>7560</duration>
+         <type>eighth</type>
+         <dot />
++        <stem>down</stem>
++        <beam number="1">begin</beam>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>C</step>
++          <alter>0</alter>
++          <octave>4</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>natural</accidental>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -10095,6 +10105,15 @@
+         <beam number="1">begin</beam>
+         <beam number="2">begin</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>G</step>
+@@ -10129,10 +10148,40 @@
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -10140,8 +10189,8 @@
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -10333,6 +10382,7 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>sharp</accidental>
+       </note>
+       <note>
+         <pitch>
+@@ -10351,17 +10401,79 @@
+           <step>B</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+         <beam number="1">begin</beam>
+       </note>
+@@ -10371,9 +10483,37 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -10384,7 +10524,7 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -10629,8 +10769,38 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -10639,6 +10809,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -10785,11 +10958,10 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <chord />
+@@ -10798,9 +10970,38 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 5 ==========================-->
+@@ -10836,6 +11037,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>G</step>
+@@ -10939,14 +11149,45 @@
+       </note>
+       <note>
+         <pitch>
+-          <step>C</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
++          <step>A</step>
++          <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
+-        <stem>down</stem>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
+         <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -10955,9 +11196,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
++        <stem>up</stem>
+         <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -11340,9 +11581,34 @@
+           <step>B</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>15120</duration>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>10080</duration>
+         <type>quarter</type>
+-        <dot />
+       </note>
+       <note>
+         <chord />
+@@ -11350,11 +11616,63 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>15120</duration>
++        <duration>10080</duration>
+         <type>quarter</type>
+-        <dot />
+       </note>
+       <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <alter>-1</alter>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>flat</accidental>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>D</step>
+           <octave>4</octave>
+@@ -11528,6 +11846,17 @@
+         <beam number="1">continue</beam>
+         <beam number="2">end</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>0</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>natural</accidental>
++      </note>
+       <note>
+         <pitch>
+           <step>G</step>
+@@ -11562,10 +11891,12 @@
+         <chord />
+         <pitch>
+           <step>B</step>
++          <alter>0</alter>
+           <octave>3</octave>
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <accidental>natural</accidental>
+       </note>
+       <note>
+         <pitch>
+@@ -11761,15 +12092,47 @@
+     <!--========================= Measure 10 =========================-->
+     <measure implicit="no" number="10">
+       <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
+-        <stem>down</stem>
+-        <beam number="1">begin</beam>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>sharp</accidental>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -11778,7 +12141,7 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
++        <stem>up</stem>
+         <beam number="1">continue</beam>
+         <beam number="2">begin</beam>
+       </note>
+@@ -11799,7 +12162,7 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
++        <stem>up</stem>
+         <beam number="1">end</beam>
+         <beam number="2">end</beam>
+       </note>
+@@ -11962,8 +12325,11 @@
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -11971,8 +12337,37 @@
+           <step>G</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -12041,7 +12436,7 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">continue</beam>
+-        <beam number="2">continue</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -12060,16 +12455,18 @@
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>up</stem>
+-        <beam number="1">end</beam>
+-        <beam number="2">end</beam>
++        <beam number="1">continue</beam>
++        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <pitch>
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -12077,31 +12474,156 @@
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-      </note>
+-    </measure>
+-    <!--========================= Measure 12 =========================-->
+-    <measure implicit="no" number="12">
+-      <note>
+-        <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+           <step>G</step>
+-          <octave>4</octave>
++          <octave>3</octave>
+         </pitch>
+-        <duration>15120</duration>
+-        <type>quarter</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++    </measure>
++    <!--========================= Measure 12 =========================-->
++    <measure implicit="no" number="12">
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -12143,9 +12665,15 @@
+     <!--========================= Measure 13 =========================-->
+     <measure implicit="no" number="13">
+       <note>
+-        <rest />
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -12154,6 +12682,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -12253,9 +12784,30 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -12275,20 +12827,61 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+           <step>G</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>15120</duration>
+-        <type>quarter</type>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
+         <dot />
++        <stem>down</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -12372,20 +12965,50 @@
+     <measure implicit="no" number="15">
+       <note>
+         <rest />
+-        <duration>5040</duration>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>7560</duration>
+         <type>eighth</type>
++        <dot />
++        <stem>up</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>20160</duration>
+-        <tie type="start" />
+-        <type>half</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -12393,25 +13016,128 @@
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+-        <tie type="stop" />
+         <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 16 =========================-->
+@@ -12422,17 +13148,51 @@
+         <type>16th</type>
+       </note>
+       <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>G</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -12441,6 +13201,8 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -12539,17 +13301,48 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -12558,8 +13351,17 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -12571,7 +13373,7 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -12638,20 +13440,102 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 18 =========================-->
+     <measure implicit="no" number="18">
+       <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>17640</duration>
+-        <type>quarter</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
+         <dot />
+       </note>
+       <note>
+@@ -12734,9 +13618,8 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+         <beam number="1">begin</beam>
+       </note>
+@@ -12747,9 +13630,39 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -12761,13 +13674,28 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
++        <beam number="2">end</beam>
+       </note>
+     </measure>
+     <!--========================= Measure 19 =========================-->
+     <measure implicit="no" number="19">
+       <note>
+-        <rest />
++        <pitch>
++          <step>E</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+@@ -12779,7 +13707,7 @@
+         <duration>5040</duration>
+         <type>eighth</type>
+         <stem>up</stem>
+-        <beam number="1">begin</beam>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -12979,8 +13907,26 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>30240</duration>
+-        <type>half</type>
++        <duration>10080</duration>
++        <type>quarter</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>15120</duration>
++        <type>quarter</type>
+         <dot />
+       </note>
+     </measure>
+@@ -13168,14 +14114,85 @@
+       </note>
+       <note>
+         <pitch>
+-          <step>F</step>
+-          <alter>1</alter>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">begin</beam>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -13183,39 +14200,39 @@
+           <step>D</step>
+           <octave>5</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+-          <step>A</step>
+-          <octave>3</octave>
++          <step>D</step>
++          <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">continue</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+-        <chord />
+         <pitch>
+           <step>D</step>
+-          <octave>5</octave>
++          <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+           <step>D</step>
+           <octave>5</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
+-        <stem>down</stem>
+-        <beam number="1">end</beam>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -13224,6 +14241,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -13266,6 +14286,15 @@
+         <beam number="1">continue</beam>
+         <beam number="2">begin</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -13414,10 +14443,18 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -13441,10 +14478,18 @@
+     </measure>
+     <!--========================= Measure 24 =========================-->
+     <measure implicit="no" number="24">
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -13474,6 +14519,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>B</step>
+@@ -13512,8 +14566,31 @@
+           <step>D</step>
+           <octave>5</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -13558,22 +14635,55 @@
+         <duration>5040</duration>
+         <type>eighth</type>
+         <stem>down</stem>
++        <beam number="1">continue</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
+         <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>down</stem>
+         <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -13584,7 +14694,7 @@
+         <type>16th</type>
+         <stem>down</stem>
+         <beam number="1">end</beam>
+-        <beam number="2">backward hook</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -13651,8 +14761,22 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 26 =========================-->
+@@ -13664,47 +14788,136 @@
+       </note>
+       <note>
+         <pitch>
+-          <step>B</step>
+-          <octave>3</octave>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <pitch>
+-          <step>B</step>
+-          <octave>3</octave>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">continue</beam>
+         <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+         <pitch>
+-          <step>D</step>
+-          <octave>4</octave>
++          <step>E</step>
++          <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+-          <step>D</step>
+-          <octave>4</octave>
++          <step>G</step>
++          <alter>1</alter>
++          <octave>5</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
+-      </note>
+-      <note>
+-        <rest />
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>sharp</accidental>
+       </note>
+       <note>
+         <pitch>
+@@ -13712,8 +14925,11 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -13721,8 +14937,8 @@
+           <step>E</step>
+           <octave>5</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -13731,6 +14947,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -13740,10 +14959,12 @@
+       <note>
+         <pitch>
+           <step>G</step>
++          <alter>0</alter>
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>natural</accidental>
+       </note>
+       <note>
+         <rest />
+@@ -13765,6 +14986,18 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -13776,18 +15009,20 @@
+         <type>16th</type>
+       </note>
+       <note>
+-        <chord />
+         <pitch>
+-          <step>B</step>
++          <step>A</step>
+           <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -13808,13 +15043,19 @@
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">continue</beam>
+         <beam number="2">end</beam>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -13823,6 +15064,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -13866,6 +15110,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -13907,13 +15160,25 @@
+           <step>E</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+-        <rest />
+-        <duration>20160</duration>
+-        <type>half</type>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -13921,6 +15186,21 @@
+         <type>eighth</type>
+         <dot />
+       </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>17640</duration>
++        <type>quarter</type>
++        <dot />
++        <dot />
++      </note>
+     </measure>
+     <!--========================= Measure 30 =========================-->
+     <measure implicit="no" number="30">
+@@ -14004,6 +15284,37 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+         <duration>20160</duration>
+@@ -14011,9 +15322,8 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 31 =========================-->
+@@ -14051,11 +15361,31 @@
+     <measure implicit="no" number="32">
+       <note>
+         <rest />
+-        <duration>37800</duration>
++        <duration>30240</duration>
+         <type>half</type>
+         <dot />
+-        <dot />
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+         <pitch>
+@@ -14068,10 +15398,19 @@
+     </measure>
+     <!--========================= Measure 33 =========================-->
+     <measure implicit="no" number="33">
++      <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -14149,6 +15488,15 @@
+         <type>16th</type>
+       </note>
+       <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>E</step>
+           <octave>4</octave>
+@@ -14275,10 +15623,12 @@
+       <note>
+         <pitch>
+           <step>B</step>
++          <alter>-1</alter>
+           <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>flat</accidental>
+         <stem>up</stem>
+         <beam number="1">end</beam>
+         <beam number="2">backward hook</beam>
+@@ -14287,10 +15637,23 @@
+         <chord />
+         <pitch>
+           <step>B</step>
++          <alter>0</alter>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>natural</accidental>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <alter>0</alter>
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>natural</accidental>
+       </note>
+       <note>
+         <chord />
+@@ -14338,10 +15701,31 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -14351,6 +15735,8 @@
+         <duration>7560</duration>
+         <type>eighth</type>
+         <dot />
++        <stem>up</stem>
++        <beam number="1">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -14364,9 +15750,17 @@
+         <dot />
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>C</step>
++          <alter>0</alter>
++          <octave>4</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>natural</accidental>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -14657,13 +16051,38 @@
+         <type>16th</type>
+       </note>
+       <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>sharp</accidental>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -14868,7 +16287,7 @@
+         <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -14884,9 +16303,46 @@
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+         <beam number="1">end</beam>
+       </note>
+@@ -14896,9 +16352,8 @@
+           <step>G</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <chord />
+@@ -14906,9 +16361,8 @@
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+     </measure>
+     <!--========================= Measure 39 =========================-->
+@@ -14918,10 +16372,11 @@
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -14929,8 +16384,38 @@
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15040,6 +16525,15 @@
+         <beam number="1">end</beam>
+         <beam number="2">end</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -15077,9 +16571,40 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15147,14 +16672,27 @@
+       <note>
+         <pitch>
+           <step>B</step>
++          <alter>-1</alter>
+           <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>flat</accidental>
+         <stem>down</stem>
+         <beam number="1">end</beam>
+         <beam number="2">backward hook</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <alter>0</alter>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>natural</accidental>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -15174,11 +16712,69 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+-        <stem>up</stem>
+-        <beam number="1">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -15187,20 +16783,19 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <pitch>
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -15208,9 +16803,8 @@
+           <step>A</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -15219,9 +16813,18 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15230,6 +16833,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -15270,11 +16876,10 @@
+           <step>G</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <chord />
+@@ -15282,9 +16887,37 @@
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 41 =========================-->
+@@ -15385,6 +17018,16 @@
+         <beam number="1">continue</beam>
+         <beam number="2">continue</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>B</step>
+@@ -15529,11 +17172,52 @@
+           <step>D</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>up</stem>
+         <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15736,9 +17420,40 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15805,8 +17520,99 @@
+       </note>
+       <note>
+         <pitch>
+-          <step>G</step>
+-          <octave>4</octave>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
++        <stem>up</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+@@ -15815,71 +17621,63 @@
+         <beam number="2">end</beam>
+       </note>
+       <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
+-      </note>
+-      <note>
++        <chord />
+         <pitch>
+-          <step>D</step>
++          <step>A</step>
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+-          <step>F</step>
++          <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+-      <note>
+-        <rest />
+-        <duration>2520</duration>
+-        <type>16th</type>
+-      </note>
+       <note>
+         <pitch>
+-          <step>D</step>
+-          <octave>3</octave>
++          <step>A</step>
++          <octave>2</octave>
+         </pitch>
+-        <duration>2520</duration>
+-        <type>16th</type>
++        <duration>5040</duration>
++        <type>eighth</type>
+         <stem>up</stem>
+         <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+-          <step>F</step>
++          <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+-        <stem>up</stem>
+-        <beam number="1">end</beam>
+       </note>
+       <note>
+         <pitch>
+-          <step>C</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
++          <step>A</step>
++          <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+           <step>A</step>
+-          <octave>2</octave>
++          <octave>3</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -15888,8 +17686,8 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -15899,6 +17697,9 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+     </measure>
+     <!--========================= Measure 45 =========================-->
+@@ -15947,10 +17748,27 @@
+         <stem>down</stem>
+         <beam number="1">end</beam>
+       </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -16032,15 +17850,37 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>F</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++        <stem>up</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -16259,8 +18099,32 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
++        <stem>down</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -16325,14 +18189,14 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+       </note>
+       <note>
+         <pitch>
+-          <step>B</step>
+-          <octave>3</octave>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+@@ -16340,6 +18204,25 @@
+         <beam number="1">begin</beam>
+         <beam number="2">begin</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>B</step>
+@@ -16349,7 +18232,18 @@
+         <type>16th</type>
+         <stem>down</stem>
+         <beam number="1">continue</beam>
+-        <beam number="2">continue</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -16381,65 +18275,152 @@
+         <type>16th</type>
+       </note>
+       <note>
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
++        <stem>up</stem>
++        <beam number="1">end</beam>
+       </note>
+     </measure>
+     <!--========================= Measure 50 =========================-->
+     <measure implicit="no" number="50">
+       <note>
+         <pitch>
+-          <step>G</step>
++          <step>G</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
+           <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>up</stem>
++        <stem>down</stem>
+         <beam number="1">begin</beam>
+         <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <chord />
+         <pitch>
+-          <step>B</step>
++          <step>A</step>
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+-          <step>A</step>
+-          <octave>3</octave>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
+-        <stem>up</stem>
++        <stem>down</stem>
+         <beam number="1">continue</beam>
+       </note>
+       <note>
+         <pitch>
+-          <step>A</step>
+-          <octave>3</octave>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
+-        <stem>up</stem>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
+         <beam number="1">end</beam>
++        <beam number="2">backward hook</beam>
+       </note>
+       <note>
+         <chord />
+         <pitch>
+           <step>C</step>
+           <alter>1</alter>
+-          <octave>4</octave>
++          <octave>5</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -16447,8 +18428,11 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -16458,8 +18442,8 @@
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>up</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="1">continue</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -16565,7 +18549,7 @@
+       <note>
+         <pitch>
+           <step>E</step>
+-          <octave>3</octave>
++          <octave>2</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+@@ -16573,6 +18557,15 @@
+         <beam number="1">continue</beam>
+         <beam number="2">continue</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -16646,6 +18639,15 @@
+         <beam number="1">begin</beam>
+         <beam number="2">forward hook</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -16691,6 +18693,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -16746,17 +18757,34 @@
+         <type>quarter</type>
+       </note>
+       <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>C</step>
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <tie type="start" />
+-        <type>quarter</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -16764,12 +18792,43 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
+         <duration>2520</duration>
+-        <tie type="stop" />
+         <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -16797,16 +18856,21 @@
+     <!--========================= Measure 53 =========================-->
+     <measure implicit="no" number="53">
+       <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <tie type="start" />
+-        <type>quarter</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -16814,24 +18878,16 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <tie type="start" />
+-        <type>quarter</type>
+-        <notations>
+-          <tied type="start" />
+-        </notations>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>2520</duration>
+-        <tie type="stop" />
+-        <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <chord />
+@@ -16839,12 +18895,8 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>2520</duration>
+-        <tie type="stop" />
+-        <type>16th</type>
+-        <notations>
+-          <tied type="stop" />
+-        </notations>
++        <duration>10080</duration>
++        <type>quarter</type>
+       </note>
+       <note>
+         <pitch>
+@@ -17003,14 +19055,79 @@
+       </note>
+       <note>
+         <pitch>
+-          <step>A</step>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
++      <note>
++        <rest />
++        <duration>10080</duration>
++        <type>quarter</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
+           <octave>3</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>down</stem>
+         <beam number="1">continue</beam>
+-        <beam number="2">forward hook</beam>
++        <beam number="2">continue</beam>
+       </note>
+       <note>
+         <chord />
+@@ -17024,22 +19141,22 @@
+       <note>
+         <chord />
+         <pitch>
+-          <step>F</step>
+-          <alter>1</alter>
+-          <octave>4</octave>
++          <step>A</step>
++          <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+-          <step>A</step>
++          <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>down</stem>
+         <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -17047,35 +19164,37 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+-        <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
++        <chord />
+         <pitch>
+-          <step>B</step>
+-          <octave>3</octave>
++          <step>A</step>
++          <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">end</beam>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
+       </note>
+       <note>
+         <chord />
+@@ -17083,9 +19202,8 @@
+           <step>D</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -17093,9 +19211,8 @@
+           <step>A</step>
+           <octave>5</octave>
+         </pitch>
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -17105,8 +19222,8 @@
+         <duration>2520</duration>
+         <type>16th</type>
+         <stem>down</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">begin</beam>
++        <beam number="1">continue</beam>
++        <beam number="2">continue</beam>
+       </note>
+       <note>
+         <chord />
+@@ -17166,6 +19283,25 @@
+         <beam number="1">begin</beam>
+         <beam number="2">begin</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>D</step>
+@@ -17250,8 +19386,31 @@
+           <step>G</step>
+           <octave>4</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>G</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -17506,6 +19665,15 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <chord />
+         <pitch>
+@@ -17583,6 +19751,40 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>G</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <alter>-1</alter>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>flat</accidental>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+         <duration>20160</duration>
+@@ -17590,9 +19792,8 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 58 =========================-->
+@@ -17613,11 +19814,38 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>35280</duration>
+-        <type>half</type>
+-        <dot />
++        <duration>15120</duration>
++        <type>quarter</type>
+         <dot />
+       </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <alter>0</alter>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <accidental>natural</accidental>
++      </note>
++      <note>
++        <rest />
++        <duration>10080</duration>
++        <type>quarter</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>5040</duration>
++        <type>eighth</type>
++      </note>
+     </measure>
+     <!--========================= Measure 59 =========================-->
+     <measure implicit="no" number="59">
+@@ -17648,6 +19876,16 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+         <duration>15120</duration>
+@@ -17703,8 +19941,31 @@
+           <step>B</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
+       </note>
+       <note>
+         <rest />
+@@ -17880,8 +20141,25 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+     </measure>
+     <!--========================= Measure 64 =========================-->
+@@ -17966,14 +20244,24 @@
+         </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
+-        <stem>down</stem>
+-        <beam number="1">begin</beam>
+-        <beam number="2">forward hook</beam>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+         <pitch>
+-          <step>D</step>
++          <step>F</step>
++          <alter>1</alter>
+           <octave>5</octave>
+         </pitch>
+         <duration>2520</duration>
+@@ -18008,6 +20296,25 @@
+         <duration>2520</duration>
+         <type>16th</type>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <rest />
+         <duration>5040</duration>
+@@ -18103,8 +20410,19 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>B</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>down</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -18113,6 +20431,8 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
++        <stem>down</stem>
++        <beam number="1">end</beam>
+       </note>
+       <note>
+         <chord />
+@@ -18195,14 +20515,22 @@
+         <beam number="1">begin</beam>
+         <beam number="2">forward hook</beam>
+       </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
+       <note>
+         <pitch>
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
+         <stem>up</stem>
+         <beam number="1">end</beam>
+       </note>
+@@ -18213,9 +20541,38 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>7560</duration>
++        <duration>5040</duration>
+         <type>eighth</type>
+-        <dot />
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -18225,8 +20582,8 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
+-        <stem>down</stem>
+-        <beam number="1">begin</beam>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
+       </note>
+       <note>
+         <pitch>
+@@ -18235,7 +20592,7 @@
+         </pitch>
+         <duration>5040</duration>
+         <type>eighth</type>
+-        <stem>down</stem>
++        <stem>up</stem>
+         <beam number="1">end</beam>
+       </note>
+       <note>
+@@ -18823,8 +21180,20 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <chord />
+@@ -18833,8 +21202,58 @@
+           <alter>1</alter>
+           <octave>4</octave>
+         </pitch>
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">continue</beam>
++        <beam number="2">forward hook</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>E</step>
++          <octave>4</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>C</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
++        <duration>5040</duration>
++        <type>eighth</type>
+       </note>
+       <note>
+         <rest />
+@@ -19428,6 +21847,16 @@
+         <type>16th</type>
+       </note>
+       <note>
++        <pitch>
++          <step>F</step>
++          <alter>1</alter>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <chord />
+         <pitch>
+           <step>B</step>
+           <octave>3</octave>
+@@ -19532,8 +21961,24 @@
+     <!--========================= Measure 79 =========================-->
+     <measure implicit="no" number="79">
+       <note>
+-        <rest measure="yes" />
+-        <duration>40320</duration>
++        <rest />
++        <duration>20160</duration>
++        <type>half</type>
++      </note>
++      <note>
++        <pitch>
++          <step>D</step>
++          <octave>5</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>17640</duration>
++        <type>quarter</type>
++        <dot />
++        <dot />
+       </note>
+     </measure>
+     <!--========================= Measure 80 =========================-->
+@@ -19548,8 +21993,31 @@
+           <step>A</step>
+           <octave>2</octave>
+         </pitch>
+-        <duration>5040</duration>
+-        <type>eighth</type>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">begin</beam>
++        <beam number="2">begin</beam>
++      </note>
++      <note>
++        <pitch>
++          <step>A</step>
++          <octave>2</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++        <stem>up</stem>
++        <beam number="1">end</beam>
++        <beam number="2">end</beam>
++      </note>
++      <note>
++        <chord />
++        <pitch>
++          <step>A</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <rest />
+@@ -19567,9 +22035,21 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>7560</duration>
+-        <type>eighth</type>
+-        <dot />
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <pitch>
++          <step>E</step>
++          <octave>3</octave>
++        </pitch>
++        <duration>2520</duration>
++        <type>16th</type>
++      </note>
++      <note>
++        <rest />
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+         <pitch>
+@@ -19634,18 +22114,29 @@
+       </note>
+       <note>
+         <rest />
+-        <duration>10080</duration>
+-        <type>quarter</type>
++        <duration>2520</duration>
++        <type>16th</type>
+       </note>
+       <note>
+-        <rest />
++        <pitch>
++          <step>G</step>
++          <alter>1</alter>
++          <octave>4</octave>
++        </pitch>
+         <duration>2520</duration>
+         <type>16th</type>
++        <accidental>sharp</accidental>
++      </note>
++      <note>
++        <rest />
++        <duration>7560</duration>
++        <type>eighth</type>
++        <dot />
+       </note>
+     </measure>
+   </part>
+   <!--=========================== Part 5 ===========================-->
+-  <part id="P03853ef83d3dd2bd366e8539a0a8350c">
++  <part id="P9ea9bee079946fa5ea0295d070050560">
+     <!--========================= Measure 1 ==========================-->
+     <measure implicit="no" number="1">
+       <attributes>
+diff --git a/Haunted.pdf b/Haunted.pdf
+index 591d53b..07df62a 100644
+Binary files a/Haunted.pdf and b/Haunted.pdf differ
+diff --git a/assemble_v4.py b/assemble_v4.py
+index 4fe52bd..a44f155 100644
+--- a/assemble_v4.py
++++ b/assemble_v4.py
+@@ -211,11 +211,15 @@ piano = chord_filter(piano, keep_velocity=75, min_len_16=1)
+ piano = cap_polyphony_by_onset(piano, max_voices=4)
+ piano = drop_shorts(piano, min_len_16=1)
+ 
++# Guitar: no chord_filter. Guitar parts are primarily rhythmic (strums,
++# arpeggios, picked eighth/sixteenth patterns), so most notes are 1 sixteenth
++# long. chord_filter's diatonic path required ≥2 sixteenths — it was dropping
++# 150+ legitimate strum/pick hits and flattening the part into a drone.
++# velocity_floor + cap_polyphony are enough to suppress cross-bleed noise.
+ guit_raw = load_stem_midi("guitar", premerge_gap_ms=80)
+ guit_raw = _snap_notes_to_onsets(guit_raw, "guitar")
+ guit = quantize(guit_raw, min_len_16=1, velocity_floor=35, pitch_lo=40, pitch_hi=84)
+ guit = merge_same_pitch(guit, gap_tol_16=1)
+-guit = chord_filter(guit, keep_velocity=85, min_len_16=1)
+ guit = cap_polyphony_by_onset(guit, max_voices=3)
+ guit = drop_shorts(guit, min_len_16=1)
+ 
+diff --git a/midi/Haunted_full.mid b/midi/Haunted_full.mid
+index 15127e6..3b7ffd5 100644
+Binary files a/midi/Haunted_full.mid and b/midi/Haunted_full.mid differ
+diff --git a/midi/combined.mid b/midi/combined.mid
+index 1afa99a..b9c818f 100644
+Binary files a/midi/combined.mid and b/midi/combined.mid differ
+diff --git a/run_experiment.py b/run_experiment.py
+index 1a53a56..4d0d4f8 100644
+--- a/run_experiment.py
++++ b/run_experiment.py
+@@ -175,6 +175,8 @@ def main():
+     ap.add_argument("--compare", help="previous run_id to diff metrics against")
+     ap.add_argument("--skip-assemble", action="store_true",
+                     help="reuse current Haunted.musicxml without rerunning pipeline")
++    ap.add_argument("--vocals-wav", type=Path, default=None,
++                    help="pass-through: RVC or other pre-rendered vocal WAV")
+     args = ap.parse_args()
+ 
+     today = date.today().isoformat()
+@@ -211,7 +213,10 @@ def main():
+ 
+     # 4. Evaluate
+     print("[4/5] running eval.py")
+-    run([PYTHON, "eval.py", str(run_dir / "Haunted.musicxml"), str(run_dir)])
++    eval_cmd = [PYTHON, "eval.py", str(run_dir / "Haunted.musicxml"), str(run_dir)]
++    if args.vocals_wav is not None:
++        eval_cmd += ["--vocals-wav", str(args.vocals_wav)]
++    run(eval_cmd)
+     metrics = json.loads((run_dir / "metrics.json").read_text())
+ 
+     # 5. Seed notes.md, append to INDEX.md

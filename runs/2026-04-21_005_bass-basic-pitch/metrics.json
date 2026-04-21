@@ -1,0 +1,54 @@
+{
+  "xml_path": "/Users/spyre/Documents/claude-cowork/music-transcription/runs/2026-04-21_005_bass-basic-pitch/Haunted.musicxml",
+  "soundfont": "assets/FluidR3.sf3",
+  "overall": 0.4721277132873276,
+  "per_stem": {
+    "vocals": {
+      "chroma_cosine": 0.9158360958099365,
+      "onset_f1": 0.19240506329113927,
+      "onset_f1_synth": 0.2523148148148148,
+      "note_f1": 0.02120141342756184,
+      "mel_l1": 0.5028894476410911,
+      "mel_l1_raw": 0.4098733365535736,
+      "composite": 0.5115332584087924
+    },
+    "piano": {
+      "chroma_cosine": 0.800093412399292,
+      "onset_f1": 0.13513513513513514,
+      "onset_f1_synth": 0.101010101010101,
+      "note_f1": 0.0155440414507772,
+      "mel_l1": 0.26946304424084905,
+      "mel_l1_raw": 0.313485324382782,
+      "composite": 0.4547046123157178
+    },
+    "guitar": {
+      "chroma_cosine": 0.7592204213142395,
+      "onset_f1": 0.32610744580584355,
+      "onset_f1_synth": 0.3474903474903475,
+      "note_f1": 0.03868471953578337,
+      "mel_l1": 0.39679953632906934,
+      "mel_l1_raw": 1.0300134420394897,
+      "composite": 0.4960306949636366
+    },
+    "bass": {
+      "chroma_cosine": 0.7137049436569214,
+      "onset_f1": 0.1702970297029703,
+      "onset_f1_synth": 0.15652173913043477,
+      "note_f1": 0.0196078431372549,
+      "mel_l1": 0.4275110261984112,
+      "mel_l1_raw": 0.3850143849849701,
+      "composite": 0.42624228746116355
+    },
+    "_mix": {
+      "chroma_cosine": 0.7836961150169373,
+      "onset_f1": 0.37786774628879893,
+      "onset_f1_synth": 0.35154394299287417,
+      "note_f1": NaN,
+      "mel_l1": 0.9367112638079719,
+      "mel_l1_raw": 0.8949586153030396,
+      "composite": 0.49561506109981557
+    }
+  },
+  "xml_valid": true,
+  "xml_issues": []
+}

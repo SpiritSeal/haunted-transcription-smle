@@ -1,0 +1,14 @@
+date: '2026-04-21'
+hypothesis: "Widen bass pitch range (B0-G4) + min_len=1 + no onset-snap \u2014 match\
+  \ 8dbcc0b bass"
+run_id: 2026-04-21_006_bass-wider
+script_shas:
+  analyze_grid.py: edf5237f8422
+  assemble_v4.py: 50d95bcd11ac
+  chord_detect.py: 991e95648d03
+  midi_utils.py: f377deaf076f
+  transcribe_drums.py: cb46f97c5320
+  transcribe_stems.py: 83096b09707f
+  transcribe_vocals_poly.py: 2a78aa1fa12e
+  vocal_harmony.py: e860d0d26fd2
+  vocal_melody.py: 794297b7c356

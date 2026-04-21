@@ -20,7 +20,8 @@ from music21 import (stream, note, chord as m21chord, meter, key,
                      tempo as m21tempo, metadata, instrument, clef, harmony,
                      duration as m21dur, pitch as m21pitch)
 
-MIDI_DIR = Path("midi")
+import os as _os_mid
+MIDI_DIR = Path(_os_mid.environ.get("MIDI_DIR", "midi"))
 
 # ---- grid ---------------------------------------------------------------
 grid = np.load("grid.npz", allow_pickle=True)
@@ -133,9 +134,11 @@ def load_stem_midi(name, premerge_gap_ms: float | None = None):
 # onsets before 16th quantization. Keeps pitch detection's notes but aligns
 # attacks with the real audio transients.
 import librosa as _lb
+import os as _os_early
+STEMS_DIR_PATH = Path(_os_early.environ.get("STEMS_DIR", "stems"))
 
 def _load_stem_onsets(stem_name: str) -> np.ndarray:
-    path = next(Path("stems").glob(f"*{stem_name}*.mp3"))
+    path = next(STEMS_DIR_PATH.glob(f"*{stem_name}*.mp3"))
     y, _ = _lb.load(str(path), sr=22050, mono=True)
     return np.asarray(_lb.onset.onset_detect(y=y, sr=22050, units="time",
                                              backtrack=True))
@@ -173,24 +176,35 @@ vox = quantize(_vox_snapped, min_len_16=1, velocity_floor=0,
 vox = merge_same_pitch(vox, gap_tol_16=2)
 vox = drop_shorts(vox, min_len_16=2)
 
-# Bass — prefer CREPE monophonic track when available (clean f0 contour),
-# fall back to basic-pitch. CREPE notes are already monophonic and high-
-# confidence, so skip chord_filter. Onset-snap to the bass stem's detected
-# onsets so note-start times land on real audio attacks (CREPE's f0-change
-# boundaries lag by 20-50ms).
+# Bass — basic-pitch polyphonic is preferred over CREPE monophonic for
+# pitch-class coverage. Retroactive eval of the pre-harness draft showed
+# bass chroma 0.920 with basic-pitch vs 0.739 with CREPE + onset-snap +
+# chord_filter; the stricter monophonic contour was losing octave doublings
+# and grace-note pitch-classes that basic-pitch was catching. Dropped
+# chord_filter too (same reasoning as guitar).
+# CREPE bass track is still produced by bass_melody.py but no longer used
+# here; set BASS_SRC=crepe to force it.
+import os as _os
+_bass_src = _os.environ.get("BASS_SRC", "basic_pitch")
 _bass_crepe = MIDI_DIR / "bass_crepe.mid"
-if _bass_crepe.exists():
+if _bass_src == "crepe" and _bass_crepe.exists():
     _pm = pretty_midi.PrettyMIDI(str(_bass_crepe))
     bass_raw = list(_pm.instruments[0].notes)
+    bass_raw = _snap_notes_to_onsets(bass_raw, "bass")
+    bass = quantize(bass_raw, min_len_16=2, velocity_floor=0,
+                    pitch_lo=28, pitch_hi=55)
     print("bass: using CREPE contour")
 else:
+    # Basic-pitch bass polyphonic + onset-snap. Winning config (run 005).
+    # Tried widening range (run 006/007) — hurts mel_L1 (more spurious
+    # high-pitch bass notes) without recovering chroma. Keep narrow
+    # E1–G3 range and min_len=2.
     bass_raw = load_stem_midi("bass")
-bass_raw = _snap_notes_to_onsets(bass_raw, "bass")
-bass = quantize(bass_raw, min_len_16=2, velocity_floor=0 if _bass_crepe.exists() else 30,
-                pitch_lo=28, pitch_hi=55)
+    bass_raw = _snap_notes_to_onsets(bass_raw, "bass")
+    bass = quantize(bass_raw, min_len_16=2, velocity_floor=30,
+                    pitch_lo=28, pitch_hi=55)
+    print("bass: using basic-pitch polyphonic")
 bass = merge_same_pitch(bass, gap_tol_16=2)
-if not _bass_crepe.exists():
-    bass = chord_filter(bass, keep_velocity=80, min_len_16=2)
 bass = drop_shorts(bass, min_len_16=2)
 
 # Piano: prefer MT3 (ismir2021, SOTA for polyphonic piano) when available,
@@ -207,17 +221,30 @@ else:
 piano_raw = _snap_notes_to_onsets(piano_raw, "piano")
 piano = quantize(piano_raw, min_len_16=1, velocity_floor=30, pitch_lo=33, pitch_hi=96)
 piano = merge_same_pitch(piano, gap_tol_16=1)
-piano = chord_filter(piano, keep_velocity=75, min_len_16=1)
+# Piano chord_filter removed (same reasoning as guitar in run 015):
+# piano plays arpeggios and passing tones that are 1-sixteenth diatonic —
+# the filter's "diatonic ≥ 2-16ths" rule was dropping legitimate notes.
+# cap_polyphony(4) + MT3's pre-filtering + velocity_floor are enough.
 piano = cap_polyphony_by_onset(piano, max_voices=4)
 piano = drop_shorts(piano, min_len_16=1)
 
-guit_raw = load_stem_midi("guitar", premerge_gap_ms=80)
-guit_raw = _snap_notes_to_onsets(guit_raw, "guitar")
-guit = quantize(guit_raw, min_len_16=1, velocity_floor=35, pitch_lo=40, pitch_hi=84)
-guit = merge_same_pitch(guit, gap_tol_16=1)
-guit = chord_filter(guit, keep_velocity=85, min_len_16=1)
+# Guitar: draft1 (git 8dbcc0b) pipeline verbatim. User rates draft1's
+# audio as "best so far by miles." Draft1 did *nothing* beyond
+# quantize-to-16ths + cap_polyphony(3). Our successive "improvements"
+# (silence-gate, onset-snap, pitch-range filter, premerge,
+# merge_same_pitch) all hurt — each drops or shifts real notes. The
+# simplest pipeline wins.
+_guit_draft1 = MIDI_DIR / "guitar_draft1.mid"
+if _guit_draft1.exists():
+    _pm_g = pretty_midi.PrettyMIDI(str(_guit_draft1))
+    guit_raw = [n for inst in _pm_g.instruments if not inst.is_drum
+                for n in inst.notes]
+    print(f"guitar: using draft1 basic-pitch verbatim ({len(guit_raw)} notes)")
+else:
+    guit_raw = load_stem_midi("guitar")
+guit = quantize(guit_raw, min_len_16=1, velocity_floor=35,
+                pitch_lo=0, pitch_hi=127)  # no pitch range filter
 guit = cap_polyphony_by_onset(guit, max_voices=3)
-guit = drop_shorts(guit, min_len_16=1)
 
 piano_rh = [n for n in piano if n[2] >= 60]
 piano_lh = [n for n in piano if n[2] <  60]
