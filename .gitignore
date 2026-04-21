@@ -9,3 +9,6 @@ assets/*.sf3
 
 # Per-run audio renders (WAVs are heavy) — keep MIDI/PDF/XML committed
 runs/*/audio/
+
+# Raw htdemucs output (24 MB/stem) — source of truth is stems/
+separated/

@@ -2,7 +2,8 @@
 import os, sys, time
 from pathlib import Path
 from basic_pitch.inference import predict_and_save
-from basic_pitch import ICASSP_2022_MODEL_PATH
+from basic_pitch import build_icassp_2022_model_path, FilenameSuffix
+ICASSP_2022_MODEL_PATH = build_icassp_2022_model_path(FilenameSuffix.onnx)
 
 STEMS_DIR = Path("stems")
 OUT_DIR = Path("midi")

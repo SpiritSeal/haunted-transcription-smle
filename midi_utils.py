@@ -81,7 +81,7 @@ def merge_tied_notes(notes, gap_ms: float = 80.0):
 
 # ---- rendering via fluidsynth ------------------------------------------
 
-DEFAULT_SF2 = Path("assets/soundfont.sf3")
+DEFAULT_SF2 = Path("assets/FluidR3.sf3")
 
 # For each score-part name, pick a GM percussion channel? No — we only have
 # pitched parts in the score; drums are in the playback midi only.
