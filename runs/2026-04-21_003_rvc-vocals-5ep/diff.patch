@@ -1,0 +1,42 @@
+diff --git a/eval.py b/eval.py
+index 72d57dd..2dfd4e8 100644
+--- a/eval.py
++++ b/eval.py
+@@ -212,7 +212,8 @@ def stem_note_ground_truth(stem_audio_path: Path, cache_dir: Path) -> pretty_mid
+ 
+ # ------------------------------------------------------------------ #
+ 
+-def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
++def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2,
++             vocals_wav: Path | None = None):
+     run_dir = Path(run_dir)
+     run_dir.mkdir(parents=True, exist_ok=True)
+     audio_dir = run_dir / "audio"
+@@ -231,6 +232,18 @@ def evaluate(xml_path: Path, run_dir: Path, sf2: Path = DEFAULT_SF2):
+     pm = musicxml_to_pm(xml_path)
+     track_wavs = render_per_track(pm, audio_dir, sf2=sf2)
+ 
++    # Optional: replace the Vocals-track WAV with an externally-rendered one
++    # (e.g., RVC voice-converted output).
++    if vocals_wav is not None and vocals_wav.exists():
++        import shutil
++        # Find the track whose name routes to the vocals stem
++        for track_name in list(track_wavs.keys()):
++            if TRACK_TO_STEM.get(track_name) == "vocals":
++                dst = track_wavs[track_name]
++                shutil.copy(str(vocals_wav), str(dst))
++                print(f"[eval] replaced {track_name} render with {vocals_wav}")
++                break
++
+     # 2. Group tracks by stem (RH + LH both map to piano stem).
+     by_stem: dict[str, list[str]] = {}
+     for track_name in track_wavs:
+@@ -375,5 +388,7 @@ if __name__ == "__main__":
+     ap.add_argument("xml", type=Path)
+     ap.add_argument("run_dir", type=Path)
+     ap.add_argument("--sf2", type=Path, default=DEFAULT_SF2)
++    ap.add_argument("--vocals-wav", type=Path, default=None,
++                    help="Override the vocal render with this WAV (e.g. RVC output)")
+     args = ap.parse_args()
+-    evaluate(args.xml, args.run_dir, args.sf2)
++    evaluate(args.xml, args.run_dir, args.sf2, vocals_wav=args.vocals_wav)

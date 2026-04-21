@@ -19,3 +19,10 @@ t5x_repo/
 
 # MT3 checkpoints (~165 MB each; re-downloadable via transcribe_mt3.py)
 assets/mt3_checkpoints/
+
+# RVC vendored sources (cloned; installed into .venv-rvc)
+rvc_repo/
+
+# RVC training data + logs (re-producible from stems/ + scripts)
+rvc_training/
+
