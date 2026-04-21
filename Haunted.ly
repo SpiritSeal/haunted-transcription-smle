@@ -7,7 +7,7 @@
     subtitle =  "Auto-transcribed"
     composer =  "smle (ft. Seann Bowe)"
     encodingsoftware =  "music21 v.9.9.1"
-    encodingdate =  "2026-04-20"
+    encodingdate =  "2026-04-21"
     }
 
 #(set-global-staff-size 20.0)
@@ -20,7 +20,7 @@
         autoBeaming = ##f
         }
     }
-PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOne = 
+PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne = 
 \relative d' {
     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 R1 | % 2
@@ -114,10 +114,9 @@ PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnec
     <d b' d>16 r2... | \barNumberCheck #80
     r4.. b'4 r4 b16 | % 81
     b16 r2... | % 82
-    r4 a8. r8 d,8 r8. d8 | % 83
-    R1*2 }
+    r4 a8. r8 d,8 r8. d8 }
 
-PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOneChords = 
+PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords = 
 \chordmode {
     | % 1
     b4:m a4 g4 b4:m s4*9 s8 s4 s16 s8 s8. | % 5
@@ -193,205 +192,129 @@ PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnec
     a16 s16*15 | \barNumberCheck #80
     b4..:m s4 s4 s16 | % 81
     g16 s16*15 | % 82
-    a4 s8. s8 s8 s8. s8 | % 83
-    }
+    a4 s8. s8 s8 s8. }
 
-PartPZerodaOneTwoTwoNinecaSixOneFourOneNineSixTwoFourEightfTwoeTwodNinecNineSixbFiveFiveThreeeVoiceOne = 
-\relative cis' {
+PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne = 
+\relative d''' {
     \clef "treble" \numericTimeSignature\time 4/4 \key b \minor | % 1
-    \tempo 4=96 r16 cis8 r2 r4 r16 | % 2
-    r8 cis16 r2 r4 r16 | % 3
-    r2. g'8. r16 | % 4
-    r8. d4 ~ d16 r8 d16 r4 r16 | % 5
-    r16 fis'16 r8. b,8. r2 | % 6
-    r16 cis,8 r16 d8 r8. d16 r4. | % 7
-    r4.. b'16 r2 | % 8
-    r4.. <d, d''>8 r4. cis16 | % 9
-    r2 <d d'>16 r8. d8. r16 | \barNumberCheck #10
-    r8. d16 \stemUp fis'8 [ \stemUp d,16 ] r16 \stemDown <fis fis'>16 [
-    \stemDown fis'16 ] r4. | % 11
-    r8. d,16 r8 fis'16 r4 r16 d,4 | % 12
-    r8. b''16 r4 g,16 r4 d16 r8 | % 13
-    a'16 r8 cis,16 r16 <a' cis>16 r8 e8 r4. | % 14
-    r4.. e''8 r4.. | % 15
-    R1 | % 16
-    r2 r8. d16 r4 | % 17
-    r2 d,,4 r8 <d d'>16 r16 | % 18
-    r4. d16 r4.. e8 | % 19
-    \stemDown <e g'>16 [ \stemDown g'16 ] r4 e8 r2 | \barNumberCheck #20
-    \stemUp <e, g>16 [ \stemUp <e g e' g>16 \stemUp <e g e'>16 \stemUp
-    <e e'>8 ] e8 r16 \stemUp <d a' d>8. [ \stemUp a'16 ] r4 | % 21
-    r4. d,4.. r8. | % 22
-    <e g>8. r4 <d fis>8 fis16 r4. | % 23
-    \stemUp d16 [ \stemUp <d fis>8 \stemUp d8 ] \stemUp <d fis>8 [
-    \stemUp d8 ] r4. g16 | % 24
-    g8. r4 fis8. r4 r16 cis16 | % 25
-    cis8. r8 d4 r8 d16 <cis cis'>8 r16 d16 | % 26
-    r4.. cis8. r4. | % 27
-    r4 r16 g'16 r2 r8 | % 28
-    r2 r16 fis'16 r4. | % 29
-    r8. b,8. r4 b4 r8 | \barNumberCheck #30
-    R1 | % 31
-    r8. b16 \stemUp d,16 [ \stemUp d'16 ] r4 r16 b16 r4 | % 32
-    r4.. g16 r2 | % 33
-    r8 b16 r2 r4 r16 | % 34
-    R1 | % 35
-    r2 r16 e,8. r4 | % 36
-    R1 | % 37
-    r2. d8. r16 | % 38
-    cis16 r4 fis16 r4. d16 r8. | % 39
-    r8 d16 r4.. b''16 r8 d,,16 r8 | \barNumberCheck #40
-    d8. r2 r4 r16 | % 41
-    r4 \stemUp d16 [ \stemUp <d d'>16 \stemUp d16 ] r2 fis'16 | % 42
-    fis8 r2 r8 b8. r16 | % 43
-    r4.. b16 r4 r16 \stemDown b16 [ \stemDown e,16 \stemDown g,16 ] | % 44
-    g8 r16 fis8 r4. cis4 r16 | % 45
-    r16 cis'16 d,4. r2 | % 46
-    R1 | % 47
-    r2 r8. <g e'>16 b16 r8. | % 48
-    e,8 r4 fis16 r16 \stemUp a16 [ \stemUp cis,16 ] r16 e8 cis8. ] | % 49
-    cis16 r8 d16 \stemDown b''16 [ \stemDown fis16 ] r4 \stemUp fis16 [
-    \stemUp d,16 ] r4 | \barNumberCheck #50
-    r2 r8 e4 r8 | % 51
-    r2 r16 \stemDown <g e'>8 [ \stemDown <e g e'>8. ] e8 ] | % 52
-    \stemUp e16 [ \stemUp <fis a d>16 \stemUp <d fis a d>16 \stemUp <d
-        a' d>16 ] <d a'>16 r2 r8 <d fis>16 | % 53
-    \stemUp <d fis>16 [ \stemUp d16 ] r4.. \stemUp g8 [ \stemUp <e g>16
-    ] \stemDown e16 [ \stemDown <e fis'>16 ] r8 | % 54
-    \stemUp fis8. [ \stemUp d16 ] r4 r16 <d fis>8. \stemUp d8 [ \stemUp
-    <d fis>8 ] | % 55
-    \stemUp d8 [ \stemUp <d fis>8 ] r4 g4 r4 | % 56
-    \stemUp <fis d'>16 [ \stemUp <d fis d'>8 \stemUp d16 ] r4 \stemUp
-    cis8. [ \stemUp <cis e>16 ] \stemUp <cis cis'>16 [ \stemUp e'16
-    \stemUp d,8 ] | % 57
-    d4 <d fis>16 r8. d16 r8. d16 r8. | % 58
-    cis4 r2. | % 59
-    R1*2 | % 61
-    r2. d'16 r8. | % 62
-    r2. \stemDown b16 [ \stemDown <d, b'>16 ] r8 | % 63
-    R1 | % 64
-    cis16 r2 r8 b'8 r8. | % 65
-    r8. b16 r2 a'16 r8. | % 66
-    r16 fis,16 r2 r8 d16 r8. | % 67
-    r2 r8 b'8 r8 fis8 | % 68
-    \stemUp fis16 [ \stemUp d16 \stemUp b'16 ] r2 r16 d,4 | % 69
-    d16 r2 b'8 r8 fis8 r16 | \barNumberCheck #70
-    r8. d16 r8 d2 r8 | % 71
-    r4 r16 g8 r4. fis8 r16 | % 72
-    R1*2 | % 74
-    r2 b'16 r4.. | % 75
-    r4 r16 d,8 r2 r16 | % 76
-    r2 b4 r4 | % 77
-    R1 | % 78
-    r4. a16 r2 r16 | % 79
-    r2 d16 r4.. | \barNumberCheck #80
-    r2 b8 r8. d,16 r8 | % 81
-    r2.. d16 r16 | % 82
-    r4 r16 \stemUp cis16 [ \stemUp a'16 ] r2 e16 | % 83
-    e8 r2.. | % 84
-    r16 e16 r2.. }
+    \tempo 4=96 R1*13 | % 14
+    r8 \stemDown <d fis>16 [ \stemDown e8 ] \stemDown <d e>16 [
+    \stemDown e16 \stemDown <e fis>16 ] \stemDown <d e b'>16 [ \stemDown
+    e8 \stemDown <b e>8 ] <b d e>16 r8 | % 15
+    \stemDown <g e' b'>16 [ \stemDown <g a e' b'>16 \stemDown <g b e>8.
+    ] r2 r8. | % 16
+    r2 r8. <b d>16 r8. d16 | % 17
+    d16 r2... | % 18
+    R1*4 | % 22
+    \stemDown <g,, b>16 [ \stemDown <g gis'>16 \stemDown <g g'' b c>16
+    \stemDown <g'' b c>16 ] e,16 r16 \stemDown e,16 [ \stemDown <fis
+        fis'>8 ] \stemUp <fis e''>16 [ \stemUp fis16 \stemUp a16 ] r8.
+    fis16 | % 23
+    \stemDown a'16 [ \stemDown fis16 \stemDown bes'16 \stemDown <fis a
+        bes>16 ] \stemUp <d,, fis'' a>16 [ \stemUp <d fis fis' fis' a>16
+    \stemUp fis'8 ] \stemDown <fis e'>16 [ \stemDown <fis, fis' e' a>8 ]
+    r4 <g g''>16 | % 24
+    \stemDown <g g''>16 [ \stemDown <g b' g'>16 ] r16 <cis' e>16 r8. fis16
+    \stemUp <fis,, a fis''>16 [ \stemUp a8 ] r4 cis,16 | % 25
+    \stemDown <a'' cis>16 [ \stemDown cis16 \stemDown <cis,, e cis''>16
+    \stemDown cis''8 ] \stemDown <d,, cis'' e a>16 [ \stemDown e''8 ]
+    \stemUp <d,, e'' a>16 [ \stemUp d8 \stemUp <d e>16 ] r16 \stemDown
+    cis16 [ \stemDown b'''16 \stemDown <d,,, b'''>16 ] | % 26
+    \stemDown b'''16 [ \stemDown <d, g b>16 ] r4 r16 b16 \stemDown <b,
+        a'>16 [ \stemDown a'16 \stemDown <a b>16 ] r8. \stemDown <g' b>16
+    [ \stemDown g16 ] | % 27
+    g1 | % 28
+    g1 | % 29
+    g1 | \barNumberCheck #30
+    g1 | % 31
+    g1 | % 32
+    g1 | % 33
+    g1 | % 34
+    g1 | % 35
+    g1 | % 36
+    g1 | % 37
+    g1 | % 38
+    g1 | % 39
+    g1 | \barNumberCheck #40
+    g1 | % 41
+    g1 | % 42
+    g1 | % 43
+    g1 | % 44
+    g1 | % 45
+    g1 | % 46
+    g1 | % 47
+    g1 | % 48
+    g1 | % 49
+    g1 | \barNumberCheck #50
+    g1 | % 51
+    g1 | % 52
+    g1 | % 53
+    g1 | % 54
+    \stemDown g8. [ \stemDown <fis,, g''>16 ] \stemDown g''16 [
+    \stemDown <d g>16 \stemDown g16 \stemDown <b,, b' g'>16 ] \stemDown
+    g''16 [ \stemDown <d g a>16 \stemDown <d fis g a>16 \stemDown <d e
+        fis g a>8. ] \stemDown <d g>16 [ \stemDown g16 ] | % 55
+    \stemDown g16 [ \stemDown <d,, e e' e' g>16 \stemDown <d e e' b' e
+        fis g>16 \stemDown <d e e' b' d e fis g>16 ] \stemDown <d'' g>16
+    [ \stemDown g8. ] \stemDown <g,, fis'' g>8 [ \stemDown <g g''>16
+    \stemDown <e e' g b g'>16 ] <e' g'>4 | % 56
+    \stemDown <e g'>8 [ \stemDown <fis, a e' g'>16 \stemDown <a e' g'>16
+    ] \stemDown <e' a b g' b>16 [ \stemDown <e g'>8. ] \stemDown <cis,
+        e' g'>16 [ \stemDown <cis e' g' gis>16 \stemDown <cis a' b c e
+        g'>16 \stemDown <cis b' e g'>16 ] \stemDown <b' e g' b>16 [
+    \stemDown <cis e g'>16 \stemDown <d, cis'' g'>16 \stemDown <d'' g>16
+    ] | % 57
+    <d fis g>16 <d,, g''>4 \stemDown g''16 [ \stemDown <cis,,, b'' g'>16
+    \stemDown g'''16 ] \stemDown <d,, g''>16 [ \stemDown <d g' g' a b>8
+    \stemDown <d g'' a b>16 ] \stemDown <cis'' g' b>16 [ \stemDown <cis
+        d g>16 \stemDown <cis g'>16 \stemDown g'16 ] | % 58
+    \stemDown <cis,,, g'''>8. [ \stemDown <cis cis'' g'>16 ] \stemDown
+    <a'' g'>16 [ \stemDown g'8. ] \stemDown <g,, b' g'>16 [ \stemDown
+    g''8. ] \stemDown <fis g>16 [ \stemDown cis16 \stemDown <g a>16
+    \stemDown <e g>16 ] | % 59
+    e8 r2.. | \barNumberCheck #60
+    R1*11 | % 71
+    r4 r16 \stemDown g,16 [ \stemDown fis''16 \stemDown <g, e'>8 ]
+    \stemDown <fis g>16 [ \stemDown <fis g fis'>8. ] \stemDown <fis,
+        fis' g d' fis>16 [ \stemDown <fis fis' a d fis>16 \stemDown
+    fis''16 ] | % 72
+    fis8 r2.. | % 73
+    r4. b,8 <a b>16 r4.. | % 74
+    R1*9 }
 
-PartPcdbfbSixafOneeeFourFivefSixecEightEightcZeroNinecbFivefNineFiveEightfFourOneVoiceOne = 
-\relative b {
+PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne = 
+\relative e, {
     \clef "bass" \numericTimeSignature\time 4/4 \key b \minor | % 1
-    \tempo 4=96 r2 b16 r4.. | % 2
-    r2... d,16 | % 3
-    r4 \stemUp g16 [ \stemUp g,16 ] r2 r8 | % 4
-    r2 r8 b'16 r4 r16 | % 5
-    r4 r16 b4. fis8. r8 | % 6
-    R1 | % 7
-    r8. b4 ~ b16 r4 r16 b8. | % 8
-    r2.. a16 r16 | % 9
-    r8. b16 r8. b8. r8 \stemDown b16 [ \stemDown <g b>8 \stemDown g16 ]
-    | \barNumberCheck #10
-    r16 b16 r8. b,16 r16 b'16 r8 d,8 r4 | % 11
-    r8 \stemDown g16 [ \stemDown <g b>16 ] b4 ~ b16 r8. b8. r16 | % 12
-    r2 b16 r16 d,16 r4 r16 | % 13
-    r4.. a'8 r4.. | % 14
-    R1*4 | % 18
-    b4 ~ b16 r4 a16 r4 a16 r16 | % 19
-    b16 r4.. \stemDown g16 [ \stemDown b16 ] r4. | \barNumberCheck #20
-    \stemDown e,16 [ \stemDown <e b'>8 \stemDown b'16 ] r4 \stemDown d,16
-    [ \stemDown <d, d'>8 \stemDown <d d' a'>8 ] r8. | % 21
-    r8. a8 r16 b''4. r4 | % 22
-    \stemDown <e, b'>8 [ \stemDown <e, e' b'>16 \stemDown <e e'>16 ] r8.
-    <d' a'>16 \stemDown d8 [ \stemDown <d a'>16 \stemDown d16 ] r8. b'16
-    | % 23
-    \stemDown <b, b'>8. [ \stemDown b'16 ] r16 b,4.. r8. <e b'>16 | % 24
-    \stemDown <e b'>16 [ \stemDown <e, e' b'>8 \stemDown b''8 ] r8 <d,,
-        a' d>8 \stemUp <a' d a'>16 [ \stemUp <a d>16 \stemUp d8 ] r8 <a,
-        a' a'>16 | % 25
-    <a' a'>4 r16 <b b'>4 r8 fis16 <a a'>8 r16 <g b'>16 | % 26
-    \stemDown <g b'>8 [ \stemDown <g d' b'>16 \stemDown <d g b'>16 ] r8.
-    a'4 r8. <e e' g>8 | % 27
-    \stemUp <e e' g>16 [ \stemUp <e e'>8 \stemUp <e e' b'>16 ] \stemUp
-    <e g' b>16 [ \stemUp <e g'>16 \stemUp <e e' g>16 \stemUp g'16 ]
-    \stemUp <b, g'>16 [ \stemUp <e, b'>16 ] r4. | % 28
-    r4.. a'16 r4 \stemUp <a, a'>16 [ \stemUp a16 ] r8 | % 29
-    b,8 r16 e'16 r4. e8 r4 | \barNumberCheck #30
-    R1*2 | % 32
-    <b b'>16 r2.. b'16 | % 33
-    b,,16 r16 e'16 r2 r8. g8 | % 34
-    d16 r8 d8 r4.. a16 r8. | % 35
-    R1 | % 36
-    r2 r4 r16 b'8 r16 | % 37
-    r16 b16 r8 \stemDown g8 [ \stemDown b16 ] r2 r16 | % 38
-    r2.. b8 | % 39
-    b16 r4 b4 r8. <b, b'>16 r8. | \barNumberCheck #40
-    R1 | % 41
-    r2 r4 r16 b'8 r16 | % 42
-    r16 b8. r2 b4 | % 43
-    b8 r16 g16 r16 \stemDown b16 [ \stemDown <g b>8 ] r4 r16 \stemDown b16
-    [ \stemDown <e, b'>16 \stemDown b'16 ] | % 44
-    b16 r8 d,8 r4 d16 r4. | % 45
-    r2 r8 e16 r4 r16 | % 46
-    e,16 r2... | % 47
-    r4.. b''8 r16 e,16 r8 e16 r8 | % 48
-    r2 r4 r16 a16 r8 | % 49
-    r2 r16 b4.. | \barNumberCheck #50
-    b8 r8. a16 r4. <e b'>16 r8 g16 | % 51
-    g8. r4. \stemDown b16 [ \stemDown <e, b'>8. ] b'8. ] | % 52
-    r16 \stemDown d,16 [ \stemDown <d, d'>8. ] d16 r8. \stemUp a8 [
-    \stemUp <a a''>8 ] a16 r8 | % 53
-    b''8 r4.. \stemDown b8 [ \stemDown <e, b'>8 ] b'16 r8 | % 54
-    \stemDown d,8. [ \stemDown <d a'>8 ] r4 <b b'>4 b8. | % 55
-    b4 r4 \stemUp <e, e' b'>8. [ \stemUp b''8. ] r8 | % 56
-    <d, a'>4 d8 r8 \stemDown <a e' a>16 [ \stemDown <a, a' e' a>16
-    \stemDown <a' e' a>8. ] r16 <b b'>8 | % 57
-    \stemDown <b b'>16 [ \stemDown <b fis' b>8 \stemDown <b b'>8 ] r16
-    <a e' a>8 \stemDown <g g' b>8 [ \stemDown <g' b>16 \stemDown <d g b>16
-    ] \stemDown <d b'>16 [ \stemDown b'16 ] r8 | % 58
-    \stemUp <a, e' a>16 [ \stemUp <a e'>8 \stemUp a8. ] r8 <e e' g>4
-    \stemUp <e e' g b>8. [ \stemUp g'16 ] | % 59
-    \stemDown g16 [ \stemDown <e, g'>16 \stemDown <e g' b>16 ] r2 r4 r16
-    | \barNumberCheck #60
-    R1 | % 61
-    r2... a'16 | % 62
-    r2 r4 r16 <b,, b''>16 r8 | % 63
-    r16 b16 r2 b'16 r8 <b b'>16 r8 | % 64
-    r4 r16 a16 r4. e'16 r8. | % 65
-    r16 b,16 r16 e'8. r16 g16 \stemDown b16 [ \stemDown d,16 ] r4. | % 66
-    R1 | % 67
-    r4. e8 r8 e8 r4 | % 68
-    R1 | % 69
-    r4.. e16 r2 | \barNumberCheck #70
-    R1 | % 71
-    r4 r16 <e, e' b'>8. <e' b'>8 r8. \stemUp d,16 [ \stemUp <d a''>16
-    \stemUp d16 ] | % 72
-    r4 r16 e'8 r2 r16 | % 73
-    r4 r16 <g, d' g>8. \stemUp <g g'>16 [ \stemUp g16 \stemUp <g d'>8 ]
-    r4 | % 74
-    r4 <e g' b>8 e4 r4 r16 g'16 | % 75
-    r2 r4 r16 d,16 r8 | % 76
-    r4 b4 r4. b8 | % 77
-    r2 r8 <b' b'>16 r4 r16 | % 78
-    R1*2 | \barNumberCheck #80
-    r4 b,8 r8. \stemUp b16 [ \stemUp b''16 ] r8 <b,, b''>16 r8 | % 81
-    r4 \stemDown g''16 [ \stemDown b16 ] r4 d,16 r4 r16 | % 82
-    r16 a16 r2.. | % 83
-    R1*2 }
+    \tempo 4=96 R1*21 | % 22
+    \stemUp <e b''>16 [ \stemUp b''16 \stemUp <e, b'>8 ] r8. <d, d'>8 d'8
+    r4 <b, b' b'>16 | % 23
+    r4 \stemDown b''8 [ \stemDown <b, b'>8 ] b,8. r4 <e' b'>16 | % 24
+    \stemDown <e b'>16 [ \stemDown b'16 ] r4 r16 <d,, d' b'>16 \stemDown
+    d'16 [ \stemDown <a d>16 \stemDown <d, d'>16 \stemDown a''16 ] r8.
+    <a,, a' e'>16 | % 25
+    \stemUp <a a'>8 [ \stemUp <a a' a'>16 \stemUp <a a'>16 ] \stemUp a16
+    [ \stemUp <a b'>16 ] r16 b''16 \stemDown <b, b'>16 [ \stemDown <b d
+        b'>16 \stemDown <b b'>16 \stemDown <b, g' b b'>16 ] <a a' a'>16
+    r8 <g' b'>16 | % 26
+    r16 \stemUp b,16 [ \stemUp g'16 ] r4 <a, a' a'>16 r4. <e' e'>16 r16
+    | % 27
+    R1*27 | % 54
+    r8. <d' fis>16 <d, d'>16 r4 <b b'>4 ~ ~ <b b'>16 b'8 | % 55
+    b4 r4 <e, b''>16 b''4 r8. | % 56
+    \stemUp <d,, d' fis a>16 [ \stemUp <d a''>8 \stemUp d8 ] r8. \stemUp
+    <a e' a>16 [ \stemUp <e' a>8 \stemUp <a, e' a>16 ] \stemUp e'8 [
+    \stemUp <e b' b'>8 ] | % 57
+    <e b' b'>4 ~ ~ ~ <e b' b'>16 \stemUp e16 [ \stemUp <a, e' a>16
+    \stemUp <e' a'>16 ] \stemUp <e g b'>8. [ \stemUp <e b''>16 ] e4 | % 58
+    \stemUp <a, e' a a'>16 [ \stemUp <e' a a'>16 \stemUp <e a e'>8 ]
+    \stemUp <e a>16 [ \stemUp e8. ] \stemUp <e e' b'>16 [ \stemUp <e e'>8
+    \stemUp e8 ] <e e'>8 r16 | % 59
+    R1*12 | % 71
+    r4 r16 <c e e'>16 r16 b''8 e,16 r4 a16 r16 | % 72
+    r4 r16 <a,, e'' a>8 r2 r16 | % 73
+    R1*10 }
 
-PartPSevenOnefThreeEightFourThreeTwoEightbcSeveneZeroeeFiveOneTwoEightcdcThreeNineTwoaFourdThreefSixVoiceOne = 
+PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne = 
 \relative cis' {
     \clef "treble_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 cis8. r16 \stemUp g,16 [ \stemUp <g b' b'>16 \stemUp <g
@@ -554,33 +477,32 @@ PartPSevenOnefThreeEightFourThreeTwoEightbcSeveneZeroeeFiveOneTwoEightcdcThreeNi
     R1*2 | \barNumberCheck #80
     r16 a8 r8. d'16 r8. b16 r4 e,16 | % 81
     e16 r2... | % 82
-    r16 a,8 r2 r4 r16 | % 83
-    R1*2 }
+    r16 a,8 r2 r4 r16 }
 
-PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFivebThreeNineThreeeNineZeroVoiceOne = 
+PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne = 
 \relative e, {
     \clef "bass_8" \numericTimeSignature\time 4/4 \key b \minor | % 1
     \tempo 4=96 R1*11 | % 12
     r8 e2 r8. d8 r16 | % 13
     r8 a8 r4 a8 b4 ~ b16 r16 | % 14
-    r8 e4 ~ e16 r8. d4 r8 | % 15
+    r8 e4 ~ e16 r8 d4 ~ d16 r8 | % 15
     r16 g,8 r4 g8 r4.. | % 16
     r16 e'2 d4.. | % 17
-    d16 a4 ~ a16 r8. b4 ~ b16 r16 a16 | % 18
-    a16 g4 ~ g16 r8. a4.. | % 19
+    d16 a4 ~ a16 r8. b4 ~ b16 a8 | % 18
+    r16 g4 ~ g16 r8. a4.. | % 19
     a16 e2 ~ e16 r4. | \barNumberCheck #20
-    r16 e4 r2 r8. | % 21
+    e4 ~ e16 r2 r8. | % 21
     a4 ~ a16 r16 b4. r4 | % 22
     e,4 r2. | % 23
     R1 | % 24
     e4 r2. | % 25
     R1*2 | % 27
     r2... e16 | % 28
-    e16 r4 e8 r4. fis8 r16 | % 29
+    e16 r8. e8 r4. fis8 r8 | % 29
     b8 r8. b4 ~ b16 r4 r16 e,16 | \barNumberCheck #30
     e16 r8. e8 r8. fis8 r4 b16 | % 31
-    b2 ~ b8 r4 e,8 | % 32
-    e16 r2 fis8 r4 r16 | % 33
+    b2 ~ b8 r4 r16 e,16 | % 32
+    e8 r4. fis8 r4 r16 b16 | % 33
     b2 ~ b16 r4 r16 g8 | % 34
     r2... e16 | % 35
     e2 ~ e16 r4.. | % 36
@@ -588,44 +510,43 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
     r2 r8. e'4 ~ e16 | % 44
     r8. d4 ~ d16 r8. a8 r8. | % 45
     r16 a8 b4 ~ b16 r8. e4 ~ e16 | % 46
-    e8. d4 ~ d16 r8. g,8 r8. | % 47
+    \stemUp e8 [ \stemUp <d e>16 ] d4 ~ d16 r8. g,8 r8. | % 47
     g4 r4. e'4 ~ e16 r16 | % 48
     r2 r8 a,8 r4 | % 49
-    \stemUp a8 [ \stemUp b8 ] r4. g4 ~ g16 r16 | \barNumberCheck #50
-    r8 a2 e4. | % 51
-    e4 r4. e4 r8 | % 52
+    \stemUp a8 [ \stemUp b8 ] r4 r16 g4. r16 | \barNumberCheck #50
+    r8 a4.. r16 e4. | % 51
+    e8. r4. e4 r8. | % 52
     R1 | % 53
     b'4 ~ b16 r4. e,8 r8. | % 54
     R1*2 | % 56
-    r2 r16 a4 r8. | % 57
+    r2 a4 ~ a16 r8. | % 57
     r16 b8 r8. a8 g4 ~ g16 r8. | % 58
     a4 ~ a16 r8. e2 | % 59
-    e8 r4.. e8 r8. e8 | \barNumberCheck #60
-    r4. fis8 r2 | % 61
-    b4 r4 e,8 r8. e8 r16 | % 62
+    e8 r4. e8 r8. e8 r16 | \barNumberCheck #60
+    r4 r16 fis8 r2 b16 | % 61
+    b8. r4 r16 e,8 r8. e8 r16 | % 62
     r2 r16 b'4.. | % 63
     b8. r4 r16 e,8. r4 r16 | % 64
     r4.. b'2 ~ b16 | % 65
-    b8. r4 g8 r4.. | % 66
+    b8 r4 r16 g8 r4.. | % 66
     r4 a8 r8 e2 | % 67
     e8 r2.. | % 68
     R1*7 | % 75
     r4 r16 e8. r2 | % 76
     r8 fis8 r8 b8 r4 b4 | % 77
-    r4 r16 e,8. r2 | % 78
-    r4 b'2. | % 79
+    r4 e,4 r2 | % 78
+    r4 b'8. r8. b4 ~ b16 r16 | % 79
     r4 e,8. r4.. fis8 | \barNumberCheck #80
     r4 r16 b2 ~ b8 r16 | % 81
     r8. g8. r2 r8 | % 82
-    r4 r16 e2 ~ e8 r16 | % 83
-    R1*2 }
+    r4 r16 e2 ~ e8 r16 }
 
 
 % The score definition
 \score {
     <<
         
-        \context ChordNames = "PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOneChords" { \PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOneChords}
+        \context ChordNames = "PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords" { \PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOneChords}
         \new Staff
         <<
             \set Staff.instrumentName = "Vocals"
@@ -633,7 +554,7 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOne" {  \PartPFourTwodeeEightNineSixfbeSixaEightcThreeeEightOnedThreeddFiveadeOneSixfOnecVoiceOne }
+                \context Voice = "PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne" {  \PartPTwocZeroTwoaSixdZeroSevenZeroTwoZeroeFouraNineTwoSevenEightbFourSixEightffFiveNineeFiveEighteTwoVoiceOne }
                 >>
             >>
         \new Staff
@@ -643,7 +564,7 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPZerodaOneTwoTwoNinecaSixOneFourOneNineSixTwoFourEightfTwoeTwodNinecNineSixbFiveFiveThreeeVoiceOne" {  \PartPZerodaOneTwoTwoNinecaSixOneFourOneNineSixTwoFourEightfTwoeTwodNinecNineSixbFiveFiveThreeeVoiceOne }
+                \context Voice = "PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne" {  \PartPFourThreeeFourdEightZeroecaSixdThreeffdThreeSevenaaNineOneEighteaSixEighteeTwoaEightVoiceOne }
                 >>
             >>
         \new Staff
@@ -653,7 +574,7 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPcdbfbSixafOneeeFourFivefSixecEightEightcZeroNinecbFivefNineFiveEightfFourOneVoiceOne" {  \PartPcdbfbSixafOneeeFourFivefSixecEightEightcZeroNinecbFivefNineFiveEightfFourOneVoiceOne }
+                \context Voice = "PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne" {  \PartPZeroEightFourbThreecFiveSixeThreeThreeFourFivebOnebThreeSixEightbSevenSixTwoSixfaTwoFourNineSevendbVoiceOne }
                 >>
             >>
         \new Staff
@@ -663,7 +584,7 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPSevenOnefThreeEightFourThreeTwoEightbcSeveneZeroeeFiveOneTwoEightcdcThreeNineTwoaFourdThreefSixVoiceOne" {  \PartPSevenOnefThreeEightFourThreeTwoEightbcSeveneZeroeeFiveOneTwoEightcdcThreeNineTwoaFourdThreefSixVoiceOne }
+                \context Voice = "PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne" {  \PartPfcdEightTwoZeroNineEightaOneceeeOneOneeFouraFiveaaOneTwoSixSixFourSixaFourNineOneVoiceOne }
                 >>
             >>
         \new Staff
@@ -673,7 +594,7 @@ PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFiv
             
             \context Staff << 
                 \mergeDifferentlyDottedOn\mergeDifferentlyHeadedOn
-                \context Voice = "PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFivebThreeNineThreeeNineZeroVoiceOne" {  \PartPfTwobZeroFourThreeSevenNineTwoTwoTwoSixNineEightfbfcaNineaZeroEightThreeFivebThreeNineThreeeNineZeroVoiceOne }
+                \context Voice = "PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne" {  \PartPZeroThreeEightFiveThreeefEightThreedThreeddTwobdThreeSixSixeEightFiveThreeNineaZeroaEightThreeFiveZerocVoiceOne }
                 >>
             >>
         

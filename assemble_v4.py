@@ -140,7 +140,7 @@ def _load_stem_onsets(stem_name: str) -> np.ndarray:
     return np.asarray(_lb.onset.onset_detect(y=y, sr=22050, units="time",
                                              backtrack=True))
 
-_ONSETS = {name: _load_stem_onsets(name) for name in ("vocals", "piano", "guitar")}
+_ONSETS = {name: _load_stem_onsets(name) for name in ("vocals", "piano", "guitar", "bass")}
 
 def _snap_notes_to_onsets(notes, stem_name, tol=0.08):
     arr = _ONSETS.get(stem_name)
@@ -175,7 +175,9 @@ vox = drop_shorts(vox, min_len_16=2)
 
 # Bass — prefer CREPE monophonic track when available (clean f0 contour),
 # fall back to basic-pitch. CREPE notes are already monophonic and high-
-# confidence, so skip chord_filter.
+# confidence, so skip chord_filter. Onset-snap to the bass stem's detected
+# onsets so note-start times land on real audio attacks (CREPE's f0-change
+# boundaries lag by 20-50ms).
 _bass_crepe = MIDI_DIR / "bass_crepe.mid"
 if _bass_crepe.exists():
     _pm = pretty_midi.PrettyMIDI(str(_bass_crepe))
@@ -183,6 +185,7 @@ if _bass_crepe.exists():
     print("bass: using CREPE contour")
 else:
     bass_raw = load_stem_midi("bass")
+bass_raw = _snap_notes_to_onsets(bass_raw, "bass")
 bass = quantize(bass_raw, min_len_16=2, velocity_floor=0 if _bass_crepe.exists() else 30,
                 pitch_lo=28, pitch_hi=55)
 bass = merge_same_pitch(bass, gap_tol_16=2)
@@ -190,7 +193,17 @@ if not _bass_crepe.exists():
     bass = chord_filter(bass, keep_velocity=80, min_len_16=2)
 bass = drop_shorts(bass, min_len_16=2)
 
-piano_raw = load_stem_midi("piano", premerge_gap_ms=80)
+# Piano: prefer MT3 (ismir2021, SOTA for polyphonic piano) when available,
+# fall back to basic-pitch's piano.mid. MT3 is trained on solo piano so it
+# captures voicings and arpeggios that basic-pitch fragments.
+_piano_mt3 = MIDI_DIR / "piano_mt3.mid"
+if _piano_mt3.exists():
+    _pm_p = pretty_midi.PrettyMIDI(str(_piano_mt3))
+    piano_raw = [n for inst in _pm_p.instruments if not inst.is_drum
+                 for n in inst.notes]
+    print(f"piano: using MT3 transcription ({len(piano_raw)} notes)")
+else:
+    piano_raw = load_stem_midi("piano", premerge_gap_ms=80)
 piano_raw = _snap_notes_to_onsets(piano_raw, "piano")
 piano = quantize(piano_raw, min_len_16=1, velocity_floor=30, pitch_lo=33, pitch_hi=96)
 piano = merge_same_pitch(piano, gap_tol_16=1)

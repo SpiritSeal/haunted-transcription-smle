@@ -1,4 +1,4 @@
-.venv/
+.venv*
 __pycache__/
 *.pyc
 _prev-*.png
@@ -12,3 +12,10 @@ runs/*/audio/
 
 # Raw htdemucs output (24 MB/stem) — source of truth is stems/
 separated/
+
+# MT3 vendored sources (cloned, editable-installed into .venv-mt3)
+mt3_repo/
+t5x_repo/
+
+# MT3 checkpoints (~165 MB each; re-downloadable via transcribe_mt3.py)
+assets/mt3_checkpoints/
