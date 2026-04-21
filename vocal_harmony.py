@@ -13,7 +13,8 @@ import pretty_midi
 import numpy as np
 from collections import defaultdict
 
-MIDI_DIR = Path("midi")
+import os
+MIDI_DIR = Path(os.environ.get("MIDI_DIR", "midi"))
 
 lead_pm = pretty_midi.PrettyMIDI(str(MIDI_DIR / "vocals_crepe.mid"))
 poly_pm = pretty_midi.PrettyMIDI(str(MIDI_DIR / "vocals_poly.mid"))

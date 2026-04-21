@@ -13,6 +13,17 @@ runs/*/audio/
 # Raw htdemucs output (24 MB/stem) — source of truth is stems/
 separated/
 
+# Demucs-v3 stems kept around for A/B (8 MB × 6 = 48 MB). Restore with:
+#   git show 52e38cd^:"stems/..." > stems_v3_demucs/...
+stems_v3_demucs/
+
+# Demucs-v3 basic-pitch regeneration output (fresh transcriptions; re-runnable
+# via STEMS_DIR=stems_v3_demucs MIDI_DIR=midi_v3_demucs python transcribe_stems.py)
+midi_v3_demucs/
+
+# Local agent/editor state
+.claude/
+
 # MT3 vendored sources (cloned, editable-installed into .venv-mt3)
 mt3_repo/
 t5x_repo/

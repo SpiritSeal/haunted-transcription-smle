@@ -9,12 +9,14 @@ Pipeline:
   6. Snap onsets/offsets to the beat grid (16ths).
 """
 from pathlib import Path
+import os
 import numpy as np
 import crepe
 import librosa
 import pretty_midi
 
-STEMS = Path("stems")
+STEMS = Path(os.environ.get("STEMS_DIR", "stems"))
+MIDI_OUT = Path(os.environ.get("MIDI_DIR", "midi"))
 SR = 16000            # crepe's native sample rate
 STEP_MS = 10
 CONF_THR = 0.6
@@ -80,6 +82,8 @@ for (s, e, p) in notes:
         continue
     inst.notes.append(pretty_midi.Note(velocity=90, pitch=p, start=float(s), end=float(e)))
 pm.instruments.append(inst)
-pm.write("midi/vocals_crepe.mid")
-print("wrote midi/vocals_crepe.mid")
+out = MIDI_OUT / "vocals_crepe.mid"
+out.parent.mkdir(parents=True, exist_ok=True)
+pm.write(str(out))
+print(f"wrote {out}")
 print(f"kept {len(inst.notes)} notes, pitch range {min(n.pitch for n in inst.notes)}..{max(n.pitch for n in inst.notes)}")

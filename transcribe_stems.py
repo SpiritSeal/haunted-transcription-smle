@@ -5,9 +5,9 @@ from basic_pitch.inference import predict_and_save
 from basic_pitch import build_icassp_2022_model_path, FilenameSuffix
 ICASSP_2022_MODEL_PATH = build_icassp_2022_model_path(FilenameSuffix.onnx)
 
-STEMS_DIR = Path("stems")
-OUT_DIR = Path("midi")
-OUT_DIR.mkdir(exist_ok=True)
+STEMS_DIR = Path(os.environ.get("STEMS_DIR", "stems"))
+OUT_DIR = Path(os.environ.get("MIDI_DIR", "midi"))
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Stem-specific parameters tuned for each instrument
 # onset_threshold: lower = more notes detected (sensitive to quiet notes)

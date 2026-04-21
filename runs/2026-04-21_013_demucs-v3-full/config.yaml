@@ -1,0 +1,14 @@
+date: '2026-04-21'
+hypothesis: Full pipeline on demucs-v3 stems (draft1 era). basic-pitch all 4 stems,
+  draft1-verbatim guitar, no RVC.
+run_id: 2026-04-21_013_demucs-v3-full
+script_shas:
+  analyze_grid.py: edf5237f8422
+  assemble_v4.py: 2ddf84270b33
+  chord_detect.py: 991e95648d03
+  midi_utils.py: f377deaf076f
+  transcribe_drums.py: a5b8df0f31a7
+  transcribe_stems.py: 4449b15758a6
+  transcribe_vocals_poly.py: 2a78aa1fa12e
+  vocal_harmony.py: 753a3040dc76
+  vocal_melody.py: c1a2147d86f8

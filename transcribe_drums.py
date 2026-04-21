@@ -1,10 +1,13 @@
 """Detect kick/snare/hi-hat onsets from the drum stem and write a MIDI drum track."""
+import os
 import librosa
 import numpy as np
 import pretty_midi
 from pathlib import Path
 
-DRUM_PATH = next(Path("stems").glob("*drums*.mp3"))
+STEMS_DIR = Path(os.environ.get("STEMS_DIR", "stems"))
+MIDI_DIR = Path(os.environ.get("MIDI_DIR", "midi"))
+DRUM_PATH = next(STEMS_DIR.glob("*drums*.mp3"))
 SR = 22050
 y, sr = librosa.load(str(DRUM_PATH), sr=SR, mono=True)
 
@@ -44,5 +47,7 @@ add_hits(snare_times, SNARE, vel=105)
 add_hits(hat_times, HAT, dur=0.05, vel=85)
 
 pm.instruments.append(drum)
-pm.write("midi/drums.mid")
-print("wrote midi/drums.mid")
+out = MIDI_DIR / "drums.mid"
+out.parent.mkdir(parents=True, exist_ok=True)
+pm.write(str(out))
+print(f"wrote {out}")
